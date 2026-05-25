@@ -2147,16 +2147,17 @@ const sbGet    = (table, query='')      => sb('GET', table, null, query);
 const sbPost   = (table, body)          => sb('POST', table, body);
 const sbPatch  = (table, body, query)   => sb('PATCH', table, body, query);
 const sbDelete = (table, query)         => sb('DELETE', table, null, query);
-const sbUpsert = (table, body) => fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
+const sbUpsert = (table, body, conflictCol) => fetch(
+  `${SUPABASE_URL}/rest/v1/${table}${conflictCol ? '?on_conflict='+conflictCol : ''}`, {
   method: 'POST',
   headers: {
     'apikey': SUPABASE_KEY,
     'Authorization': `Bearer ${SUPABASE_KEY}`,
     'Content-Type': 'application/json',
-    'Prefer': 'resolution=merge-duplicates,return=representation'
+    'Prefer': 'resolution=merge-duplicates,return=minimal'
   },
-  body: JSON.stringify(body)
-}).then(r => r.json());
+  body: JSON.stringify(Array.isArray(body) ? body : [body])
+});
 
 // Khusus untuk tabel results — upsert berdasarkan result_key (unique per siswa+paket)
 const sbUpsertResults = (body) => fetch(`${SUPABASE_URL}/rest/v1/results?on_conflict=result_key`, {
@@ -2165,10 +2166,10 @@ const sbUpsertResults = (body) => fetch(`${SUPABASE_URL}/rest/v1/results?on_conf
     'apikey': SUPABASE_KEY,
     'Authorization': `Bearer ${SUPABASE_KEY}`,
     'Content-Type': 'application/json',
-    'Prefer': 'resolution=merge-duplicates,return=representation'
+    'Prefer': 'resolution=merge-duplicates,return=minimal'
   },
   body: JSON.stringify(body)
-}).then(r => r.json());
+});
 
 
 // ===================== APP STATE =====================
@@ -3208,17 +3209,26 @@ async function pushProgress(status = 'active') {
   if (!currentUser || !currentClass) return;
   try {
     const answered = examOrder.filter(qIdx => isAnswered(qIdx)).length;
-    await sbUpsert('progress', {
-      id: `${currentClass}::${currentUser}`,
-      student_name: currentUser,
-      class_name: currentClass,
-      paket: activePaketPrefix(),
-      current_q: currentQ,
-      answered,
-      total: ACTIVE_QUESTIONS.length,
-      started_at: new Date(examStartTime).toISOString(),
-      updated_at: new Date().toISOString(),
-      status
+    const pk = activePaketPrefix();
+    await fetch(`${SUPABASE_URL}/rest/v1/progress?on_conflict=progress_key`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'resolution=merge-duplicates,return=minimal'
+      },
+      body: JSON.stringify({
+        progress_key: `${currentClass}::${currentUser}::${pk}`,
+        nama: currentUser,
+        class_name: currentClass,
+        paket: pk,
+        current_q: currentQ,
+        answered,
+        total: ACTIVE_QUESTIONS.length,
+        status,
+        updated_at: new Date().toISOString()
+      })
     });
   } catch(e) { /* silent */ }
 }
