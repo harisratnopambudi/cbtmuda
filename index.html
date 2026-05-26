@@ -3268,6 +3268,26 @@ async function renderDashboard() {
     if (filterKelas) query += `&class_name=eq.${encodeURIComponent(filterKelas)}`;
     const results = await sbGet('results', query);
 
+    // Fetch nilai_langkah untuk gabungkan ke total
+    let nilaiQuery = '?select=*';
+    if (filterKelas) nilaiQuery += `&class_name=eq.${encodeURIComponent(filterKelas)}`;
+    const nilaiRows = await sbGet('nilai_langkah', nilaiQuery).catch(() => []);
+    const nilaiMap = {};
+    (nilaiRows || []).forEach(r => {
+      nilaiMap[`${r.class_name}::${r.nama}::${r.paket}`] = r;
+    });
+
+    // Helper hitung total nilai = skor otomatis + langkah + essay
+    function getTotalNilai(r) {
+      if (!r) return null;
+      const nm = nilaiMap[`${r.class_name}::${r.nama}::${r.paket}`] || {};
+      const langkahScores = nm.langkah_scores || {};
+      const essayScores = nm.essay_scores || {};
+      const totalLangkah = Object.values(langkahScores).reduce((a,b) => a + (parseFloat(b)||0), 0);
+      const totalEssay = Object.values(essayScores).reduce((a,b) => a + (parseFloat(b)||0), 0);
+      return (r.score || 0) + totalLangkah + totalEssay;
+    }
+
     // Map per siswa per paket: key = "kelas::nama::paket"
     const resultMap = {};
     (results || []).forEach(r => {
@@ -3296,7 +3316,7 @@ async function renderDashboard() {
     const allDone = allStudents.filter(s => s.r1 || s.r2 || s.r3 || s.r4);
     const avgScore = allDone.length
       ? Math.round(allDone.reduce((a,s) => {
-          const scores = [s.r1,s.r2,s.r3,s.r4].filter(Boolean).map(r=>r.score);
+          const scores = [s.r1,s.r2,s.r3,s.r4].filter(Boolean).map(r => getTotalNilai(r));
           return a + scores.reduce((x,y)=>x+y,0)/scores.length;
         }, 0) / allDone.length)
       : 0;
@@ -3323,12 +3343,15 @@ async function renderDashboard() {
 
     allStudents.sort((a,b) => a.nama.localeCompare(b.nama, 'id'));
 
-    const paketScore = (r, nQ) => r
-      ? `<div class="score-bar-wrap">
-          <div class="score-bar"><div class="score-bar-inner ${r.score>=75?'high':r.score>=60?'mid':'low'}" style="width:${r.score}%"></div></div>
-          <span style="font-weight:800;min-width:35px;">${r.score}</span>
-         </div>`
-      : '<span style="color:#cbd5e1;">—</span>';
+    const paketScore = (r, nQ) => {
+      if (!r) return '<span style="color:#cbd5e1;">—</span>';
+      const total = getTotalNilai(r);
+      const pct = Math.min(100, Math.round(total));
+      return `<div class="score-bar-wrap">
+          <div class="score-bar"><div class="score-bar-inner ${pct>=75?'high':pct>=60?'mid':'low'}" style="width:${pct}%"></div></div>
+          <span style="font-weight:800;min-width:35px;">${total % 1 === 0 ? total : total.toFixed(1)}</span>
+         </div>`;
+    };
 
     const tbody = document.getElementById('dashTableBody');
     tbody.innerHTML = '';
