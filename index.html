@@ -4463,7 +4463,7 @@ async function renderPenilaian() {
         const val = langkahVals[q.id] !== undefined ? langkahVals[q.id] : '';
         html += `<td style="padding:4px 6px;text-align:center;">
           <input type="number" min="0" max="1" step="1" value="${val}"
-            data-nama="${r.nama}" data-soal="${q.id}" data-type="langkah"
+            data-nama="${r.nama}" data-soal="${q.id}" data-type="langkah" data-ri="${ri}"
             onchange="updateNilaiCell(this)"
             style="width:44px;padding:4px;border:1.5px solid var(--border);border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">
         </td>`;
@@ -4473,7 +4473,7 @@ async function renderPenilaian() {
         const val = essayVals[q.id] !== undefined ? essayVals[q.id] : '';
         html += `<td style="padding:4px 6px;text-align:center;">
           <input type="number" min="0" max="100" step="0.5" value="${val}"
-            data-nama="${r.nama}" data-soal="${q.id}" data-type="essay"
+            data-nama="${r.nama}" data-soal="${q.id}" data-type="essay" data-ri="${ri}"
             onchange="updateNilaiCell(this)"
             style="width:54px;padding:4px;border:1.5px solid var(--border);border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">
         </td>`;
@@ -4506,9 +4506,25 @@ function updateNilaiCell(input) {
   const nama = input.dataset.nama;
   const soal = input.dataset.soal;
   const type = input.dataset.type;
+  const ri = input.dataset.ri;
   if (!window._nilaiChanges[nama]) window._nilaiChanges[nama] = { langkah_scores: {}, essay_scores: {} };
   if (type === 'langkah') window._nilaiChanges[nama].langkah_scores[soal] = parseFloat(input.value) || 0;
   if (type === 'essay') window._nilaiChanges[nama].essay_scores[soal] = parseFloat(input.value) || 0;
+
+  // Recalculate total untuk baris ini
+  const autoScore = parseFloat(input.closest('tr').querySelector('td:nth-child(2)').textContent) || 0;
+  const allInputs = input.closest('tr').querySelectorAll('input[type=number]');
+  let totalLangkah = 0, totalEssay = 0;
+  allInputs.forEach(inp => {
+    if (inp.dataset.type === 'langkah') totalLangkah += parseFloat(inp.value) || 0;
+    if (inp.dataset.type === 'essay') totalEssay += parseFloat(inp.value) || 0;
+  });
+  const totalNilai = autoScore + totalLangkah + totalEssay;
+  const totalCell = document.getElementById(`total_${ri}`);
+  if (totalCell) {
+    const color = totalNilai >= 75 ? '#10b981' : totalNilai >= 60 ? '#f59e0b' : '#ef4444';
+    totalCell.innerHTML = `<span style="font-weight:800;font-size:15px;color:${color};">${totalNilai.toFixed(1)}</span>`;
+  }
 }
 
 async function saveAllNilaiLangkah() {
