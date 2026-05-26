@@ -2853,7 +2853,11 @@ async function submitExam(timeout) {
         nama: currentUser,
         class_name: currentClass,
         paket: pk,
-        score, benar, salah, kosong, duration,
+        score,
+        correct: benar,
+        wrong: salah,
+        empty: kosong,
+        duration,
         answers: examAnswers,
         submitted_at: new Date().toISOString()
       });
