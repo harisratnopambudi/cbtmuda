@@ -2449,7 +2449,7 @@ async function startExam() {
     try {
       // Filter berdasarkan paket juga — beda paket = beda ujian, tidak saling ganggu
       const rows = await sbGet('results',
-        `?student_name=eq.${encodeURIComponent(nama)}&class_name=eq.${encodeURIComponent(kelas)}&paket=eq.${paketPrefix}`
+        `?nama=eq.${encodeURIComponent(nama)}&class_name=eq.${encodeURIComponent(kelas)}&paket=eq.${paketPrefix}`
       );
       hideLoading();
       if (rows && rows.length > 0) {
@@ -2457,7 +2457,7 @@ async function startExam() {
         if (!confirm(`${nama} sudah mengerjakan ${paketLabel} (Nilai: ${rows[0].score}). Kerjakan ulang?`)) return;
         // Hapus hanya hasil paket ini, bukan semua hasil siswa
         await sbDelete('results',
-          `?student_name=eq.${encodeURIComponent(nama)}&class_name=eq.${encodeURIComponent(kelas)}&paket=eq.${paketPrefix}`
+          `?nama=eq.${encodeURIComponent(nama)}&class_name=eq.${encodeURIComponent(kelas)}&paket=eq.${paketPrefix}`
         );
       }
     } catch(e) { hideLoading(); }
@@ -2850,7 +2850,7 @@ async function submitExam(timeout) {
       const pk = activePaketPrefix();
       await sbUpsertResults({
         result_key: `${currentClass}::${currentUser}::${pk}`,  // ← unique per siswa per paket
-        student_name: currentUser,
+        nama: currentUser,
         class_name: currentClass,
         paket: pk,
         score, benar, salah, kosong, duration,
@@ -3054,7 +3054,7 @@ async function renderLiveMonitor() {
   try {
     // Filter hanya hari ini berdasarkan started_at
     const today = todayLocalISO();
-    const rows = await sbGet('progress', `?started_at=gte.${today}T00:00:00&order=class_name.asc,student_name.asc`);
+    const rows = await sbGet('progress', `?started_at=gte.${today}T00:00:00&order=class_name.asc,nama.asc`);
     const data = rows || [];
 
     const active    = data.filter(r => r.status === 'active');
@@ -3156,7 +3156,7 @@ async function renderLiveMonitor() {
         const sinceSec   = Math.floor((Date.now() - updatedAt.getTime()) / 1000);
         const sinceLabel = sinceSec < 60 ? `${sinceSec}d lalu` : `${Math.floor(sinceSec/60)}m lalu`;
 
-        const initials  = r.student_name.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+        const initials  = (r.nama||'?').split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
         const cardClass = isDone ? 'done' : isIdle ? 'idle' : '';
         const dotClass  = isDone ? 'done' : isIdle ? 'idle' : '';
 
@@ -3177,7 +3177,7 @@ async function renderLiveMonitor() {
           <div class="live-card-header">
             <div class="live-avatar">${initials}</div>
             <div style="flex:1;min-width:0;">
-              <div class="live-name">${r.student_name}</div>
+              <div class="live-name">${r.nama}</div>
               ${paketBadge}
             </div>
             <div class="live-status-dot ${dotClass}""></div>
@@ -3268,7 +3268,7 @@ async function renderDashboard() {
     const resultMap = {};
     (results || []).forEach(r => {
       const pk = r.paket || 'p1';
-      resultMap[`${r.class_name}::${r.student_name}::${pk}`] = r;
+      resultMap[`${r.class_name}::${r.nama}::${pk}`] = r;
     });
 
     let allStudents = [];
@@ -3385,8 +3385,8 @@ async function renderStudentTable() {
     const rMap = {};
     (results || []).forEach(r => {
       const pk = r.paket || 'p1';
-      if (!rMap[r.student_name]) rMap[r.student_name] = {};
-      rMap[r.student_name][pk] = r;
+      if (!rMap[r.nama]) rMap[r.nama] = {};
+      rMap[r.nama][pk] = r;
     });
 
     // Update thead
@@ -3454,7 +3454,7 @@ async function removeStudent(nama) {
       const students = (rows[0].students || []).filter(n => n !== nama);
       await sbPatch('classes', { students }, `?name=eq.${encodeURIComponent(selectedAdminClass)}`);
     }
-    await sbDelete('results', `?student_name=eq.${encodeURIComponent(nama)}&class_name=eq.${encodeURIComponent(selectedAdminClass)}`);
+    await sbDelete('results', `?nama=eq.${encodeURIComponent(nama)}&class_name=eq.${encodeURIComponent(selectedAdminClass)}`);
     hideLoading();
     renderClassTabs();
     renderDashboard();
@@ -3471,7 +3471,7 @@ async function resetStudentResult(nama) {
   showLoading('Mereset...');
   try {
     await sbDelete('results',
-      `?student_name=eq.${encodeURIComponent(nama)}&class_name=eq.${encodeURIComponent(selectedAdminClass)}`
+      `?nama=eq.${encodeURIComponent(nama)}&class_name=eq.${encodeURIComponent(selectedAdminClass)}`
     );
     hideLoading();
     showToast(`✅ Hasil ujian ${nama} berhasil direset`);
@@ -3787,9 +3787,9 @@ async function exportCSV() {
   showLoading('Menyiapkan export...');
   try {
     const classes = await getClasses();
-    const results = await sbGet('results', '?order=class_name,student_name');
+    const results = await sbGet('results', '?order=class_name,nama');
     const resultMap = {};
-    (results || []).forEach(r => { resultMap[`${r.class_name}::${r.student_name}`] = r; });
+    (results || []).forEach(r => { resultMap[`${r.class_name}::${r.nama}`] = r; });
 
     let csv = 'No,Nama,Kelas,Status,Nilai,Benar,Salah,Kosong,Durasi,Waktu Selesai\n';
     let i = 1;
