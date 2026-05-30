@@ -2371,7 +2371,154 @@ const QUESTIONS_P3 = [
 ];
 
 // ===================== PAKET 4: BAHASA INDONESIA KELAS 5 =====================
-const QUESTIONS_P4 = [];
+const QUESTIONS_P4 = [
+  {
+    id: 1, type: 'single',
+    text: 'Saat warga desa membersihkan saluran air bersama-sama, mereka menunjukkan sikap ....',
+    options: ['Kemalasan', 'Persaingan', 'Gotong royong', 'Individualisme'],
+    answer: 2
+  },
+  {
+    id: 2, type: 'single',
+    text: 'Wilayah pegunungan di Indonesia memiliki ciri ....',
+    options: ['Banyak pelabuhan laut', 'Udara sejuk dan tanah subur', 'Ombak besar dan angin kencang', 'Udara panas dan pantai berpasir'],
+    answer: 1
+  },
+  {
+    id: 3, type: 'single',
+    text: 'Bacalah paragraf berikut! "Indonesia memiliki banyak wilayah pegunungan. Daerah pegunungan memiliki udara yang sejuk dan tanah yang subur. Banyak masyarakat memanfaatkan wilayah tersebut untuk bercocok tanam." Ide pokok paragraf tersebut adalah ....',
+    options: ['Udara pegunungan sejuk', 'Tanah pegunungan subur', 'Masyarakat bercocok tanam', 'Wilayah pegunungan di Indonesia'],
+    answer: 3
+  },
+  {
+    id: 4, type: 'single',
+    text: 'Kalimat yang tepat sebagai pendukung teks eksposisi tentang gotong royong adalah ....',
+    options: ['Sekolahku sangat besar.', 'Saya suka bermain sepak bola.', 'Pantai adalah tempat wisata menarik.', 'Gotong royong membuat pekerjaan lebih cepat selesai.'],
+    answer: 3
+  },
+  {
+    id: 5, type: 'single',
+    text: 'Rama kesulitan memahami tugas kelompok karena teman-temannya tidak mau bekerja sama. Solusi terbaik adalah ....',
+    options: ['Marah kepada teman', 'Meninggalkan kelompok', 'Tidak mengerjakan tugas', 'Melaporkan kepada guru dan mengajak berdiskusi'],
+    answer: 3
+  },
+  {
+    id: 6, type: 'truefalse',
+    text: 'Baca teks berikut! Pada hari Minggu, warga Desa Harapan berkumpul di lapangan untuk melakukan kerja bakti. Pak Rudi, ketua RT, mengatakan bahwa gotong royong dapat mempererat persatuan masyarakat. Bu Guru menjelaskan bahwa udara pantai biasanya terasa panas, sedangkan udara pegunungan lebih sejuk. Bu Guru juga mengingatkan bahwa ide pokok merupakan inti pembahasan dalam paragraf. Kalimat majemuk setara terdiri atas dua kalimat yang sederajat. Teks persuasif bertujuan memengaruhi pembaca agar mau mengikuti ajakan. Berdasarkan teks, tentukan BENAR atau SALAH!',
+    statements: [
+      { text: 'Gotong royong dapat mempererat persatuan masyarakat.', answer: true },
+      { text: 'Wilayah pantai memiliki udara yang sejuk seperti pegunungan.', answer: false },
+      { text: 'Ide pokok merupakan inti pembahasan dalam paragraf.', answer: true },
+      { text: 'Kalimat majemuk setara terdiri atas dua kalimat yang sederajat.', answer: true },
+      { text: 'Teks persuasif bertujuan memengaruhi pembaca.', answer: true }
+    ]
+  },
+  {
+    id: 7, type: 'multiselect',
+    text: 'Contoh sikap gotong royong adalah .... (pilih 3 jawaban)',
+    options: ['Membersihkan lingkungan bersama', 'Membantu tetangga terkena musibah', 'Membiarkan teman bekerja sendiri', 'Bekerja sama saat piket kelas'],
+    answers: [0, 1, 3]
+  },
+  {
+    id: 8, type: 'multiselect',
+    text: 'Ciri wilayah pantai adalah .... (pilih 3 jawaban)',
+    options: ['Udara panas', 'Banyak nelayan', 'Tanah subur untuk sayuran pegunungan', 'Dekat laut'],
+    answers: [0, 1, 3]
+  },
+  {
+    id: 9, type: 'multiselect',
+    text: 'Kalimat yang termasuk kalimat majemuk setara adalah .... (pilih 3 jawaban)',
+    options: ['Dina membaca buku dan Rani menulis tugas.', 'Ayah bekerja sedangkan ibu memasak.', 'Saya pergi ke sekolah.', 'Edo bermain bola lalu Beni bersepeda.'],
+    answers: [0, 1, 3]
+  },
+  {
+    id: 10, type: 'multiselect',
+    text: 'Ciri teks persuasif adalah .... (pilih 3 jawaban)',
+    options: ['Mengajak pembaca', 'Menggunakan kata ajakan', 'Berisi langkah percobaan', 'Bertujuan memengaruhi pembaca'],
+    answers: [0, 1, 3]
+  },
+  {
+    id: 11, type: 'multiselect',
+    text: 'Pernyataan yang termasuk ide pendukung adalah .... (pilih 3 jawaban)',
+    options: ['Pegunungan memiliki udara sejuk.', 'Banyak petani menanam sayuran di pegunungan.', 'Indonesia memiliki wilayah pegunungan.', 'Tanah pegunungan subur untuk pertanian.'],
+    answers: [0, 1, 3]
+  },
+  {
+    id: 12, type: 'short',
+    text: 'Bacalah teks berikut! "Warga Desa Sukamaju mengadakan kerja bakti membersihkan jalan desa setiap hari Minggu. Mereka bekerja sama membersihkan selokan dan memotong rumput liar. Kepala desa mengingatkan bahwa gotong royong harus terus dilaksanakan agar persatuan warga tetap terjaga." Manfaat gotong royong adalah…',
+    answer: 'Pekerjaan cepat selesai dan mempererat persatuan warga'
+  },
+  {
+    id: 13, type: 'short',
+    text: 'Indonesia memiliki wilayah pegunungan, dataran rendah, dan pantai. Wilayah pegunungan memiliki udara sejuk dan tanah subur. Banyak masyarakat bekerja sebagai petani sayur. Wilayah pantai memiliki udara panas dan masyarakat banyak bekerja sebagai nelayan. Ide pokok paragraf pertama adalah…',
+    answer: 'Indonesia memiliki berbagai wilayah dengan ciri yang berbeda'
+  },
+  {
+    id: 14, type: 'short',
+    text: 'Bacalah teks! "Sekolah SD Nusantara mengadakan kegiatan menanam pohon di halaman sekolah. Semua siswa membawa bibit tanaman dari rumah. Kegiatan tersebut bertujuan menjaga lingkungan agar tetap hijau dan asri. Menurut Edo, kegiatan menanam pohon adalah kegiatan paling menyenangkan di sekolah." Informasi fakta dari teks tersebut adalah…',
+    answer: 'SD Nusantara mengadakan kegiatan menanam pohon di halaman sekolah'
+  },
+  {
+    id: 15, type: 'short',
+    text: 'Dina mengikuti kerja kelompok bersama teman-temannya. Namun, beberapa teman tidak mau bekerja sama. Akibatnya, tugas kelompok tidak selesai tepat waktu. Dina kemudian mengajak teman-temannya berdiskusi agar tugas dapat diselesaikan bersama. Masalah yang dihadapi Dina adalah…',
+    answer: 'Beberapa teman tidak mau bekerja sama sehingga tugas tidak selesai tepat waktu'
+  },
+  {
+    id: 16, type: 'short',
+    text: 'Karakteristik wilayah pantai adalah…',
+    answer: 'Udara panas, dekat laut, banyak nelayan, dan berpasir'
+  },
+  {
+    id: 17, type: 'short',
+    text: 'Bacalah teks! "Gotong royong membuat pekerjaan menjadi lebih ringan. Selain itu, kegiatan tersebut dapat mempererat hubungan antarwarga. Warga yang saling membantu akan hidup rukun dan damai. Oleh karena itu, gotong royong perlu dibiasakan dalam kehidupan sehari-hari." Ide pendukung paragraf tersebut adalah…',
+    answer: 'Gotong royong mempererat hubungan antarwarga dan membuat warga hidup rukun'
+  },
+  {
+    id: 18, type: 'short',
+    text: 'Contoh kalimat majemuk setara adalah…',
+    answer: ''
+  },
+  {
+    id: 19, type: 'short',
+    text: 'Pekerjaan masyarakat di dataran rendah yaitu…',
+    answer: 'Petani, pedagang, buruh pabrik'
+  },
+  {
+    id: 20, type: 'short',
+    text: 'Bacalah teks! "Ayo, kita menjaga kebersihan lingkungan sekolah! Lingkungan yang bersih membuat belajar menjadi nyaman dan sehat. Buanglah sampah pada tempatnya dan ikutilah kegiatan kerja bakti bersama teman-teman." Tujuan dari isi teks tersebut adalah…',
+    answer: 'Mengajak pembaca untuk menjaga kebersihan lingkungan sekolah'
+  },
+  {
+    id: 21, type: 'short',
+    text: 'Bacalah teks! "Pada hari Sabtu, siswa kelas V melakukan kerja bakti membersihkan taman sekolah. Mereka bekerja sama mencabut rumput dan menyapu halaman. Namun, beberapa siswa hanya bermain sehingga pekerjaan menjadi lambat selesai." Solusi yang dilakukan ketua kelas adalah…',
+    answer: ''
+  },
+  {
+    id: 22, type: 'essay',
+    text: 'Baca teks berikut! Hari Minggu pagi, warga Kampung Harmoni berkumpul di balai desa untuk kerja bakti. Awalnya, sebagian warga kurang peduli dan memilih tetap di rumah. Akibatnya, pekerjaan membersihkan selokan menjadi lambat. Rani dan teman-temannya kemudian mengajak warga lain untuk bekerja bersama. Setelah semua warga ikut membantu, pekerjaan menjadi lebih cepat selesai. Bandingkan sikap warga yang ikut bergotong royong dengan warga yang tidak ikut bekerja bakti pada awal cerita!',
+    answer: ''
+  },
+  {
+    id: 23, type: 'essay',
+    text: 'Berdasarkan teks Kampung Harmoni: Apa masalah yang terjadi di Kampung Harmoni sebelum semua warga ikut membantu?',
+    answer: 'Sebagian warga tidak mau ikut bekerja bakti sehingga selokan tersumbat dan menimbulkan bau tidak sedap'
+  },
+  {
+    id: 24, type: 'essay',
+    text: 'Berdasarkan teks Kampung Harmoni: Tuliskan kesimpulan dari cerita tersebut!',
+    answer: ''
+  },
+  {
+    id: 25, type: 'essay',
+    text: 'Jika kamu menjadi warga Kampung Harmoni, solusi apa yang akan kamu lakukan agar semua warga mau ikut bergotong royong?',
+    answer: ''
+  },
+  {
+    id: 26, type: 'essay',
+    text: 'Ceritakan pengalamanmu tentang kegiatan gotong royong yang pernah dilakukan di lingkungan sekitar rumah atau di lingkungan sekolah. Tulis dalam 4 paragraf dengan menggunakan ejaan yang tepat!',
+    answer: ''
+  }
+];
 
 
 // Variabel aktif: diisi saat startExam berdasarkan pilihan paket
