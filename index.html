@@ -4871,6 +4871,13 @@ async function deleteCurrentImg(idx) {
 
 
 // ===================== PENILAIAN =====================
+const typeStyle = {
+  single:      { bg:'#dbeafe', text:'#1e40af', label:'PG' },
+  multiselect: { bg:'#ede9fe', text:'#5b21b6', label:'Multi' },
+  truefalse:   { bg:'#dcfce7', text:'#166534', label:'B/S' },
+  short:       { bg:'#ffedd5', text:'#9a3412', label:'Isian' },
+  essay:       { bg:'#fce7f3', text:'#9d174d', label:'Essay' }
+};
 async function renderPenilaian() {
   const paket = document.getElementById('nilaiPaketSelector').value;
   const kelas = document.getElementById('nilaiKelasSelector').value;
@@ -4922,16 +4929,35 @@ async function renderPenilaian() {
           <th style="padding:10px 12px;text-align:center;min-width:80px;">Skor Otomatis</th>`;
 
     objQuestions.forEach((q, i) => {
-      html += `<th style="padding:10px 8px;text-align:center;min-width:54px;font-size:11px;">S${q.id}<br><span style="opacity:0.8;font-weight:600;">Langkah</span></th>`;
+      const s = typeStyle[q.type] || typeStyle.single;
+      html += `<th style="padding:8px 6px;text-align:center;min-width:56px;font-size:11px;background:${s.bg};color:${s.text};">
+        <div style="font-weight:800;">S${q.id}</div>
+        <div style="font-size:10px;font-weight:600;opacity:0.9;">${s.label}</div>
+        <div style="font-size:9px;font-weight:600;margin-top:1px;">Langkah</div>
+      </th>`;
     });
 
     essayQuestions.forEach((q, i) => {
-      html += `<th style="padding:10px 8px;text-align:center;min-width:64px;font-size:11px;">S${q.id}<br><span style="opacity:0.8;font-weight:600;">Essay</span></th>`;
+      const s = typeStyle.essay;
+      html += `<th style="padding:8px 6px;text-align:center;min-width:64px;font-size:11px;background:${s.bg};color:${s.text};">
+        <div style="font-weight:800;">S${q.id}</div>
+        <div style="font-size:10px;font-weight:600;opacity:0.9;">Essay</div>
+        <div style="font-size:9px;font-weight:600;margin-top:1px;">Nilai</div>
+      </th>`;
     });
 
-    html += `<th style="padding:10px 12px;text-align:center;min-width:80px;">Total Nilai</th>
+    html += `<th style="padding:10px 12px;text-align:center;min-width:80px;background:#f1f5f9;color:#1e293b;">Total Nilai</th>
         </tr>
       </thead><tbody>`;
+    html += '<tr style="background:#f8fafc;border-bottom:2px solid #e2e8f0;">'
+      + '<td colspan="2" style="padding:6px 12px;font-size:11px;font-weight:700;color:#64748b;">Keterangan:</td>'
+      + '<td colspan="100" style="padding:6px 8px;">'
+      + '<span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">PG</span>'
+      + '<span style="background:#ede9fe;color:#5b21b6;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">Multi</span>'
+      + '<span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">B/S</span>'
+      + '<span style="background:#ffedd5;color:#9a3412;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">Isian</span>'
+      + '<span style="background:#fce7f3;color:#9d174d;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;">Essay</span>'
+      + '</td></tr>';
 
     const isBiPaket = paket === '2' || paket === '4';
     // Store answers per siswa untuk popup alasan
@@ -4955,27 +4981,28 @@ async function renderPenilaian() {
       const totalNilai = autoScore + totalLangkah + totalEssay;
 
       const rowBg = ri % 2 === 0 ? 'white' : '#f8fafc';
+      const lihatAlasanBtn = isBiPaket
+        ? '<br><button onclick="showAlasanSiswa(' + JSON.stringify(r.nama) + ', ' + ri + ')" style="margin-top:4px;padding:3px 10px;background:#ede9fe;color:#5b21b6;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;">📖 Lihat Alasan</button>'
+        : '';
       html += `<tr style="background:${rowBg};">
         <td style="padding:8px 12px;font-weight:700;">
-          ${r.nama}
-          ${isBiPaket ? `<br><button onclick="showAlasanSiswa('${r.nama.replace(/'/g,"\'")}', ${ri})"
-            style="margin-top:4px;padding:3px 10px;background:#ede9fe;color:#5b21b6;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;">
-            📖 Lihat Alasan</button>` : ''}
+          ${r.nama}${lihatAlasanBtn}
         </td>
         <td style="padding:8px 12px;text-align:center;font-weight:800;color:var(--primary);">${autoScore}</td>`;
 
       objQuestions.forEach(q => {
         const val = langkahVals[q.id] !== undefined ? langkahVals[q.id] : '';
-        // Untuk BI: tampilkan alasan singkat di tooltip
         const ans = answers[q.id - 1] || {};
         const alasan = isBiPaket && ans.langkah ? ans.langkah.substring(0, 40) + (ans.langkah.length > 40 ? '...' : '') : '';
-        html += `<td style="padding:4px 6px;text-align:center;" title="${alasan}">
-          ${isBiPaket && alasan ? `<div style="font-size:10px;color:#7c3aed;margin-bottom:2px;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${alasan}</div>` : ''}
-          <input type="number" min="0" max="1" step="1" value="${val}"
-            data-nama="${r.nama}" data-soal="${q.id}" data-type="langkah" data-ri="${ri}"
-            onchange="updateNilaiCell(this)"
-            style="width:44px;padding:4px;border:1.5px solid var(--border);border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">
-        </td>`;
+        const tStyle = typeStyle[q.type] || typeStyle.single;
+        const alasanDiv = (isBiPaket && alasan) ? '<div style="font-size:10px;color:#7c3aed;margin-bottom:2px;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + alasan + '</div>' : '';
+        html += '<td style="padding:4px 6px;text-align:center;background:' + tStyle.bg + '30;" title="' + alasan + '">'
+          + alasanDiv
+          + '<input type="number" min="0" max="1" step="1" value="' + val + '"'
+          + ' data-nama="' + r.nama + '" data-soal="' + q.id + '" data-type="langkah" data-ri="' + ri + '"'
+          + ' onchange="updateNilaiCell(this)"'
+          + ' style="width:44px;padding:4px;border:1.5px solid ' + tStyle.text + '50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">'
+          + '</td>';
       });
 
       essayQuestions.forEach(q => {
