@@ -3356,14 +3356,8 @@ async function submitExam(timeout) {
   const showPembahasan = _settings.show_pembahasan === true;
   document.getElementById('btnPembahasan').style.display = showPembahasan ? 'block' : 'none';
 
-  let emoji, msg;
-  if (score >= 90) { emoji='🏆'; msg='Luar Biasa! Nilai sempurna! 🎉'; }
-  else if (score >= 75) { emoji='🌟'; msg='Bagus sekali! Pertahankan! 💪'; }
-  else if (score >= 60) { emoji='😊'; msg='Cukup baik! Terus belajar ya! 📚'; }
-  else { emoji='💪'; msg='Jangan menyerah! Belajar lagi yuk! 🌈'; }
-
-  document.getElementById('resultEmoji').textContent = timeout ? '⏰' : emoji;
-  document.getElementById('resultMsg').textContent = timeout ? 'Waktu habis! Jawaban otomatis dikumpulkan.' : msg;
+  // Emoji saja yang tampil, pesan nilai disembunyikan
+  document.getElementById('resultEmoji').textContent = timeout ? '⏰' : '✅';
 }
 
 // ===================== PEMBAHASAN =====================
