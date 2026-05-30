@@ -4659,11 +4659,19 @@ async function renderPenilaian() {
         </tr>
       </thead><tbody>`;
 
+    const isBiPaket = paket === '2' || paket === '4';
+    // Store answers per siswa untuk popup alasan
+    window._penilaianAnswers = {};
+    rows.forEach((r, ri) => {
+      window._penilaianAnswers[r.nama] = r.answers || {};
+    });
+
     rows.forEach((r, ri) => {
       const nm = nilaiMap[r.nama] || {};
       const langkahVals = nm.langkah_scores || {};
       const essayVals = nm.essay_scores || {};
       const autoScore = r.score || 0;
+      const answers = r.answers || {};
 
       // Hitung total langkah
       let totalLangkah = 0;
@@ -4674,12 +4682,21 @@ async function renderPenilaian() {
 
       const rowBg = ri % 2 === 0 ? 'white' : '#f8fafc';
       html += `<tr style="background:${rowBg};">
-        <td style="padding:8px 12px;font-weight:700;">${r.nama}</td>
+        <td style="padding:8px 12px;font-weight:700;">
+          ${r.nama}
+          ${isBiPaket ? `<br><button onclick="showAlasanSiswa('${r.nama.replace(/'/g,"\'")}', ${ri})"
+            style="margin-top:4px;padding:3px 10px;background:#ede9fe;color:#5b21b6;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;">
+            📖 Lihat Alasan</button>` : ''}
+        </td>
         <td style="padding:8px 12px;text-align:center;font-weight:800;color:var(--primary);">${autoScore}</td>`;
 
       objQuestions.forEach(q => {
         const val = langkahVals[q.id] !== undefined ? langkahVals[q.id] : '';
-        html += `<td style="padding:4px 6px;text-align:center;">
+        // Untuk BI: tampilkan alasan singkat di tooltip
+        const ans = answers[q.id - 1] || {};
+        const alasan = isBiPaket && ans.langkah ? ans.langkah.substring(0, 40) + (ans.langkah.length > 40 ? '...' : '') : '';
+        html += `<td style="padding:4px 6px;text-align:center;" title="${alasan}">
+          ${isBiPaket && alasan ? `<div style="font-size:10px;color:#7c3aed;margin-bottom:2px;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${alasan}</div>` : ''}
           <input type="number" min="0" max="1" step="1" value="${val}"
             data-nama="${r.nama}" data-soal="${q.id}" data-type="langkah" data-ri="${ri}"
             onchange="updateNilaiCell(this)"
@@ -4689,7 +4706,10 @@ async function renderPenilaian() {
 
       essayQuestions.forEach(q => {
         const val = essayVals[q.id] !== undefined ? essayVals[q.id] : '';
-        html += `<td style="padding:4px 6px;text-align:center;">
+        const ans = answers[q.id - 1] || {};
+        const essayText = ans.essay ? ans.essay.substring(0, 40) + (ans.essay.length > 40 ? '...' : '') : '';
+        html += `<td style="padding:4px 6px;text-align:center;" title="${essayText}">
+          ${essayText ? `<div style="font-size:10px;color:#0369a1;margin-bottom:2px;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${essayText}</div>` : ''}
           <input type="number" min="0" max="100" step="0.5" value="${val}"
             data-nama="${r.nama}" data-soal="${q.id}" data-type="essay" data-ri="${ri}"
             onchange="updateNilaiCell(this)"
@@ -4700,6 +4720,28 @@ async function renderPenilaian() {
       html += `<td style="padding:8px 12px;text-align:center;" id="total_${ri}">
         <span style="font-weight:800;font-size:15px;color:${totalNilai>=75?'#10b981':totalNilai>=60?'#f59e0b':'#ef4444'};">${totalNilai.toFixed(1)}</span>
       </td></tr>`;
+
+      // Row alasan (tersembunyi, expand saat klik Lihat Alasan)
+      if (isBiPaket) {
+        html += `<tr id="alasanRow_${ri}" style="display:none;background:#faf5ff;">
+          <td colspan="100%" style="padding:12px 16px;">
+            <div style="font-weight:800;font-size:13px;color:#5b21b6;margin-bottom:8px;">📖 Alasan Jawaban — ${r.nama}</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;">
+              ${qs.map((q, qi) => {
+                const ans = answers[qi] || {};
+                const alasan = ans.langkah || '';
+                const jawaban = ans.essay || ans.short || '';
+                return alasan || jawaban ? `
+                  <div style="background:white;border:1.5px solid #ddd6fe;border-radius:8px;padding:8px 12px;">
+                    <div style="font-size:11px;font-weight:800;color:#5b21b6;">Soal ${q.id} (${q.type})</div>
+                    ${alasan ? `<div style="font-size:12px;margin-top:4px;"><b>Alasan:</b> ${alasan}</div>` : ''}
+                    ${jawaban ? `<div style="font-size:12px;margin-top:4px;"><b>Jawaban:</b> ${jawaban}</div>` : ''}
+                  </div>` : '';
+              }).join('')}
+            </div>
+          </td>
+        </tr>`;
+      }
     });
 
     html += '</tbody></table>';
@@ -4715,6 +4757,12 @@ async function renderPenilaian() {
     content.innerHTML = `<div style="color:red;padding:20px;">Error: ${e.message}</div>`;
   }
   hideLoading();
+}
+
+function showAlasanSiswa(nama, ri) {
+  const row = document.getElementById(`alasanRow_${ri}`);
+  if (!row) return;
+  row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
 }
 
 // Temporary store perubahan
