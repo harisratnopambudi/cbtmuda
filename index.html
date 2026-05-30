@@ -1914,7 +1914,7 @@
 const QUESTIONS = [
   {
     id: 1, type: 'single',
-    text: 'Udin ingin menutupi permukaan meja belajarnya dengan buku tulis miliknya. Setelah disusun rapi tanpa celah dan tidak bertumpuk, ternyata meja Udin tertutup penuh oleh buku tulis. Berdasarkan gambar di atas, luas permukaan meja Udin adalah ....',
+    text: 'Udin ingin menutupi permukaan meja belajarnya dengan buku tulis miliknya. Setelah disusun rapi tanpa celah dan tidak bertumpuk, ternyata meja Udin tertutup penuh oleh buku tulis seperti gambar berikut. Berdasarkan gambar di atas, luas permukaan meja Udin adalah ....',
     options: ['10 buku tulis', '18 buku tulis', '20 buku tulis', '24 buku tulis'],
     answer: 2
   },
@@ -1926,73 +1926,51 @@ const QUESTIONS = [
   },
   {
     id: 3, type: 'single',
-    text: 'Ibu membeli satu kotak susu seperti pada gambar. Ibu ingin memindahkan seluruh isi susu tersebut ke dalam gelas berukuran 1 Liter (1.000 ml). Manakah pernyataan yang paling tepat?',
+    text: 'Ibu membeli satu kotak susu. Ibu ingin memindahkan seluruh isi susu ke dalam gelas berukuran 1 Liter (1.000 ml). Manakah pernyataan yang paling tepat?',
     options: [
-      'Susu akan meluap karena volume susu kotak lebih besar dari volume gelas 1 Liter.',
-      'Susu akan mengisi tepat penuh gelas 1 Liter tersebut.',
       'Susu tidak akan muat di gelas 1 Liter.',
-      'Susu hanya terisi sebagian (setengahnya atau kurang) dari volume gelas 1 Liter.'
+      'Susu akan mengisi tepat penuh gelas 1 Liter tersebut.',
+      'Susu hanya terisi sebagian (setengahnya atau kurang) dari volume gelas 1 Liter.',
+      'Susu akan meluap karena volume susu kotak lebih besar dari volume gelas 1 Liter.'
     ],
-    answer: 3
+    answer: 2
   },
   {
     id: 4, type: 'single',
-    text: 'Budi memprogram karakter kucing di aplikasi Scratch untuk menggambar sebuah bangun datar. Karakter tersebut bergerak membentuk 3 garis lurus yang saling menyambung dan tertutup. Jika garis pertama dan kedua memiliki panjang yang sama persis, sedangkan garis ketiga ukurannya berbeda, maka bangun datar apa yang berhasil digambar?',
+    text: 'Budi memprogram karakter kucing di aplikasi Scratch untuk menggambar sebuah bangun datar dengan 3 garis lurus yang saling menyambung dan tertutup. Jika garis pertama dan kedua memiliki panjang yang sama persis, sedangkan garis ketiga ukurannya berbeda, maka bangun datar apa yang berhasil digambar?',
     options: ['Segitiga siku-siku', 'Segitiga sama sisi', 'Segitiga sama kaki', 'Segitiga sembarang'],
     answer: 2
   },
   {
     id: 5, type: 'single',
-    text: 'Berdasarkan diagram batang "Olahraga Favorit Siswa Kelas 4" di atas, berapakah jumlah total siswa yang memilih dua jenis olahraga yang memiliki peminat paling sedikit?',
+    text: 'Berdasarkan diagram batang "Olahraga Favorit Siswa Kelas 4", berapakah jumlah total siswa yang memilih dua jenis olahraga yang memiliki peminat paling sedikit?',
     options: ['8 siswa', '10 siswa', '12 siswa', '18 siswa'],
     answer: 1
   },
   {
     id: 6, type: 'multiselect',
-    text: 'Di laboratorium sekolah, sebuah robot bernama Ruhiya memiliki tangki berkapasitas maksimal 3 Liter. Tangki akan diisi dari: Wadah A = 1.200 cm³, Wadah B = 850 ml, Wadah C = 0,45 Liter. Manakah pernyataan yang BENAR?',
+    text: 'Robot bernama Galaxi memiliki tangki berkapasitas 3 Liter. Diisi dari: Wadah A = 1.200 cm³, Wadah B = 850 ml, Wadah C = 0,45 Liter. Manakah pernyataan yang BENAR?',
     options: [
-      'Jika volume cairan pada Wadah A diubah ke dalam satuan Liter, maka nilainya sama dengan 12 Liter.',
-      'Volume cairan pada Wadah C jika diukur menggunakan gelas ukur berskala mililiter akan menunjukkan angka 450 ml.',
-      'Jumlah total volume ketiga cairan yang akan dimasukkan ke dalam tangki robot Ruhiya adalah 2.500 cm³.',
-      'Setelah semua cairan dari wadah A, B, dan C dimasukkan, tangki robot Ruhiya langsung penuh dan airnya meluap sebanyak 500 ml.'
-    ],
-    answers: [1, 2]
-  },
-  {
-    id: 7, type: 'multiselect',
-    text: 'Perhatikan gambar tangram (sebuah persegi besar yang disusun dari berbagai bangun datar). Manakah pernyataan yang BENAR?',
-    options: [
-      'Persegi besar tersebut disusun dari total 10 buah bangun datar penyusun.',
-      'Bangun datar yang berwarna kuning dan berwarna biru muda (paling atas) keduanya berbentuk jajargenjang.',
-      'Terdapat lebih banyak bangun berbentuk segitiga dibandingkan bangun berbentuk segiempat dalam susunan tersebut.',
-      'Bangun penyusun yang berwarna ungu pada sudut kanan bawah adalah sebuah persegi.'
+      'Jika volume Wadah A diubah ke satuan Liter, nilainya sama dengan 12 Liter.',
+      'Jumlah total volume ketiga cairan adalah 2.500 cm³.',
+      'Volume Wadah C jika diukur dalam mililiter menunjukkan angka 450 ml.',
+      'Setelah semua cairan dimasukkan, tangki langsung penuh dan meluap sebanyak 500 ml.'
     ],
     answers: [2, 3]
   },
   {
-    id: 8, type: 'multiselect',
-    text: 'Pada gambar trapesium, sisi DC sejajar dengan sisi AB. Diketahui sudut A = 70° dan sudut B = 55°. Manakah pernyataan yang BENAR?',
+    id: 7, type: 'multiselect',
+    text: 'Toko Buah "SEGAR" mencatat penjualan: Apel 25 kg = Rp500.000, Jeruk 30 kg = Rp450.000, Pisang 20 kg = Rp300.000, Mangga 15 kg = Rp375.000, Anggur 10 kg = Rp400.000. Manakah pernyataan yang BENAR?',
     options: [
-      'Jumlah dari besar sudut A dan besar sudut D yang berdekatan di antara sisi sejajar adalah 180°.',
-      'Berdasarkan perhitungan, besar sudut C adalah 110° dan besar sudut D adalah 125°.',
-      'Jika nilai sudut B diperbesar menjadi 60°, maka besar sudut C otomatis akan mengecil menjadi 120°.',
-      'Jika kita menjumlahkan seluruh keempat sudut pada trapesium tersebut (sudut A + B + C + D), maka jumlah totalnya adalah 180°.'
-    ],
-    answers: [0, 1]
-  },
-  {
-    id: 9, type: 'multiselect',
-    text: 'Toko Buah "Ruhiya" mencatat penjualan: Apel 25 kg = Rp500.000, Jeruk 30 kg = Rp450.000, Pisang 20 kg = Rp300.000, Mangga 15 kg = Rp375.000, Anggur 10 kg = Rp400.000. Manakah pernyataan yang BENAR?',
-    options: [
-      'Total berat seluruh buah yang berhasil terjual adalah tepat 100 kg.',
-      'Buah Apel memiliki harga jual per kilogram yang paling mahal dibandingkan buah lainnya.',
-      'Walaupun berat Pisang yang terjual lebih banyak daripada Mangga, total pendapatan dari penjualan Mangga terbukti lebih besar daripada Pisang.',
-      'Total pendapatan bersih dari penjualan kelima jenis buah tersebut adalah Rp 2.500.000.'
+      'Total berat seluruh buah yang terjual adalah tepat 100 kg.',
+      'Buah Apel memiliki harga jual per kg yang paling mahal.',
+      'Walaupun berat Pisang lebih banyak dari Mangga, total pendapatan Mangga lebih besar dari Pisang.',
+      'Total pendapatan dari penjualan kelima jenis buah adalah Rp 2.500.000.'
     ],
     answers: [0, 2, 3]
   },
   {
-    id: 10, type: 'multiselect',
+    id: 8, type: 'multiselect',
     text: 'Toko Laris Berkah menjual beras C4, menthik, dan rojo lele. Berdasarkan diagram batang stok beras Juli–Oktober 2024, manakah pernyataan yang BENAR?',
     options: [
       'Stok beras rojo lele pada bulan Juli sama dengan stok beras menthik pada bulan Oktober.',
@@ -2003,89 +1981,91 @@ const QUESTIONS = [
     answers: [1, 3]
   },
   {
-    id: 11, type: 'truefalse',
+    id: 9, type: 'truefalse',
     text: 'Tentukan apakah pernyataan-pernyataan berikut BENAR atau SALAH!',
     statements: [
-      { text: 'Sebuah kelereng sangat cocok dan tepat digunakan sebagai alat untuk mengukur luas permukaan buku gambar.', answer: false },
-      { text: 'Jumlah keempat sudut trapesium adalah 360°.', answer: true },
-      { text: '81.000 ml sama dengan 81 liter.', answer: true },
-      { text: 'Jika 1 gambar semangka mewakili 2.000 buah, maka gambar 7 semangka mewakili 15.000 semangka.', answer: false },
+      { text: 'Sebuah kelereng sangat cocok digunakan sebagai alat untuk mengukur luas permukaan buku gambar.', answer: false },
       { text: 'Di dalam sebuah gudang terdapat dua buah pipa. Pipa pertama panjangnya 450 cm dan pipa kedua panjangnya 3,5 m. Total panjang kedua pipa tersebut adalah 800 cm.', answer: false }
     ]
   },
   {
-    id: 12, type: 'short',
+    id: 10, type: 'short',
     text: 'Perhatikan gambar bangun datar berwarna biru pada kertas berpetak. Luas bangun datar tersebut adalah … satuan persegi.',
     answer: ''
   },
   {
-    id: 13, type: 'short',
+    id: 11, type: 'short',
     text: 'Volume sabun cuci tangan pada sebuah botol adalah 1 liter. Jika isinya dipindahkan ke botol yang volumenya 200 ml, maka banyak botol yang dibutuhkan adalah …',
     answer: '5'
   },
   {
-    id: 14, type: 'short',
+    id: 12, type: 'short',
     text: 'Perhatikan bangun belah ketupat ABCD. Jika besar sudut ABC = 75°, maka besar sudut BAD adalah …',
     answer: '105'
   },
   {
-    id: 15, type: 'short',
+    id: 13, type: 'short',
     text: 'Sebuah belah ketupat dapat dipotong menurut kedua garis diagonalnya yang saling menyilang. Hasil potongan tersebut berupa … buah segitiga siku-siku.',
     answer: '4'
   },
   {
-    id: 16, type: 'short',
+    id: 14, type: 'short',
     text: 'Dua buah trapesium sama kaki yang bentuk dan ukurannya sama persis, jika disusun saling membelakangi dan menempel pada sisi alasnya yang paling panjang, akan membentuk bangun datar ….',
     answer: 'jajargenjang'
   },
   {
-    id: 17, type: 'short',
+    id: 15, type: 'short',
     text: 'Volume bangun ruang pada gambar adalah … kubus satuan.',
     answer: ''
   },
   {
-    id: 18, type: 'short',
-    text: 'Pak Budi membeli susu sebanyak 20 liter dalam jeriken besar. Susu tersebut akan dijual kembali dalam kemasan botol. Masing-masing botol bervolume 1.000 cm³. Banyaknya botol yang dibutuhkan Pak Budi adalah …',
+    id: 16, type: 'short',
+    text: 'Pak Budi membeli susu sebanyak 20 liter. Susu dijual dalam kemasan botol bervolume 1.000 cm³. Banyaknya botol yang dibutuhkan adalah …',
     answer: '20'
   },
   {
-    id: 19, type: 'short',
+    id: 17, type: 'short',
     text: 'Besar sudut pada bangun datar persegi panjang adalah … derajat.',
     answer: '90'
   },
   {
-    id: 20, type: 'short',
+    id: 18, type: 'short',
     text: 'Perhatikan tabel piktogram penjualan mobil (1 gambar = 1.000 mobil). Unit mobil yang terjual pada tahun 2021 adalah …',
     answer: ''
   },
   {
-    id: 21, type: 'short',
+    id: 19, type: 'short',
     text: 'Berdasarkan tabel piktogram penjualan mobil (1 gambar = 1.000 mobil). Selisih unit mobil yang terjual pada tahun 2022 dan 2023 adalah …',
     answer: ''
   },
   {
-    id: 22, type: 'essay',
-    text: 'Di laboratorium sains, siswa kelas 4 merancang rumah kaca mini. Alas berbentuk persegi panjang panjang 120 cm dan lebar 80 cm. Ditutupi karpet sensor berbentuk persegi sisi 40 cm. Berapa banyak lembar karpet sensor yang dibutuhkan? Tuliskan langkah-langkah penyelesaiannya!',
+    id: 20, type: 'essay',
+    text: 'Di laboratorium sains, siswa kelas 4 merancang rumah kaca mini yang dikendalikan sistem cerdas bernama MUDA. Alas berbentuk persegi panjang panjang 120 cm dan lebar 80 cm. Ditutupi karpet sensor berbentuk persegi dengan sisi 40 cm. Berapa banyak lembar karpet sensor yang dibutuhkan? Tuliskan langkah-langkah penyelesaiannya!',
     answer: 'Luas alas = 120 × 80 = 9.600 cm². Luas karpet = 40 × 40 = 1.600 cm². Banyak karpet = 9.600 ÷ 1.600 = 6 lembar.'
   },
   {
-    id: 23, type: 'essay',
+    id: 21, type: 'essay',
     text: 'Sebuah tangki air berbentuk balok panjang 50 cm, lebar 20 cm, tinggi 40 cm. Tangki hanya boleh diisi ½ dari kapasitas penuhnya. Berapa Liter volume air nutrisi yang harus dimasukkan? Tuliskan langkah-langkah penyelesaiannya!',
     answer: 'Volume penuh = 50 × 20 × 40 = 40.000 cm³ = 40 Liter. Volume ½ = 40 ÷ 2 = 20 Liter.'
   },
   {
+    id: 22, type: 'essay',
+    text: 'Siswa kelas 4 menyusun tangram membentuk hewan unta. Perhatikan potongan berwarna biru tua (di leher atas) dan oranye (di bagian kaki belakang). Apakah keduanya memiliki nama bentuk bangun datar yang sama? Jelaskan letak perbedaannya!',
+    answer: ''
+  },
+  {
+    id: 23, type: 'essay',
+    text: 'Perhatikan gambar tangram unta. Hitung seluruh potongan: Ada berapa bangun berbentuk SEGITIGA dan ada berapa bangun berbentuk SEGIEMPAT? Buat kesimpulan singkat mengapa bangun segitiga sangat penting dalam menyusun kreasi tangram hewan!',
+    answer: ''
+  },
+  {
     id: 24, type: 'essay',
-    text: 'Perhatikan gambar tangram unta. Perhatikan potongan bangun datar yang berwarna biru tua (di leher atas) dan yang berwarna oranye (di bagian kaki belakang). Apakah keduanya memiliki nama bentuk bangun datar yang sama? Jelaskan letak perbedaannya!',
+    text: 'Sebutkan 1 jenis bangun datar yang ingin kamu tambahkan pada tangram Unta agar terlihat membawa beban atau memiliki ekor! Sebutkan alasanmu mengapa memilih bangun datar tersebut!',
     answer: ''
   },
   {
     id: 25, type: 'essay',
-    text: 'Perhatikan gambar tangram unta. Hitung seluruh potongan teka-teki pada gambar tersebut. Ada berapa banyak total bangun berbentuk SEGITIGA dan ada berapa banyak bangun berbentuk SEGIEMPAT? Buat kesimpulan singkat mengapa bangun segitiga sangat penting dalam menyusun kreasi tangram hewan!',
-    answer: ''
-  },
-  {
-    id: 26, type: 'essay',
-    text: 'Bayangkan kamu ingin mengubah atau menambah bagian dari tangram Unta agar terlihat membawa beban di punggungnya atau ingin menambahkan ekor. Sebutkan 1 jenis bangun datar yang ingin kamu tambahkan, di sebelah mana ditempelkan, dan akan menjadi bagian tubuh/benda apa?',
+    text: 'Jelaskan ide kreatifmu: di sebelah mana bangun tersebut akan kamu tempelkan dan akan berubah menjadi bagian tubuh/benda apa potongan tambahan tersebut?',
     answer: ''
   }
 ];
@@ -2241,7 +2221,154 @@ const QUESTIONS_P2 = [
 ];
 
 // ===================== PAKET 3: MATEMATIKA KELAS 5 =====================
-const QUESTIONS_P3 = [];
+const QUESTIONS_P3 = [
+  {
+    id: 1, type: 'single',
+    text: 'Siti memiliki sebuah kertas lipat berbentuk persegi. Ia kemudian melipat kertas tersebut tepat di sepanjang salah satu garis diagonalnya. Bangun datar baru yang terbentuk dari lipatan tersebut memiliki ciri-ciri...',
+    options: [
+      'Memiliki 3 sisi sama panjang dan 3 sudut lancip.',
+      'Memiliki 4 sisi, di mana sepasang sisinya sejajar.',
+      'Memiliki 3 sisi yang panjangnya berbeda dan 1 sudut tumpul.',
+      'Memiliki 1 sudut siku-siku, 2 sudut lancip, dan 2 sisi yang sama panjang.'
+    ],
+    answer: 3
+  },
+  {
+    id: 2, type: 'single',
+    text: 'Fatimah menemukan petunjuk: "Aku memiliki jumlah sudut yang berdekatan 180 derajat. Sisi-sisiku yang berhadapan sejajar dan sama panjang. Sudut-sudutku yang berhadapan sama besar. Kedua diagonalku tidak saling membagi dua ruas garis sama panjang." Bangun datar apakah yang sedang dicari Fatimah?',
+    options: ['Jajargenjang', 'Belah ketupat', 'Persegi panjang', 'Trapesium sama kaki'],
+    answer: 0
+  },
+  {
+    id: 3, type: 'single',
+    text: 'Keliling kebun Pak Rahmat berbentuk persegi panjang 2 kali lebih besar dari keliling kebun Pak Jaka berbentuk persegi. Keliling kebun Pak Jaka 100 cm dan panjangnya 80 cm. Maka lebar kebun Pak Rahmat adalah … cm',
+    options: ['10', '15', '20', '30'],
+    answer: 2
+  },
+  {
+    id: 4, type: 'single',
+    text: 'Siswa kelas 5 mendesain taman sekolah berbentuk Trapesium Sama Kaki. Sisi sejajar 30 cm dan 20 cm, tinggi 12 cm. Di tengah taman ada kolam berbentuk segitiga dengan alas 10 cm dan tinggi 8 cm. Luas area rumput hijau adalah ….',
+    options: ['200 cm²', '260 cm²', '300 cm²', '340 cm²'],
+    answer: 1
+  },
+  {
+    id: 5, type: 'single',
+    text: 'Berikut data banyak apel yang terjual selama 5 hari: Senin 25, Selasa 20, Rabu 35, Kamis 40, Jumat 30. Jika 1 gambar mewakili 5 kg apel, diagram gambar yang tepat untuk hari Rabu adalah …',
+    options: ['5 gambar', '6 gambar', '7 gambar', '8 gambar'],
+    answer: 2
+  },
+  {
+    id: 6, type: 'multiselect',
+    text: 'Robot diprogram: maju 15 langkah, belok kanan 90 derajat, diulang 4 kali. Manakah pernyataan BENAR mengenai bangun datar yang terbentuk?',
+    options: [
+      'Bangun tersebut memiliki 4 sumbu simetri lipat.',
+      'Kedua garis diagonalnya berpotongan dan membentuk sudut siku-siku.',
+      'Bangun tersebut memiliki dua sudut lancip dan dua sudut tumpul.',
+      'Bangun tersebut memiliki sisi yang berhadapan sejajar, tetapi panjangnya berbeda-beda.'
+    ],
+    answers: [0, 1]
+  },
+  {
+    id: 7, type: 'multiselect',
+    text: 'Diagram gambar pameran buku 5 hari (1 gambar = 50 orang): Rabu 5, Kamis 7, Jumat 8, Sabtu 6, Minggu 9 gambar. Banyak pengunjung lebih dari 300 orang terjadi pada hari …',
+    options: ['Rabu', 'Jumat', 'Sabtu', 'Minggu'],
+    answers: [1, 3]
+  },
+  {
+    id: 8, type: 'multiselect',
+    text: 'Diagram batang pekerjaan orang tua siswa kelas 5. Manakah pernyataan yang TEPAT?',
+    options: [
+      'Orang tua siswa kelas 5 paling banyak bekerja sebagai pedagang.',
+      'Orang tua siswa kelas 5 yang paling sedikit bekerja sebagai Pegawai Negeri.',
+      'Orang tua yang bekerja sebagai pegawai negeri lebih banyak dari pegawai swasta.',
+      'Selisih banyak orang tua yang bekerja sebagai wiraswasta dan petani adalah 2 orang.'
+    ],
+    answers: [1, 3]
+  },
+  {
+    id: 9, type: 'truefalse',
+    text: 'Perhatikan gambar dan tabel berikut, tentukan BENAR atau SALAH!',
+    statements: [
+      { text: 'Jajargenjang tersebut memiliki luas 230 cm².', answer: false },
+      { text: 'Jumlah siswa yang gemar olahraga selain futsal ada 25 orang (Renang 12, Bulu Tangkis 8, Bola Basket 6).', answer: false }
+    ]
+  },
+  {
+    id: 10, type: 'short',
+    text: 'Salah satu ciri yang dimiliki persegi dan juga dimiliki belah ketupat adalah …',
+    answer: 'Keempat sisinya sama panjang'
+  },
+  {
+    id: 11, type: 'short',
+    text: 'Jumlah sudut yang berdekatan pada jajargenjang besarnya adalah …',
+    answer: '180°'
+  },
+  {
+    id: 12, type: 'short',
+    text: 'Sumbu simetri pada layang-layang ada …',
+    answer: '1'
+  },
+  {
+    id: 13, type: 'short',
+    text: 'Sebuah penggaris berbentuk segitiga sama kaki memiliki satu sudut puncak sebesar 40°. Maka besar salah satu sudut alasnya adalah … derajat.',
+    answer: '70'
+  },
+  {
+    id: 14, type: 'short',
+    text: 'Sebuah rambu lalu lintas berbentuk segitiga sama sisi memiliki ukuran panjang sisi 12 cm. Maka luasnya adalah … cm².',
+    answer: '62,35'
+  },
+  {
+    id: 15, type: 'short',
+    text: 'Sebuah taplak meja berukuran panjang 75 cm dan lebar 50 cm. Di sekelilingnya dihias pita. Pita yang dibutuhkan adalah …',
+    answer: '250 cm'
+  },
+  {
+    id: 16, type: 'short',
+    text: 'Sebuah jendela berbentuk persegi memiliki keliling 84 cm. Maka panjang sisi jendela adalah … cm.',
+    answer: '21'
+  },
+  {
+    id: 17, type: 'short',
+    text: 'Diketahui panjang diagonal pertama layang-layang sama dengan sisi persegi yang luasnya 64 cm², dan panjang diagonal kedua adalah 6 cm. Maka luas layang-layang tersebut adalah …',
+    answer: '24 cm²'
+  },
+  {
+    id: 18, type: 'short',
+    text: 'Jika 1 gambar menyatakan 4 orang yang suka bermain bola, maka 4,5 gambar menyatakan ada … orang yang suka bermain bola.',
+    answer: '18'
+  },
+  {
+    id: 19, type: 'short',
+    text: 'Perhatikan diagram batang nilai siswa. Banyaknya siswa yang memperoleh nilai lebih dari 60 sebanyak …',
+    answer: ''
+  },
+  {
+    id: 20, type: 'essay',
+    text: 'Sebuah perusahaan mainan ingin memproduksi layang-layang hias dan papan rambu berbentuk belah ketupat. Pekerja sering keliru membedakan kerangka keduanya. Sebutkan minimal 2 persamaan dan 2 perbedaan mendasar dari kedua bangun tersebut!',
+    answer: ''
+  },
+  {
+    id: 21, type: 'essay',
+    text: 'Pak Kepala Desa ingin membuat taman bermain. Rancangan A: persegi panjang 12m × 8m. Rancangan B: persegi sisi 10m. Hitunglah keliling dan luas masing-masing rancangan! Bandingkan mana yang membutuhkan pagar besi paling panjang dan rumput hias paling banyak!',
+    answer: 'A: Keliling=40m, Luas=96m². B: Keliling=40m, Luas=100m². Pagar sama panjang. Rancangan B membutuhkan rumput lebih banyak.'
+  },
+  {
+    id: 22, type: 'essay',
+    text: 'Jika dana desa terbatas untuk membeli pagar besi, namun mendapat sumbangan rumput hias yang berlimpah, rancangan manakah yang paling tepat dipilih Pak Kades? Jelaskan alasanmu!',
+    answer: ''
+  },
+  {
+    id: 23, type: 'essay',
+    text: 'Guru olahraga mendata pilihan ekstrakurikuler 40 siswa kelas 5: Futsal 15 anak, Pramuka 3 lebih sedikit dari Futsal, Seni Tari 5 anak, sisanya Melukis. Sajikan data dalam bentuk tabel! Bandingkan selisih antara kegiatan lapangan (Futsal & Pramuka) dengan kegiatan di dalam ruangan (Seni Tari & Melukis)!',
+    answer: 'Futsal=15, Pramuka=12, Seni Tari=5, Melukis=8. Lapangan=27, Dalam ruangan=13. Selisih=14 siswa.'
+  },
+  {
+    id: 24, type: 'essay',
+    text: 'Berdasarkan data ekstrakurikuler kelas 5: a) Kesimpulan apa yang dapat kamu tarik mengenai karakteristik dan minat bakat siswa kelas 5? b) Ada ekstrakurikuler yang terancam dibatalkan karena pesertanya kurang dari 10 orang. Berikan ide kreatif atau solusimu agar siswa tidak kecewa dan kegiatan tetap bisa berjalan!',
+    answer: ''
+  }
+];
 
 // ===================== PAKET 4: BAHASA INDONESIA KELAS 5 =====================
 const QUESTIONS_P4 = [];
