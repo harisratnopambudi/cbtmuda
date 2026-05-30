@@ -2089,7 +2089,154 @@ const QUESTIONS = [
 ];
 
 // ===================== PAKET 2: BAHASA INDONESIA KELAS 4 =====================
-const QUESTIONS_P2 = [];
+const QUESTIONS_P2 = [
+  {
+    id: 1, type: 'single',
+    text: 'Saat musyawarah kelas, Dita mendengarkan pendapat semua teman sebelum mengambil keputusan. Sikap tersebut sesuai dengan sila ….',
+    options: ['Persatuan Indonesia', 'Ketuhanan Yang Maha Esa', 'Kemanusiaan yang adil dan beradab', 'Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan'],
+    answer: 3
+  },
+  {
+    id: 2, type: 'single',
+    text: 'Tokoh perumus Pancasila tetap bersatu walaupun memiliki pendapat yang berbeda. Sikap tersebut dapat diteladani dengan cara ….',
+    options: ['Tidak mau berdiskusi', 'Memilih teman tertentu saja', 'Menghargai pendapat teman', 'Memaksakan pendapat sendiri'],
+    answer: 2
+  },
+  {
+    id: 3, type: 'single',
+    text: 'Siswa kelas IV membersihkan taman sekolah bersama-sama. Mereka bekerja dengan tertib. …, pekerjaan selesai tepat waktu. Konjungsi yang tepat adalah ….',
+    options: ['Namun', 'Karena', 'Walaupun', 'Oleh karena itu'],
+    answer: 3
+  },
+  {
+    id: 4, type: 'single',
+    text: 'Kalimat berikut yang termasuk fakta adalah ….',
+    options: ['Perpustakaan sekolah sangat indah.', 'Pelajaran hari ini sangat membosankan.', 'Upacara bendera paling menyenangkan.', 'Sekolah mengadakan upacara setiap hari Senin.'],
+    answer: 3
+  },
+  {
+    id: 5, type: 'single',
+    text: 'Teks 1: Siswa kelas IV menanam pohon di halaman sekolah. Teks 2: Menurut Edo, menanam pohon adalah kegiatan paling seru. Perbedaan kedua teks adalah ….',
+    options: ['Kedua teks fakta', 'Kedua teks opini', 'Teks 1 fakta, teks 2 opini', 'Teks 1 opini, teks 2 fakta'],
+    answer: 2
+  },
+  {
+    id: 6, type: 'truefalse',
+    text: 'Bacalah teks berikut! Pada hari Senin, kelas 4 SD Nusantara mengadakan musyawarah untuk menentukan tema pentas seni sekolah. Setiap siswa diberi kesempatan menyampaikan pendapatnya. Rina mengusulkan tema budaya daerah, sedangkan Andi ingin tema permainan tradisional. Walaupun pendapat mereka berbeda, semua siswa tetap saling menghargai. Sikap menghargai pendapat teman merupakan pengamalan sila keempat Pancasila. Berdasarkan teks, tentukan BENAR atau SALAH setiap pernyataan berikut!',
+    statements: [
+      { text: 'Menghargai pendapat teman termasuk pengamalan sila keempat Pancasila.', answer: true },
+      { text: 'Bagian akhir narasi berisi penyelesaian masalah.', answer: true },
+      { text: 'Kalimat "Buku cerita rakyat di perpustakaan itu paling menarik" termasuk opini.', answer: true },
+      { text: 'Tokoh perumus Pancasila mengutamakan persatuan bangsa.', answer: true },
+      { text: 'Kata "kemudian" merupakan konjungsi antar kalimat.', answer: true }
+    ]
+  },
+  {
+    id: 7, type: 'multiselect',
+    text: 'Sikap yang sesuai dengan nilai Pancasila adalah … (pilih 2 jawaban)',
+    options: ['Menghargai pendapat teman', 'Mengejek budaya daerah lain', 'Membantu teman yang kesulitan', 'Memaksakan kehendak'],
+    answers: [0, 2]
+  },
+  {
+    id: 8, type: 'multiselect',
+    text: 'Ciri-ciri teks narasi adalah … (pilih 3 jawaban)',
+    options: ['Memiliki tokoh', 'Memiliki urutan peristiwa', 'Hanya berisi angka', 'Memiliki awal, tengah, akhir'],
+    answers: [0, 1, 3]
+  },
+  {
+    id: 9, type: 'multiselect',
+    text: 'Kalimat yang termasuk fakta adalah … (pilih 2 jawaban)',
+    options: ['Sekolah mengadakan lomba kebersihan.', 'Menurut Sinta, sekolahnya paling bagus.', 'Upacara dilaksanakan hari Senin.', 'Pelajaran IPA sangat menyenangkan.'],
+    answers: [0, 2]
+  },
+  {
+    id: 10, type: 'multiselect',
+    text: 'Sikap tokoh perumus Pancasila yang dapat diteladani adalah … (pilih 3 jawaban)',
+    options: ['Cinta tanah air', 'Bekerja sama', 'Memaksakan pendapat', 'Menghargai perbedaan'],
+    answers: [0, 1, 3]
+  },
+  {
+    id: 11, type: 'multiselect',
+    text: 'Konjungsi antar kalimat ditunjukkan oleh kata … (pilih 3 jawaban)',
+    options: ['Namun', 'Oleh karena itu', 'Kemudian', 'Tetapi'],
+    answers: [0, 1, 2]
+  },
+  {
+    id: 12, type: 'short',
+    text: 'Contoh tindakan mencerminkan menghargai jasa pahlawan adalah…',
+    answer: ''
+  },
+  {
+    id: 13, type: 'short',
+    text: 'Ir. Soekarno dan para tokoh bangsa berdiskusi untuk merumuskan dasar negara Indonesia. Sikap yang dapat diteladani dari tokoh tersebut adalah…',
+    answer: ''
+  },
+  {
+    id: 14, type: 'short',
+    text: 'Bacalah teks berikut! "Di perpustakaan sekolah tersedia banyak buku cerita dan pengetahuan. Banyak siswa datang untuk membaca bersama. Menurut Beni, perpustakaan sekolah adalah tempat paling nyaman." Kalimat fakta pada teks tersebut adalah…',
+    answer: 'Di perpustakaan sekolah tersedia banyak buku cerita dan pengetahuan.'
+  },
+  {
+    id: 15, type: 'short',
+    text: 'Siswa kelas IV membersihkan taman sekolah bersama-sama. …, taman menjadi bersih dan rapi. Konjungsi yang tepat adalah ….',
+    answer: 'Oleh karena itu'
+  },
+  {
+    id: 16, type: 'short',
+    text: 'Rina membantu temannya yang kesulitan memahami pelajaran. Ia menjelaskan pelajaran dengan sabar. Nilai Pancasila yang ditunjukkan Rina adalah ….',
+    answer: 'Kemanusiaan yang adil dan beradab'
+  },
+  {
+    id: 17, type: 'short',
+    text: 'Contoh kerja bakti di lingkungan sekolah adalah…',
+    answer: ''
+  },
+  {
+    id: 18, type: 'short',
+    text: 'Contoh kalimat opini adalah…',
+    answer: ''
+  },
+  {
+    id: 19, type: 'short',
+    text: 'Bacalah teks berikut! "Tokoh perumus Pancasila berasal dari berbagai daerah di Indonesia. Mereka tetap bersatu demi kepentingan bangsa." Makna persatuan pada teks tersebut adalah…',
+    answer: ''
+  },
+  {
+    id: 20, type: 'short',
+    text: 'Andi datang terlambat ke sekolah. …, ia tetap meminta izin kepada guru sebelum masuk kelas. Konjungsi yang tepat adalah ….',
+    answer: 'Walaupun begitu'
+  },
+  {
+    id: 21, type: 'short',
+    text: 'Teks 1: Siswa menanam pohon di halaman sekolah. Teks 2: Menurut Edo, menanam pohon sangat menyenangkan. Perbedaan kedua teks tersebut adalah…',
+    answer: ''
+  },
+  {
+    id: 22, type: 'essay',
+    text: 'Bacalah teks berikut! Di lingkungan RT 05, warga sering bekerja bakti membersihkan selokan dan halaman bersama-sama setiap hari Minggu. Pak Rudi berpendapat bahwa kerja bakti adalah cara paling efektif untuk mempererat hubungan antarwarga. Suatu hari, terjadi perbedaan pendapat saat menentukan jadwal ronda malam. Warga tetap bermusyawarah dengan tenang dan saling menghargai. Bandingkan sikap warga saat bermusyawarah dengan sikap beberapa siswa yang tidak ikut menghias kelas!',
+    answer: ''
+  },
+  {
+    id: 23, type: 'essay',
+    text: 'Berdasarkan teks bacaan tentang warga RT 05 dan siswa kelas 4, apa kesimpulan yang dapat diambil?',
+    answer: ''
+  },
+  {
+    id: 24, type: 'essay',
+    text: 'Menurutmu, solusi apa yang dapat dilakukan agar semua siswa mau ikut bekerja sama saat menghias kelas?',
+    answer: ''
+  },
+  {
+    id: 25, type: 'essay',
+    text: 'Tuliskan contoh kalimat fakta dan kalimat opini yang terdapat pada teks bacaan tentang warga RT 05!',
+    answer: ''
+  },
+  {
+    id: 26, type: 'essay',
+    text: 'Ceritakan pengalamanmu dalam penerapan nilai-nilai Pancasila di kehidupan sehari-hari! Tulis dalam 3 paragraf dengan menggunakan ejaan yang tepat.',
+    answer: ''
+  }
+];
 
 // ===================== PAKET 3: MATEMATIKA KELAS 5 =====================
 const QUESTIONS_P3 = [];
@@ -2572,7 +2719,10 @@ function isAnswered(qIdx) {
   const q = ACTIVE_QUESTIONS[qIdx];
   const ans = examAnswers[qIdx];
   if (!ans) return false;
-  const hasLangkah = ans.langkah === true;
+  const isBi = paketDipilih === '2' || paketDipilih === '4';
+  const hasLangkah = isBi
+    ? (typeof ans.langkah === 'string' && ans.langkah.trim().length > 0)
+    : ans.langkah === true;
   if (!hasLangkah) return false;
   if (q.type === 'single') return ans.choice !== undefined && ans.choice !== null;
   if (q.type === 'truefalse') return ans.tf && Object.keys(ans.tf).length === q.statements.length;
@@ -2672,21 +2822,39 @@ function renderQuestion(pos) {
     </div>`;
   }
 
-  // Langkah Penyelesaian
-  const langkahDone = examAnswers[idx]?.langkah === true;
-  html += `
-    <button class="langkah-btn ${langkahDone ? 'filled' : ''}" onclick="toggleLangkah(${idx})" id="langkahBtn_${idx}">
-      <span class="langkah-icon">📝</span>
-      <div style="flex:1">
-        <div style="font-size:13px;font-weight:800;">${langkahDone ? '✅ Sudah mengerjakan Langkah Penyelesaian di kertas' : 'Langkah Penyelesaian Soal'}</div>
-        <div style="font-size:11px;font-weight:600;margin-top:2px;opacity:0.8;">${langkahDone ? 'Klik untuk membatalkan centang' : 'Klik untuk konfirmasi sudah dikerjakan di kertas'}</div>
+  // Langkah Penyelesaian — centang untuk MTK, input teks untuk BI
+  const isBiPaket = paketDipilih === '2' || paketDipilih === '4';
+  if (isBiPaket) {
+    const curLangkah = typeof examAnswers[idx]?.langkah === 'string' ? examAnswers[idx].langkah : '';
+    const langkahFilled = curLangkah.trim().length > 0;
+    html += `
+      <div class="langkah-area ${langkahFilled ? 'filled' : ''}" style="display:block;margin-top:16px;" id="langkahArea_${idx}">
+        <div style="font-size:12px;color:#92400e;font-weight:800;margin-bottom:6px;">📝 ALASAN JAWABAN (wajib diisi):</div>
+        <textarea id="langkahInput_${idx}" rows="3"
+          placeholder="Tuliskan alasan jawabanmu di sini..."
+          oninput="saveLangkahText(${idx}, this.value)"
+          style="width:100%;padding:10px 14px;border:2px solid ${langkahFilled ? '#10b981' : '#f59e0b'};border-radius:10px;font-family:Nunito,sans-serif;font-size:14px;font-weight:600;resize:vertical;box-sizing:border-box;background:white;">${curLangkah}</textarea>
       </div>
-      <div class="langkah-check">${langkahDone ? '✓' : ''}</div>
-    </button>
-    <div class="langkah-warn" id="langkahWarn_${idx}">
-      ⚠️ Centang dulu konfirmasi Langkah Penyelesaian di kertas sebelum lanjut!
-    </div>
-  `;
+      <div class="langkah-warn" id="langkahWarn_${idx}">
+        ⚠️ Isi dulu Alasan Jawaban sebelum lanjut!
+      </div>
+    `;
+  } else {
+    const langkahDone = examAnswers[idx]?.langkah === true;
+    html += `
+      <button class="langkah-btn ${langkahDone ? 'filled' : ''}" onclick="toggleLangkah(${idx})" id="langkahBtn_${idx}">
+        <span class="langkah-icon">📝</span>
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:800;">${langkahDone ? '✅ Sudah mengerjakan Langkah Penyelesaian di kertas' : 'Langkah Penyelesaian Soal'}</div>
+          <div style="font-size:11px;font-weight:600;margin-top:2px;opacity:0.8;">${langkahDone ? 'Klik untuk membatalkan centang' : 'Klik untuk konfirmasi sudah dikerjakan di kertas'}</div>
+        </div>
+        <div class="langkah-check">${langkahDone ? '✓' : ''}</div>
+      </button>
+      <div class="langkah-warn" id="langkahWarn_${idx}">
+        ⚠️ Centang dulu konfirmasi Langkah Penyelesaian di kertas sebelum lanjut!
+      </div>
+    `;
+  }
 
   const isFirst = pos === 0;
   const isLast = pos === examOrder.length - 1;
@@ -2703,6 +2871,20 @@ function renderQuestion(pos) {
   requestAnimationFrame(() => { card.style.animation = 'fadeIn 0.3s ease'; });
 }
 
+
+function saveLangkahText(idx, val) {
+  if (!examAnswers[idx]) examAnswers[idx] = {};
+  examAnswers[idx].langkah = val;
+  const area = document.getElementById(`langkahArea_${idx}`);
+  const ta = document.getElementById(`langkahInput_${idx}`);
+  const warn = document.getElementById(`langkahWarn_${idx}`);
+  const filled = val.trim().length > 0;
+  if (area) area.className = `langkah-area ${filled ? 'filled' : ''}`;
+  if (ta) ta.style.borderColor = filled ? '#10b981' : '#f59e0b';
+  if (warn && filled) warn.style.display = 'none';
+  updateNav();
+  saveSession();
+}
 
 function toggleLangkah(idx) {
   if (!examAnswers[idx]) examAnswers[idx] = {};
@@ -2728,13 +2910,20 @@ function toggleLangkah(idx) {
 
 function tryNext(pos, isLast) {
   const idx = examOrder[pos];
-  const langkahDone = examAnswers[idx]?.langkah === true;
+  const ans = examAnswers[idx] || {};
+  const isBi = paketDipilih === '2' || paketDipilih === '4';
+  const langkahOk = isBi
+    ? (typeof ans.langkah === 'string' && ans.langkah.trim().length > 0)
+    : ans.langkah === true;
   const warn = document.getElementById(`langkahWarn_${idx}`);
-  if (!langkahDone) {
+  if (!langkahOk) {
     if (warn) { warn.style.display = 'flex'; }
-    // Scroll ke tombol langkah supaya kelihatan
-    const btn = document.getElementById(`langkahBtn_${idx}`);
-    if (btn) btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const target = document.getElementById(`langkahBtn_${idx}`) || document.getElementById(`langkahArea_${idx}`);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (isBi) {
+      const ta = document.getElementById(`langkahInput_${idx}`);
+      if (ta) { ta.focus(); ta.style.borderColor = '#ef4444'; }
+    }
     return;
   }
   if (warn) warn.style.display = 'none';
