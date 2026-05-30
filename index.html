@@ -1467,8 +1467,8 @@
         <span class="result-emoji" id="resultEmoji">🎉</span>
         <div class="result-name" id="resultName"></div>
 
-        <!-- Skor circle — bisa disembunyikan -->
-        <div id="resultScoreSection">
+        <!-- Skor disembunyikan dari siswa, hanya tampil di admin -->
+        <div id="resultScoreSection" style="display:none;">
           <div class="result-score-circle">
             <div class="score-num" id="resultScore">0</div>
             <div class="score-label">NILAI</div>
@@ -1489,7 +1489,13 @@
           </div>
         </div>
 
-        <div class="result-msg" id="resultMsg">Selamat!</div>
+        <!-- Pesan selesai tanpa nilai -->
+        <div style="text-align:center;padding:24px 0 8px;">
+          <div style="font-size:64px;margin-bottom:12px;">✅</div>
+          <div style="font-size:20px;font-weight:800;color:#1e293b;margin-bottom:8px;">Ujian Selesai!</div>
+          <div style="font-size:14px;color:#64748b;font-weight:600;line-height:1.6;">Jawabanmu sudah tersimpan.<br>Nilai akan diumumkan oleh guru.</div>
+        </div>
+        <div class="result-msg" id="resultMsg" style="display:none;">Selamat!</div>
 
         <!-- Tombol pembahasan — tampil jika setting ON -->
         <button id="btnPembahasan" onclick="showPembahasan()"
@@ -3344,7 +3350,7 @@ async function submitExam(timeout) {
 
   // Apply show_score setting
   const showScore = _settings.show_score !== false;
-  document.getElementById('resultScoreSection').style.display = showScore ? '' : 'none';
+  // Nilai tidak ditampilkan ke siswa — hanya admin
 
   // Apply show_pembahasan setting
   const showPembahasan = _settings.show_pembahasan === true;
