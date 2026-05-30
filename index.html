@@ -4995,13 +4995,29 @@ async function renderPenilaian() {
         const ans = answers[q.id - 1] || {};
         const alasan = isBiPaket && ans.langkah ? ans.langkah.substring(0, 40) + (ans.langkah.length > 40 ? '...' : '') : '';
         const tStyle = typeStyle[q.type] || typeStyle.single;
+
+        // Cek skor otomatis per soal
+        let autoMark = '⬜';
+        let autoColor = '#94a3b8';
+        if (ans && (ans.choice !== undefined || ans.ms || ans.tf)) {
+          // Cek apakah jawaban benar
+          let isCorrect = false;
+          if (q.type === 'single') isCorrect = ans.choice === q.answer;
+          else if (q.type === 'multiselect') isCorrect = JSON.stringify([...q.answers].sort()) === JSON.stringify([...(ans.ms||[])].sort());
+          else if (q.type === 'truefalse') isCorrect = q.statements && q.statements.every((st, si) => ans.tf && ans.tf[si] === st.answer);
+          else if (q.type === 'short') isCorrect = ans.short && q.answer && ans.short.trim().toLowerCase() === q.answer.toString().toLowerCase();
+          autoMark = isCorrect ? '✅' : '❌';
+          autoColor = isCorrect ? '#10b981' : '#ef4444';
+        }
+
         const alasanDiv = (isBiPaket && alasan) ? '<div style="font-size:10px;color:#7c3aed;margin-bottom:2px;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + alasan + '</div>' : '';
         html += '<td style="padding:4px 6px;text-align:center;background:' + tStyle.bg + '30;" title="' + alasan + '">'
+          + '<div style="font-size:14px;line-height:1;">' + autoMark + '</div>'
           + alasanDiv
           + '<input type="number" min="0" max="1" step="1" value="' + val + '"'
           + ' data-nama="' + r.nama + '" data-soal="' + q.id + '" data-type="langkah" data-ri="' + ri + '"'
           + ' onchange="updateNilaiCell(this)"'
-          + ' style="width:44px;padding:4px;border:1.5px solid ' + tStyle.text + '50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">'
+          + ' style="width:44px;padding:4px;border:1.5px solid ' + tStyle.text + '50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;margin-top:2px;">'
           + '</td>';
       });
 
@@ -5009,13 +5025,14 @@ async function renderPenilaian() {
         const val = essayVals[q.id] !== undefined ? essayVals[q.id] : '';
         const ans = answers[q.id - 1] || {};
         const essayText = ans.essay ? ans.essay.substring(0, 40) + (ans.essay.length > 40 ? '...' : '') : '';
-        html += `<td style="padding:4px 6px;text-align:center;" title="${essayText}">
-          ${essayText ? `<div style="font-size:10px;color:#0369a1;margin-bottom:2px;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${essayText}</div>` : ''}
-          <input type="number" min="0" max="100" step="0.5" value="${val}"
-            data-nama="${r.nama}" data-soal="${q.id}" data-type="essay" data-ri="${ri}"
-            onchange="updateNilaiCell(this)"
-            style="width:54px;padding:4px;border:1.5px solid var(--border);border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">
-        </td>`;
+        const essayDiv = essayText ? '<div style="font-size:10px;color:#9d174d;margin-bottom:2px;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + essayText + '</div>' : '<div style="font-size:10px;color:#94a3b8;">⬜ belum diisi</div>';
+        html += '<td style="padding:4px 6px;text-align:center;background:#fce7f330;" title="' + essayText + '">'
+          + essayDiv
+          + '<input type="number" min="0" max="100" step="0.5" value="' + val + '"'
+          + ' data-nama="' + r.nama + '" data-soal="' + q.id + '" data-type="essay" data-ri="' + ri + '"'
+          + ' onchange="updateNilaiCell(this)"'
+          + ' style="width:54px;padding:4px;border:1.5px solid #9d174d50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">'
+          + '</td>';
       });
 
       html += `<td style="padding:8px 12px;text-align:center;" id="total_${ri}">
