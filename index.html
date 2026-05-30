@@ -2322,6 +2322,7 @@ const sbUpsertResults = (body) => fetch(`${SUPABASE_URL}/rest/v1/results?on_conf
 // ===================== APP STATE =====================
 let currentUser = null;
 let currentClass = null;
+let paketDipilih = '1';
 let examAnswers = {};
 let timerInterval = null;
 let timeLeft = 0;
@@ -2532,7 +2533,7 @@ async function startExam() {
 
   // Cek apakah ada sesi yang belum selesai di localStorage
   // Baca paket yang dipilih lebih awal agar bisa dipakai untuk sessionKey
-  const paketDipilih = document.getElementById('selectPaket').value;
+  paketDipilih = document.getElementById('selectPaket').value;
 
   const savedSession = loadSession(nama, kelas, paketDipilih);
   if (savedSession) {
