@@ -1965,612 +1965,280 @@
 // ===================== DATA =====================
 // ===================== PAKET 1: MATEMATIKA KELAS 4 =====================
 const QUESTIONS = [
-  {
-    id: 1, type: 'single',
+  { id: 1, type: 'single',
     text: 'Udin ingin menutupi permukaan meja belajarnya dengan buku tulis miliknya. Setelah disusun rapi tanpa celah dan tidak bertumpuk, ternyata meja Udin tertutup penuh oleh buku tulis seperti gambar berikut. Berdasarkan gambar di atas, luas permukaan meja Udin adalah ....',
     options: ['10 buku tulis', '18 buku tulis', '20 buku tulis', '24 buku tulis'],
-    answer: 2
-  },
-  {
-    id: 2, type: 'single',
+    answer: 2 },
+  { id: 2, type: 'single',
     text: 'Lani ingin menghitung luas halaman rumahnya yang berbentuk persegi panjang untuk ditanami rumput. Berdasarkan ukuran pada denah, luas halaman rumah Lani adalah ....',
     options: ['23 m²', '46 m²', '120 m²', '150 m²'],
-    answer: 3
-  },
-  {
-    id: 3, type: 'single',
+    answer: 3 },
+  { id: 3, type: 'single',
     text: 'Ibu membeli satu kotak susu. Ibu ingin memindahkan seluruh isi susu ke dalam gelas berukuran 1 Liter (1.000 ml). Manakah pernyataan yang paling tepat?',
-    options: [
-      'Susu tidak akan muat di gelas 1 Liter.',
-      'Susu akan mengisi tepat penuh gelas 1 Liter tersebut.',
-      'Susu hanya terisi sebagian (setengahnya atau kurang) dari volume gelas 1 Liter.',
-      'Susu akan meluap karena volume susu kotak lebih besar dari volume gelas 1 Liter.'
-    ],
-    answer: 2
-  },
-  {
-    id: 4, type: 'single',
+    options: ['Susu tidak akan muat di gelas 1 Liter.', 'Susu akan mengisi tepat penuh gelas 1 Liter tersebut.', 'Susu hanya terisi sebagian (setengahnya atau kurang) dari volume gelas 1 Liter.', 'Susu akan meluap karena volume susu kotak lebih besar dari volume gelas 1 Liter.'],
+    answer: 2 },
+  { id: 4, type: 'single',
     text: 'Budi memprogram karakter kucing di aplikasi Scratch untuk menggambar sebuah bangun datar dengan 3 garis lurus yang saling menyambung dan tertutup. Jika garis pertama dan kedua memiliki panjang yang sama persis, sedangkan garis ketiga ukurannya berbeda, maka bangun datar apa yang berhasil digambar?',
     options: ['Segitiga siku-siku', 'Segitiga sama sisi', 'Segitiga sama kaki', 'Segitiga sembarang'],
-    answer: 2
-  },
-  {
-    id: 5, type: 'single',
+    answer: 2 },
+  { id: 5, type: 'single',
     text: 'Berdasarkan diagram batang "Olahraga Favorit Siswa Kelas 4", berapakah jumlah total siswa yang memilih dua jenis olahraga yang memiliki peminat paling sedikit?',
     options: ['8 siswa', '10 siswa', '12 siswa', '18 siswa'],
-    answer: 1
-  },
-  {
-    id: 6, type: 'multiselect',
-    text: 'Robot bernama Galaxi memiliki tangki berkapasitas 3 Liter. Diisi dari: Wadah A = 1.200 cm³, Wadah B = 850 ml, Wadah C = 0,45 Liter. Manakah pernyataan yang BENAR?',
-    options: [
-      'Jika volume Wadah A diubah ke satuan Liter, nilainya sama dengan 12 Liter.',
-      'Jumlah total volume ketiga cairan adalah 2.500 cm³.',
-      'Volume Wadah C jika diukur dalam mililiter menunjukkan angka 450 ml.',
-      'Setelah semua cairan dimasukkan, tangki langsung penuh dan meluap sebanyak 500 ml.'
-    ],
-    answers: [2, 3]
-  },
-  {
-    id: 7, type: 'multiselect',
-    text: 'Toko Buah "SEGAR" mencatat penjualan: Apel 25 kg = Rp500.000, Jeruk 30 kg = Rp450.000, Pisang 20 kg = Rp300.000, Mangga 15 kg = Rp375.000, Anggur 10 kg = Rp400.000. Manakah pernyataan yang BENAR?',
-    options: [
-      'Total berat seluruh buah yang terjual adalah tepat 100 kg.',
-      'Buah Apel memiliki harga jual per kg yang paling mahal.',
-      'Walaupun berat Pisang lebih banyak dari Mangga, total pendapatan Mangga lebih besar dari Pisang.',
-      'Total pendapatan dari penjualan kelima jenis buah adalah Rp 2.500.000.'
-    ],
-    answers: [0, 2, 3]
-  },
-  {
-    id: 8, type: 'multiselect',
-    text: 'Toko Laris Berkah menjual beras C4, menthik, dan rojo lele. Berdasarkan diagram batang stok beras Juli–Oktober 2024, manakah pernyataan yang BENAR?',
-    options: [
-      'Stok beras rojo lele pada bulan Juli sama dengan stok beras menthik pada bulan Oktober.',
-      'Stok beras C4 pada bulan Juli sama dengan stok beras rojo lele pada bulan September.',
-      'Pada bulan Oktober, stok beras menthik yang paling banyak.',
-      'Stok beras C4 paling sedikit pada bulan Agustus.'
-    ],
-    answers: [1, 3]
-  },
-  {
-    id: 9, type: 'truefalse',
-    text: 'Tentukan apakah pernyataan-pernyataan berikut BENAR atau SALAH!',
+    answer: 1 },
+  { id: 6, type: 'multiselect',
+    text: 'Robot bernama Galaxi memiliki tangki berkapasitas 3 Liter. Diisi dari: Wadah A = 1.200 cm³, Wadah B = 850 ml, Wadah C = 0,45 Liter. Manakah pernyataan yang BENAR? (centang yang benar)',
+    options: ['Jika volume Wadah A diubah ke satuan Liter, nilainya sama dengan 12 Liter.', 'Jumlah total volume ketiga cairan adalah 2.500 cm³.', 'Volume Wadah C jika diukur dalam mililiter menunjukkan angka 450 ml.', 'Setelah semua cairan dimasukkan, tangki langsung penuh dan meluap sebanyak 500 ml.'],
+    answers: [2, 3] },
+  { id: 7, type: 'multiselect',
+    text: 'Toko Buah "SEGAR" mencatat penjualan: Apel 25 kg = Rp500.000, Jeruk 30 kg = Rp450.000, Pisang 20 kg = Rp300.000, Mangga 15 kg = Rp375.000, Anggur 10 kg = Rp400.000. Manakah pernyataan yang BENAR? (centang yang benar)',
+    options: ['Total berat seluruh buah yang terjual adalah tepat 100 kg.', 'Buah Apel memiliki harga jual per kg yang paling mahal.', 'Walaupun berat Pisang lebih banyak dari Mangga, total pendapatan Mangga lebih besar dari Pisang.', 'Total pendapatan dari penjualan kelima jenis buah adalah Rp 2.500.000.'],
+    answers: [0, 2, 3] },
+  { id: 8, type: 'multiselect',
+    text: 'Toko Laris Berkah menjual beras C4, menthik, dan rojo lele. Berdasarkan diagram batang stok beras Juli–Oktober 2024, manakah pernyataan yang BENAR? (centang yang benar)',
+    options: ['Stok beras rojo lele pada bulan Juli sama dengan stok beras menthik pada bulan Oktober.', 'Stok beras C4 pada bulan Juli sama dengan stok beras rojo lele pada bulan September.', 'Pada bulan Oktober, stok beras menthik yang paling banyak.', 'Stok beras C4 paling sedikit pada bulan Agustus.'],
+    answers: [1, 3] },
+  { id: 9, type: 'truefalse',
+    text: 'Berilah tanda centang pada pernyataan BENAR atau SALAH berikut!',
     statements: [
       { text: 'Sebuah kelereng sangat cocok digunakan sebagai alat untuk mengukur luas permukaan buku gambar.', answer: false },
       { text: 'Di dalam sebuah gudang terdapat dua buah pipa. Pipa pertama panjangnya 450 cm dan pipa kedua panjangnya 3,5 m. Total panjang kedua pipa tersebut adalah 800 cm.', answer: false }
-    ]
-  },
-  {
-    id: 10, type: 'short',
-    text: 'Perhatikan gambar bangun datar berwarna biru pada kertas berpetak. Luas bangun datar tersebut adalah … satuan persegi.',
-    answer: ''
-  },
-  {
-    id: 11, type: 'short',
-    text: 'Volume sabun cuci tangan pada sebuah botol adalah 1 liter. Jika isinya dipindahkan ke botol yang volumenya 200 ml, maka banyak botol yang dibutuhkan adalah …',
-    answer: '5'
-  },
-  {
-    id: 12, type: 'short',
-    text: 'Perhatikan bangun belah ketupat ABCD. Jika besar sudut ABC = 75°, maka besar sudut BAD adalah …',
-    answer: '105'
-  },
-  {
-    id: 13, type: 'short',
-    text: 'Sebuah belah ketupat dapat dipotong menurut kedua garis diagonalnya yang saling menyilang. Hasil potongan tersebut berupa … buah segitiga siku-siku.',
-    answer: '4'
-  },
-  {
-    id: 14, type: 'short',
-    text: 'Dua buah trapesium sama kaki yang bentuk dan ukurannya sama persis, jika disusun saling membelakangi dan menempel pada sisi alasnya yang paling panjang, akan membentuk bangun datar ….',
-    answer: 'jajargenjang'
-  },
-  {
-    id: 15, type: 'short',
-    text: 'Volume bangun ruang pada gambar adalah … kubus satuan.',
-    answer: ''
-  },
-  {
-    id: 16, type: 'short',
-    text: 'Pak Budi membeli susu sebanyak 20 liter. Susu dijual dalam kemasan botol bervolume 1.000 cm³. Banyaknya botol yang dibutuhkan adalah …',
-    answer: '20'
-  },
-  {
-    id: 17, type: 'short',
-    text: 'Besar sudut pada bangun datar persegi panjang adalah … derajat.',
-    answer: '90'
-  },
-  {
-    id: 18, type: 'short',
-    text: 'Perhatikan tabel piktogram penjualan mobil (1 gambar = 1.000 mobil). Unit mobil yang terjual pada tahun 2021 adalah …',
-    answer: ''
-  },
-  {
-    id: 19, type: 'short',
-    text: 'Berdasarkan tabel piktogram penjualan mobil (1 gambar = 1.000 mobil). Selisih unit mobil yang terjual pada tahun 2022 dan 2023 adalah …',
-    answer: ''
-  },
-  {
-    id: 20, type: 'essay',
-    text: 'Di laboratorium sains, siswa kelas 4 merancang rumah kaca mini yang dikendalikan sistem cerdas bernama MUDA. Alas berbentuk persegi panjang panjang 120 cm dan lebar 80 cm. Ditutupi karpet sensor berbentuk persegi dengan sisi 40 cm. Berapa banyak lembar karpet sensor yang dibutuhkan? Tuliskan langkah-langkah penyelesaiannya!',
-    answer: 'Luas alas = 120 × 80 = 9.600 cm². Luas karpet = 40 × 40 = 1.600 cm². Banyak karpet = 9.600 ÷ 1.600 = 6 lembar.'
-  },
-  {
-    id: 21, type: 'essay',
-    text: 'Sebuah tangki air berbentuk balok panjang 50 cm, lebar 20 cm, tinggi 40 cm. Tangki hanya boleh diisi ½ dari kapasitas penuhnya. Berapa Liter volume air nutrisi yang harus dimasukkan? Tuliskan langkah-langkah penyelesaiannya!',
-    answer: 'Volume penuh = 50 × 20 × 40 = 40.000 cm³ = 40 Liter. Volume ½ = 40 ÷ 2 = 20 Liter.'
-  },
-  {
-    id: 22, type: 'essay',
-    text: 'Siswa kelas 4 menyusun tangram membentuk hewan unta. Perhatikan potongan berwarna biru tua (di leher atas) dan oranye (di bagian kaki belakang). Apakah keduanya memiliki nama bentuk bangun datar yang sama? Jelaskan letak perbedaannya!',
-    answer: ''
-  },
-  {
-    id: 23, type: 'essay',
-    text: 'Perhatikan gambar tangram unta. Hitung seluruh potongan: Ada berapa bangun berbentuk SEGITIGA dan ada berapa bangun berbentuk SEGIEMPAT? Buat kesimpulan singkat mengapa bangun segitiga sangat penting dalam menyusun kreasi tangram hewan!',
-    answer: ''
-  },
-  {
-    id: 24, type: 'essay',
-    text: 'Sebutkan 1 jenis bangun datar yang ingin kamu tambahkan pada tangram Unta agar terlihat membawa beban atau memiliki ekor! Sebutkan alasanmu mengapa memilih bangun datar tersebut!',
-    answer: ''
-  },
-  {
-    id: 25, type: 'essay',
-    text: 'Jelaskan ide kreatifmu: di sebelah mana bangun tersebut akan kamu tempelkan dan akan berubah menjadi bagian tubuh/benda apa potongan tambahan tersebut?',
-    answer: ''
-  }
+    ] },
+  { id: 10, type: 'short', text: 'Perhatikan gambar bangun datar berwarna biru pada kertas berpetak. Luas bangun datar tersebut adalah … satuan persegi.', answer: '' },
+  { id: 11, type: 'short', text: 'Volume sabun cuci tangan pada sebuah botol adalah 1 liter. Jika isinya dipindahkan ke botol yang volumenya 200 ml, maka banyak botol yang dibutuhkan adalah …', answer: '5' },
+  { id: 12, type: 'short', text: 'Perhatikan bangun belah ketupat ABCD. Jika besar sudut ABC = 75°, maka besar sudut BAD adalah …', answer: '105' },
+  { id: 13, type: 'short', text: 'Sebuah belah ketupat dapat dipotong menurut kedua garis diagonalnya yang saling menyilang. Hasil potongan tersebut berupa … buah segitiga siku-siku.', answer: '4' },
+  { id: 14, type: 'short', text: 'Dua buah trapesium sama kaki yang bentuk dan ukurannya sama persis, jika disusun saling membelakangi dan menempel pada sisi alasnya yang paling panjang, akan membentuk bangun datar ….', answer: 'jajargenjang' },
+  { id: 15, type: 'short', text: 'Volume bangun ruang pada gambar adalah … kubus satuan.', answer: '' },
+  { id: 16, type: 'short', text: 'Pak Budi membeli susu sebanyak 20 liter. Susu dijual dalam kemasan botol bervolume 1.000 cm³. Banyaknya botol yang dibutuhkan adalah …', answer: '20' },
+  { id: 17, type: 'short', text: 'Besar sudut pada bangun datar persegi panjang adalah … derajat.', answer: '90' },
+  { id: 18, type: 'short', text: 'Perhatikan tabel piktogram penjualan mobil (1 gambar = 1.000 mobil). Unit mobil yang terjual pada tahun 2021 adalah …', answer: '' },
+  { id: 19, type: 'short', text: 'Berdasarkan tabel piktogram penjualan mobil (1 gambar = 1.000 mobil). Selisih unit mobil yang terjual pada tahun 2022 dan 2023 adalah …', answer: '' },
+  { id: 20, type: 'essay', text: 'Di laboratorium sains, siswa kelas 4 merancang rumah kaca mini MUDA. Alas berbentuk persegi panjang panjang 120 cm dan lebar 80 cm. Ditutupi karpet sensor berbentuk persegi dengan sisi 40 cm. Berapa banyak lembar karpet sensor yang dibutuhkan? Tuliskan langkah-langkah penyelesaiannya!', answer: 'Luas alas = 120 × 80 = 9.600 cm². Luas karpet = 40 × 40 = 1.600 cm². Banyak karpet = 9.600 ÷ 1.600 = 6 lembar.' },
+  { id: 21, type: 'essay', text: 'Sebuah tangki air berbentuk balok panjang 50 cm, lebar 20 cm, tinggi 40 cm. Tangki hanya boleh diisi ½ dari kapasitas penuhnya. Berapa Liter volume air nutrisi yang harus dimasukkan? Tuliskan langkah-langkah penyelesaiannya!', answer: 'Volume penuh = 50 × 20 × 40 = 40.000 cm³ = 40 Liter. Volume ½ = 40 ÷ 2 = 20 Liter.' },
+  { id: 22, type: 'essay', text: 'Perhatikan tangram unta. Bandingkan potongan berwarna biru tua (di leher atas) dan oranye (di bagian kaki belakang). Apakah keduanya memiliki nama bentuk bangun datar yang sama? Jelaskan letak perbedaannya!', answer: '' },
+  { id: 23, type: 'essay', text: 'Hitung seluruh potongan tangram unta. Ada berapa bangun berbentuk SEGITIGA dan ada berapa bangun berbentuk SEGIEMPAT? Buat kesimpulan singkat mengapa bangun segitiga sangat penting dalam menyusun kreasi tangram hewan!', answer: '' },
+  { id: 24, type: 'essay', text: 'Sebutkan 1 jenis bangun datar yang ingin kamu tambahkan pada tangram Unta agar terlihat membawa beban atau memiliki ekor! Sebutkan alasanmu mengapa memilih bangun datar tersebut!', answer: '' },
+  { id: 25, type: 'essay', text: 'Jelaskan ide kreatifmu: di sebelah mana bangun tersebut akan kamu tempelkan dan akan berubah menjadi bagian tubuh/benda apa potongan tambahan tersebut?', answer: '' }
 ];
 
 // ===================== PAKET 2: BAHASA INDONESIA KELAS 4 =====================
 const QUESTIONS_P2 = [
-  {
-    id: 1, type: 'single',
+  { id: 1, type: 'single',
     text: 'Saat musyawarah kelas, Dita mendengarkan pendapat semua teman sebelum mengambil keputusan. Sikap tersebut sesuai dengan sila ….',
     options: ['Persatuan Indonesia', 'Ketuhanan Yang Maha Esa', 'Kemanusiaan yang adil dan beradab', 'Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan'],
-    answer: 3
-  },
-  {
-    id: 2, type: 'single',
+    answer: 3 },
+  { id: 2, type: 'single',
     text: 'Tokoh perumus Pancasila tetap bersatu walaupun memiliki pendapat yang berbeda. Sikap tersebut dapat diteladani dengan cara ….',
     options: ['Tidak mau berdiskusi', 'Memilih teman tertentu saja', 'Menghargai pendapat teman', 'Memaksakan pendapat sendiri'],
-    answer: 2
-  },
-  {
-    id: 3, type: 'single',
+    answer: 2 },
+  { id: 3, type: 'single',
     text: 'Siswa kelas IV membersihkan taman sekolah bersama-sama. Mereka bekerja dengan tertib. …, pekerjaan selesai tepat waktu. Konjungsi yang tepat adalah ….',
     options: ['Namun', 'Karena', 'Walaupun', 'Oleh karena itu'],
-    answer: 3
-  },
-  {
-    id: 4, type: 'single',
+    answer: 3 },
+  { id: 4, type: 'single',
     text: 'Kalimat berikut yang termasuk fakta adalah ….',
     options: ['Perpustakaan sekolah sangat indah.', 'Pelajaran hari ini sangat membosankan.', 'Upacara bendera paling menyenangkan.', 'Sekolah mengadakan upacara setiap hari Senin.'],
-    answer: 3
-  },
-  {
-    id: 5, type: 'single',
-    text: 'Teks 1: Siswa kelas IV menanam pohon di halaman sekolah. Teks 2: Menurut Edo, menanam pohon adalah kegiatan paling seru. Perbedaan kedua teks adalah ….',
+    answer: 3 },
+  { id: 5, type: 'single',
+    text: 'Perhatikan kedua teks berikut! Teks 1: Siswa kelas IV menanam pohon di halaman sekolah. Teks 2: Menurut Edo, menanam pohon adalah kegiatan paling seru. Perbedaan kedua teks adalah ….',
     options: ['Kedua teks fakta', 'Kedua teks opini', 'Teks 1 fakta, teks 2 opini', 'Teks 1 opini, teks 2 fakta'],
-    answer: 2
-  },
-  {
-    id: 6, type: 'truefalse',
-    text: 'Bacalah teks berikut! Pada hari Senin, kelas 4 SD Nusantara mengadakan musyawarah untuk menentukan tema pentas seni sekolah. Setiap siswa diberi kesempatan menyampaikan pendapatnya. Rina mengusulkan tema budaya daerah, sedangkan Andi ingin tema permainan tradisional. Walaupun pendapat mereka berbeda, semua siswa tetap saling menghargai. Sikap menghargai pendapat teman merupakan pengamalan sila keempat Pancasila. Berdasarkan teks, tentukan BENAR atau SALAH setiap pernyataan berikut!',
+    answer: 2 },
+  { id: 6, type: 'truefalse',
+    text: 'Baca teks berikut! Pada hari Senin, kelas 4 SD Nusantara mengadakan musyawarah untuk menentukan tema pentas seni sekolah. Setiap siswa diberi kesempatan menyampaikan pendapatnya. Rina mengusulkan tema budaya daerah, sedangkan Andi ingin tema permainan tradisional. Walaupun pendapat mereka berbeda, semua siswa tetap saling menghargai. Sikap menghargai pendapat teman merupakan pengamalan sila keempat Pancasila. Berdasarkan teks, tentukan BENAR atau SALAH setiap pernyataan berikut!',
     statements: [
       { text: 'Menghargai pendapat teman termasuk pengamalan sila keempat Pancasila.', answer: true },
       { text: 'Bagian akhir narasi berisi penyelesaian masalah.', answer: true },
       { text: 'Kalimat "Buku cerita rakyat di perpustakaan itu paling menarik" termasuk opini.', answer: true },
       { text: 'Tokoh perumus Pancasila mengutamakan persatuan bangsa.', answer: true },
       { text: 'Kata "kemudian" merupakan konjungsi antar kalimat.', answer: true }
-    ]
-  },
-  {
-    id: 7, type: 'multiselect',
+    ] },
+  { id: 11, type: 'multiselect',
     text: 'Sikap yang sesuai dengan nilai Pancasila adalah … (pilih 2 jawaban)',
     options: ['Menghargai pendapat teman', 'Mengejek budaya daerah lain', 'Membantu teman yang kesulitan', 'Memaksakan kehendak'],
-    answers: [0, 2]
-  },
-  {
-    id: 8, type: 'multiselect',
+    answers: [0, 2] },
+  { id: 12, type: 'multiselect',
     text: 'Ciri-ciri teks narasi adalah … (pilih 3 jawaban)',
     options: ['Memiliki tokoh', 'Memiliki urutan peristiwa', 'Hanya berisi angka', 'Memiliki awal, tengah, akhir'],
-    answers: [0, 1, 3]
-  },
-  {
-    id: 9, type: 'multiselect',
+    answers: [0, 1, 3] },
+  { id: 13, type: 'multiselect',
     text: 'Kalimat yang termasuk fakta adalah … (pilih 2 jawaban)',
     options: ['Sekolah mengadakan lomba kebersihan.', 'Menurut Sinta, sekolahnya paling bagus.', 'Upacara dilaksanakan hari Senin.', 'Pelajaran IPA sangat menyenangkan.'],
-    answers: [0, 2]
-  },
-  {
-    id: 10, type: 'multiselect',
+    answers: [0, 2] },
+  { id: 14, type: 'multiselect',
     text: 'Sikap tokoh perumus Pancasila yang dapat diteladani adalah … (pilih 3 jawaban)',
     options: ['Cinta tanah air', 'Bekerja sama', 'Memaksakan pendapat', 'Menghargai perbedaan'],
-    answers: [0, 1, 3]
-  },
-  {
-    id: 11, type: 'multiselect',
+    answers: [0, 1, 3] },
+  { id: 15, type: 'multiselect',
     text: 'Konjungsi antar kalimat ditunjukkan oleh kata … (pilih 3 jawaban)',
     options: ['Namun', 'Oleh karena itu', 'Kemudian', 'Tetapi'],
-    answers: [0, 1, 2]
-  },
-  {
-    id: 12, type: 'short',
-    text: 'Contoh tindakan mencerminkan menghargai jasa pahlawan adalah…',
-    answer: ''
-  },
-  {
-    id: 13, type: 'short',
-    text: 'Ir. Soekarno dan para tokoh bangsa berdiskusi untuk merumuskan dasar negara Indonesia. Sikap yang dapat diteladani dari tokoh tersebut adalah…',
-    answer: ''
-  },
-  {
-    id: 14, type: 'short',
+    answers: [0, 1, 2] },
+  { id: 16, type: 'short', text: 'Contoh tindakan mencerminkan menghargai jasa pahlawan adalah…', answer: '' },
+  { id: 17, type: 'short', text: 'Ir. Soekarno dan para tokoh bangsa berdiskusi untuk merumuskan dasar negara Indonesia. Sikap yang dapat diteladani dari tokoh tersebut adalah…', answer: '' },
+  { id: 18, type: 'short',
     text: 'Bacalah teks berikut! "Di perpustakaan sekolah tersedia banyak buku cerita dan pengetahuan. Banyak siswa datang untuk membaca bersama. Menurut Beni, perpustakaan sekolah adalah tempat paling nyaman." Kalimat fakta pada teks tersebut adalah…',
-    answer: 'Di perpustakaan sekolah tersedia banyak buku cerita dan pengetahuan.'
-  },
-  {
-    id: 15, type: 'short',
-    text: 'Siswa kelas IV membersihkan taman sekolah bersama-sama. …, taman menjadi bersih dan rapi. Konjungsi yang tepat adalah ….',
-    answer: 'Oleh karena itu'
-  },
-  {
-    id: 16, type: 'short',
-    text: 'Rina membantu temannya yang kesulitan memahami pelajaran. Ia menjelaskan pelajaran dengan sabar. Nilai Pancasila yang ditunjukkan Rina adalah ….',
-    answer: 'Kemanusiaan yang adil dan beradab'
-  },
-  {
-    id: 17, type: 'short',
-    text: 'Contoh kerja bakti di lingkungan sekolah adalah…',
-    answer: ''
-  },
-  {
-    id: 18, type: 'short',
-    text: 'Contoh kalimat opini adalah…',
-    answer: ''
-  },
-  {
-    id: 19, type: 'short',
-    text: 'Bacalah teks berikut! "Tokoh perumus Pancasila berasal dari berbagai daerah di Indonesia. Mereka tetap bersatu demi kepentingan bangsa." Makna persatuan pada teks tersebut adalah…',
-    answer: ''
-  },
-  {
-    id: 20, type: 'short',
-    text: 'Andi datang terlambat ke sekolah. …, ia tetap meminta izin kepada guru sebelum masuk kelas. Konjungsi yang tepat adalah ….',
-    answer: 'Walaupun begitu'
-  },
-  {
-    id: 21, type: 'short',
-    text: 'Teks 1: Siswa menanam pohon di halaman sekolah. Teks 2: Menurut Edo, menanam pohon sangat menyenangkan. Perbedaan kedua teks tersebut adalah…',
-    answer: ''
-  },
-  {
-    id: 22, type: 'essay',
-    text: 'Bacalah teks berikut! Di lingkungan RT 05, warga sering bekerja bakti membersihkan selokan dan halaman bersama-sama setiap hari Minggu. Pak Rudi berpendapat bahwa kerja bakti adalah cara paling efektif untuk mempererat hubungan antarwarga. Suatu hari, terjadi perbedaan pendapat saat menentukan jadwal ronda malam. Warga tetap bermusyawarah dengan tenang dan saling menghargai. Bandingkan sikap warga saat bermusyawarah dengan sikap beberapa siswa yang tidak ikut menghias kelas!',
-    answer: ''
-  },
-  {
-    id: 23, type: 'essay',
-    text: 'Berdasarkan teks bacaan tentang warga RT 05 dan siswa kelas 4, apa kesimpulan yang dapat diambil?',
-    answer: ''
-  },
-  {
-    id: 24, type: 'essay',
-    text: 'Menurutmu, solusi apa yang dapat dilakukan agar semua siswa mau ikut bekerja sama saat menghias kelas?',
-    answer: ''
-  },
-  {
-    id: 25, type: 'essay',
-    text: 'Tuliskan contoh kalimat fakta dan kalimat opini yang terdapat pada teks bacaan tentang warga RT 05!',
-    answer: ''
-  },
-  {
-    id: 26, type: 'essay',
-    text: 'Ceritakan pengalamanmu dalam penerapan nilai-nilai Pancasila di kehidupan sehari-hari! Tulis dalam 3 paragraf dengan menggunakan ejaan yang tepat.',
-    answer: ''
-  }
+    answer: 'Di perpustakaan sekolah tersedia banyak buku cerita dan pengetahuan.' },
+  { id: 19, type: 'short', text: 'Siswa kelas IV membersihkan taman sekolah bersama-sama. …, taman menjadi bersih dan rapi. Konjungsi yang tepat adalah ….', answer: 'Oleh karena itu' },
+  { id: 20, type: 'short', text: 'Rina membantu temannya yang kesulitan memahami pelajaran. Ia menjelaskan pelajaran dengan sabar. Nilai Pancasila yang ditunjukkan Rina adalah ….', answer: 'Kemanusiaan yang adil dan beradab' },
+  { id: 21, type: 'short', text: 'Contoh kerja bakti di lingkungan sekolah adalah…', answer: '' },
+  { id: 22, type: 'short', text: 'Contoh kalimat opini adalah…', answer: '' },
+  { id: 23, type: 'short', text: 'Bacalah teks: "Tokoh perumus Pancasila berasal dari berbagai daerah di Indonesia. Mereka tetap bersatu demi kepentingan bangsa." Makna persatuan pada teks tersebut adalah…', answer: '' },
+  { id: 24, type: 'short', text: 'Andi datang terlambat ke sekolah. …, ia tetap meminta izin kepada guru sebelum masuk kelas. Konjungsi yang tepat adalah ….', answer: 'Walaupun begitu' },
+  { id: 25, type: 'short', text: 'Teks 1: Siswa menanam pohon di halaman sekolah. Teks 2: Menurut Edo, menanam pohon sangat menyenangkan. Perbedaan kedua teks tersebut adalah…', answer: '' },
+  { id: 26, type: 'essay', text: 'Bandingkan sikap warga saat bermusyawarah dengan sikap beberapa siswa yang tidak ikut menghias kelas! (Bacalah teks RT 05)', answer: '' },
+  { id: 27, type: 'essay', text: 'Apa kesimpulan yang dapat diambil dari teks bacaan tentang RT 05 dan siswa kelas 4?', answer: '' },
+  { id: 28, type: 'essay', text: 'Menurutmu, solusi apa yang dapat dilakukan agar semua siswa mau ikut bekerja sama saat menghias kelas?', answer: '' },
+  { id: 29, type: 'essay', text: 'Tuliskan contoh kalimat fakta dan kalimat opini yang terdapat pada teks bacaan!', answer: '' },
+  { id: 30, type: 'essay', text: 'Ceritakan pengalamanmu dalam penerapan nilai-nilai Pancasila di kehidupan sehari-hari! Tulis dalam 3 paragraf dengan menggunakan ejaan yang tepat.', answer: '' }
 ];
 
 // ===================== PAKET 3: MATEMATIKA KELAS 5 =====================
 const QUESTIONS_P3 = [
-  {
-    id: 1, type: 'single',
+  { id: 1, type: 'single',
     text: 'Siti memiliki sebuah kertas lipat berbentuk persegi. Ia kemudian melipat kertas tersebut tepat di sepanjang salah satu garis diagonalnya. Bangun datar baru yang terbentuk dari lipatan tersebut memiliki ciri-ciri...',
-    options: [
-      'Memiliki 3 sisi sama panjang dan 3 sudut lancip.',
-      'Memiliki 4 sisi, di mana sepasang sisinya sejajar.',
-      'Memiliki 3 sisi yang panjangnya berbeda dan 1 sudut tumpul.',
-      'Memiliki 1 sudut siku-siku, 2 sudut lancip, dan 2 sisi yang sama panjang.'
-    ],
-    answer: 3
-  },
-  {
-    id: 2, type: 'single',
+    options: ['Memiliki 3 sisi sama panjang dan 3 sudut lancip.', 'Memiliki 4 sisi, di mana sepasang sisinya sejajar.', 'Memiliki 3 sisi yang panjangnya berbeda dan 1 sudut tumpul.', 'Memiliki 1 sudut siku-siku, 2 sudut lancip, dan 2 sisi yang sama panjang.'],
+    answer: 3 },
+  { id: 2, type: 'single',
     text: 'Fatimah menemukan petunjuk: "Aku memiliki jumlah sudut yang berdekatan 180 derajat. Sisi-sisiku yang berhadapan sejajar dan sama panjang. Sudut-sudutku yang berhadapan sama besar. Kedua diagonalku tidak saling membagi dua ruas garis sama panjang." Bangun datar apakah yang sedang dicari Fatimah?',
     options: ['Jajargenjang', 'Belah ketupat', 'Persegi panjang', 'Trapesium sama kaki'],
-    answer: 0
-  },
-  {
-    id: 3, type: 'single',
+    answer: 0 },
+  { id: 3, type: 'single',
     text: 'Keliling kebun Pak Rahmat berbentuk persegi panjang 2 kali lebih besar dari keliling kebun Pak Jaka berbentuk persegi. Keliling kebun Pak Jaka 100 cm dan panjangnya 80 cm. Maka lebar kebun Pak Rahmat adalah … cm',
     options: ['10', '15', '20', '30'],
-    answer: 2
-  },
-  {
-    id: 4, type: 'single',
+    answer: 2 },
+  { id: 4, type: 'single',
     text: 'Siswa kelas 5 mendesain taman sekolah berbentuk Trapesium Sama Kaki. Sisi sejajar 30 cm dan 20 cm, tinggi 12 cm. Di tengah taman ada kolam berbentuk segitiga dengan alas 10 cm dan tinggi 8 cm. Luas area rumput hijau adalah ….',
     options: ['200 cm²', '260 cm²', '300 cm²', '340 cm²'],
-    answer: 1
-  },
-  {
-    id: 5, type: 'single',
-    text: 'Berikut data banyak apel yang terjual selama 5 hari: Senin 25, Selasa 20, Rabu 35, Kamis 40, Jumat 30. Jika 1 gambar mewakili 5 kg apel, diagram gambar yang tepat untuk hari Rabu adalah …',
+    answer: 1 },
+  { id: 5, type: 'single',
+    text: 'Data banyak apel yang terjual selama 5 hari: Senin 25, Selasa 20, Rabu 35, Kamis 40, Jumat 30. Jika 1 gambar mewakili 5 kg apel, diagram gambar yang tepat untuk hari Rabu adalah …',
     options: ['5 gambar', '6 gambar', '7 gambar', '8 gambar'],
-    answer: 2
-  },
-  {
-    id: 6, type: 'multiselect',
-    text: 'Robot diprogram: maju 15 langkah, belok kanan 90 derajat, diulang 4 kali. Manakah pernyataan BENAR mengenai bangun datar yang terbentuk?',
-    options: [
-      'Bangun tersebut memiliki 4 sumbu simetri lipat.',
-      'Kedua garis diagonalnya berpotongan dan membentuk sudut siku-siku.',
-      'Bangun tersebut memiliki dua sudut lancip dan dua sudut tumpul.',
-      'Bangun tersebut memiliki sisi yang berhadapan sejajar, tetapi panjangnya berbeda-beda.'
-    ],
-    answers: [0, 1]
-  },
-  {
-    id: 7, type: 'multiselect',
+    answer: 2 },
+  { id: 6, type: 'multiselect',
+    text: 'Robot diprogram: maju 15 langkah, belok kanan 90 derajat, diulang 4 kali. Manakah pernyataan BENAR mengenai bangun datar yang terbentuk? (centang yang benar)',
+    options: ['Bangun tersebut memiliki 4 sumbu simetri lipat.', 'Kedua garis diagonalnya berpotongan dan membentuk sudut siku-siku.', 'Bangun tersebut memiliki dua sudut lancip dan dua sudut tumpul.', 'Bangun tersebut memiliki sisi yang berhadapan sejajar, tetapi panjangnya berbeda-beda.'],
+    answers: [0, 1] },
+  { id: 7, type: 'multiselect',
     text: 'Diagram gambar pameran buku 5 hari (1 gambar = 50 orang): Rabu 5, Kamis 7, Jumat 8, Sabtu 6, Minggu 9 gambar. Banyak pengunjung lebih dari 300 orang terjadi pada hari …',
     options: ['Rabu', 'Jumat', 'Sabtu', 'Minggu'],
-    answers: [1, 3]
-  },
-  {
-    id: 8, type: 'multiselect',
-    text: 'Diagram batang pekerjaan orang tua siswa kelas 5. Manakah pernyataan yang TEPAT?',
-    options: [
-      'Orang tua siswa kelas 5 paling banyak bekerja sebagai pedagang.',
-      'Orang tua siswa kelas 5 yang paling sedikit bekerja sebagai Pegawai Negeri.',
-      'Orang tua yang bekerja sebagai pegawai negeri lebih banyak dari pegawai swasta.',
-      'Selisih banyak orang tua yang bekerja sebagai wiraswasta dan petani adalah 2 orang.'
-    ],
-    answers: [1, 3]
-  },
-  {
-    id: 9, type: 'truefalse',
-    text: 'Perhatikan gambar dan tabel berikut, tentukan BENAR atau SALAH!',
+    answers: [1, 3] },
+  { id: 8, type: 'multiselect',
+    text: 'Perhatikan diagram batang pekerjaan orang tua siswa kelas 5. Manakah pernyataan yang TEPAT?',
+    options: ['Orang tua siswa kelas 5 paling banyak bekerja sebagai pedagang.', 'Orang tua siswa kelas 5 yang paling sedikit bekerja sebagai Pegawai Negeri.', 'Orang tua yang bekerja sebagai pegawai negeri lebih banyak dari pegawai swasta.', 'Selisih banyak orang tua yang bekerja sebagai wiraswasta dan petani adalah 2 orang.'],
+    answers: [1, 3] },
+  { id: 9, type: 'truefalse',
+    text: 'Berilah tanda centang pada pernyataan BENAR atau SALAH berikut!',
     statements: [
       { text: 'Jajargenjang tersebut memiliki luas 230 cm².', answer: false },
       { text: 'Jumlah siswa yang gemar olahraga selain futsal ada 25 orang (Renang 12, Bulu Tangkis 8, Bola Basket 6).', answer: false }
-    ]
-  },
-  {
-    id: 10, type: 'short',
-    text: 'Salah satu ciri yang dimiliki persegi dan juga dimiliki belah ketupat adalah …',
-    answer: 'Keempat sisinya sama panjang'
-  },
-  {
-    id: 11, type: 'short',
-    text: 'Jumlah sudut yang berdekatan pada jajargenjang besarnya adalah …',
-    answer: '180°'
-  },
-  {
-    id: 12, type: 'short',
-    text: 'Sumbu simetri pada layang-layang ada …',
-    answer: '1'
-  },
-  {
-    id: 13, type: 'short',
-    text: 'Sebuah penggaris berbentuk segitiga sama kaki memiliki satu sudut puncak sebesar 40°. Maka besar salah satu sudut alasnya adalah … derajat.',
-    answer: '70'
-  },
-  {
-    id: 14, type: 'short',
-    text: 'Sebuah rambu lalu lintas berbentuk segitiga sama sisi memiliki ukuran panjang sisi 12 cm. Maka luasnya adalah … cm².',
-    answer: '62,35'
-  },
-  {
-    id: 15, type: 'short',
-    text: 'Sebuah taplak meja berukuran panjang 75 cm dan lebar 50 cm. Di sekelilingnya dihias pita. Pita yang dibutuhkan adalah …',
-    answer: '250 cm'
-  },
-  {
-    id: 16, type: 'short',
-    text: 'Sebuah jendela berbentuk persegi memiliki keliling 84 cm. Maka panjang sisi jendela adalah … cm.',
-    answer: '21'
-  },
-  {
-    id: 17, type: 'short',
-    text: 'Diketahui panjang diagonal pertama layang-layang sama dengan sisi persegi yang luasnya 64 cm², dan panjang diagonal kedua adalah 6 cm. Maka luas layang-layang tersebut adalah …',
-    answer: '24 cm²'
-  },
-  {
-    id: 18, type: 'short',
-    text: 'Jika 1 gambar menyatakan 4 orang yang suka bermain bola, maka 4,5 gambar menyatakan ada … orang yang suka bermain bola.',
-    answer: '18'
-  },
-  {
-    id: 19, type: 'short',
-    text: 'Perhatikan diagram batang nilai siswa. Banyaknya siswa yang memperoleh nilai lebih dari 60 sebanyak …',
-    answer: ''
-  },
-  {
-    id: 20, type: 'essay',
-    text: 'Sebuah perusahaan mainan ingin memproduksi layang-layang hias dan papan rambu berbentuk belah ketupat. Pekerja sering keliru membedakan kerangka keduanya. Sebutkan minimal 2 persamaan dan 2 perbedaan mendasar dari kedua bangun tersebut!',
-    answer: ''
-  },
-  {
-    id: 21, type: 'essay',
-    text: 'Pak Kepala Desa ingin membuat taman bermain. Rancangan A: persegi panjang 12m × 8m. Rancangan B: persegi sisi 10m. Hitunglah keliling dan luas masing-masing rancangan! Bandingkan mana yang membutuhkan pagar besi paling panjang dan rumput hias paling banyak!',
-    answer: 'A: Keliling=40m, Luas=96m². B: Keliling=40m, Luas=100m². Pagar sama panjang. Rancangan B membutuhkan rumput lebih banyak.'
-  },
-  {
-    id: 22, type: 'essay',
-    text: 'Jika dana desa terbatas untuk membeli pagar besi, namun mendapat sumbangan rumput hias yang berlimpah, rancangan manakah yang paling tepat dipilih Pak Kades? Jelaskan alasanmu!',
-    answer: ''
-  },
-  {
-    id: 23, type: 'essay',
-    text: 'Guru olahraga mendata pilihan ekstrakurikuler 40 siswa kelas 5: Futsal 15 anak, Pramuka 3 lebih sedikit dari Futsal, Seni Tari 5 anak, sisanya Melukis. Sajikan data dalam bentuk tabel! Bandingkan selisih antara kegiatan lapangan (Futsal & Pramuka) dengan kegiatan di dalam ruangan (Seni Tari & Melukis)!',
-    answer: 'Futsal=15, Pramuka=12, Seni Tari=5, Melukis=8. Lapangan=27, Dalam ruangan=13. Selisih=14 siswa.'
-  },
-  {
-    id: 24, type: 'essay',
-    text: 'Berdasarkan data ekstrakurikuler kelas 5: a) Kesimpulan apa yang dapat kamu tarik mengenai karakteristik dan minat bakat siswa kelas 5? b) Ada ekstrakurikuler yang terancam dibatalkan karena pesertanya kurang dari 10 orang. Berikan ide kreatif atau solusimu agar siswa tidak kecewa dan kegiatan tetap bisa berjalan!',
-    answer: ''
-  }
+    ] },
+  { id: 10, type: 'short', text: 'Salah satu ciri yang dimiliki persegi dan juga dimiliki belah ketupat adalah …', answer: 'Keempat sisinya sama panjang' },
+  { id: 11, type: 'short', text: 'Jumlah sudut yang berdekatan pada jajargenjang besarnya adalah …', answer: '180°' },
+  { id: 12, type: 'short', text: 'Sumbu simetri pada layang-layang ada …', answer: '1' },
+  { id: 13, type: 'short', text: 'Sebuah penggaris berbentuk segitiga sama kaki memiliki satu sudut puncak sebesar 40°. Maka besar salah satu sudut alasnya adalah … derajat.', answer: '70' },
+  { id: 14, type: 'short', text: 'Sebuah rambu lalu lintas berbentuk segitiga sama sisi memiliki ukuran panjang sisi 12 cm. Maka luasnya adalah … cm².', answer: '62,35' },
+  { id: 15, type: 'short', text: 'Sebuah taplak meja berukuran panjang 75 cm dan lebar 50 cm. Di sekelilingnya dihias pita. Pita yang dibutuhkan adalah …', answer: '250 cm' },
+  { id: 16, type: 'short', text: 'Sebuah jendela berbentuk persegi memiliki keliling 84 cm. Maka panjang sisi jendela adalah … cm.', answer: '21' },
+  { id: 17, type: 'short', text: 'Diketahui panjang diagonal pertama layang-layang sama dengan sisi persegi yang luasnya 64 cm², dan panjang diagonal kedua adalah 6 cm. Maka luas layang-layang tersebut adalah …', answer: '24 cm²' },
+  { id: 18, type: 'short', text: 'Jika 1 gambar menyatakan 4 orang yang suka bermain bola, maka 4,5 gambar menyatakan ada … orang yang suka bermain bola.', answer: '18' },
+  { id: 19, type: 'short', text: 'Perhatikan diagram batang nilai siswa. Banyaknya siswa yang memperoleh nilai lebih dari 60 sebanyak …', answer: '' },
+  { id: 20, type: 'essay', text: 'Sebuah perusahaan mainan ingin memproduksi layang-layang hias dan papan rambu berbentuk belah ketupat. Pekerja sering keliru membedakan kerangka keduanya. Sebutkan minimal 2 persamaan dan 2 perbedaan mendasar dari kedua bangun tersebut!', answer: '' },
+  { id: 21, type: 'essay', text: 'Pak Kepala Desa ingin membuat taman bermain. Rancangan A: persegi panjang 12m × 8m. Rancangan B: persegi sisi 10m. Hitunglah keliling dan luas masing-masing rancangan! Bandingkan mana yang membutuhkan pagar besi paling panjang dan rumput hias paling banyak!', answer: 'A: Keliling=40m, Luas=96m². B: Keliling=40m, Luas=100m². Pagar sama panjang. Rancangan B membutuhkan rumput lebih banyak.' },
+  { id: 22, type: 'essay', text: 'Jika dana desa terbatas untuk membeli pagar besi, namun mendapat sumbangan rumput hias yang berlimpah, rancangan manakah yang paling tepat dipilih Pak Kades? Jelaskan alasanmu!', answer: '' },
+  { id: 23, type: 'essay', text: 'Guru olahraga mendata pilihan ekstrakurikuler 40 siswa kelas 5: Futsal 15 anak, Pramuka 3 lebih sedikit dari Futsal, Seni Tari 5 anak, sisanya Melukis. Sajikan data dalam bentuk tabel! Bandingkan selisih antara kegiatan lapangan (Futsal & Pramuka) dengan kegiatan di dalam ruangan (Seni Tari & Melukis)!', answer: 'Futsal=15, Pramuka=12, Seni Tari=5, Melukis=8. Lapangan=27, Dalam ruangan=13. Selisih=14 siswa.' },
+  { id: 24, type: 'essay', text: 'Berdasarkan data ekstrakurikuler kelas 5: a) Kesimpulan apa yang dapat kamu tarik mengenai karakteristik dan minat bakat siswa kelas 5? b) Ada ekstrakurikuler yang terancam dibatalkan karena pesertanya kurang dari 10 orang. Berikan ide kreatif atau solusimu agar siswa tidak kecewa dan kegiatan tetap bisa berjalan!', answer: '' },
+  { id: 25, type: 'essay', text: 'Ceritakan pengalamanmu tentang kerja sama dalam kelompok di sekolah! Apa yang kamu pelajari dari pengalaman tersebut? Tulis dalam 3 paragraf!', answer: '' }
 ];
 
 // ===================== PAKET 4: BAHASA INDONESIA KELAS 5 =====================
 const QUESTIONS_P4 = [
-  {
-    id: 1, type: 'single',
+  { id: 1, type: 'single',
     text: 'Saat warga desa membersihkan saluran air bersama-sama, mereka menunjukkan sikap ....',
     options: ['Kemalasan', 'Persaingan', 'Gotong royong', 'Individualisme'],
-    answer: 2
-  },
-  {
-    id: 2, type: 'single',
+    answer: 2 },
+  { id: 2, type: 'single',
     text: 'Wilayah pegunungan di Indonesia memiliki ciri ....',
     options: ['Banyak pelabuhan laut', 'Udara sejuk dan tanah subur', 'Ombak besar dan angin kencang', 'Udara panas dan pantai berpasir'],
-    answer: 1
-  },
-  {
-    id: 3, type: 'single',
+    answer: 1 },
+  { id: 3, type: 'single',
     text: 'Bacalah paragraf berikut! "Indonesia memiliki banyak wilayah pegunungan. Daerah pegunungan memiliki udara yang sejuk dan tanah yang subur. Banyak masyarakat memanfaatkan wilayah tersebut untuk bercocok tanam." Ide pokok paragraf tersebut adalah ....',
     options: ['Udara pegunungan sejuk', 'Tanah pegunungan subur', 'Masyarakat bercocok tanam', 'Wilayah pegunungan di Indonesia'],
-    answer: 3
-  },
-  {
-    id: 4, type: 'single',
+    answer: 3 },
+  { id: 4, type: 'single',
     text: 'Kalimat yang tepat sebagai pendukung teks eksposisi tentang gotong royong adalah ....',
     options: ['Sekolahku sangat besar.', 'Saya suka bermain sepak bola.', 'Pantai adalah tempat wisata menarik.', 'Gotong royong membuat pekerjaan lebih cepat selesai.'],
-    answer: 3
-  },
-  {
-    id: 5, type: 'single',
+    answer: 3 },
+  { id: 5, type: 'single',
     text: 'Rama kesulitan memahami tugas kelompok karena teman-temannya tidak mau bekerja sama. Solusi terbaik adalah ....',
     options: ['Marah kepada teman', 'Meninggalkan kelompok', 'Tidak mengerjakan tugas', 'Melaporkan kepada guru dan mengajak berdiskusi'],
-    answer: 3
-  },
-  {
-    id: 6, type: 'truefalse',
-    text: 'Baca teks berikut! Pada hari Minggu, warga Desa Harapan berkumpul di lapangan untuk melakukan kerja bakti. Pak Rudi, ketua RT, mengatakan bahwa gotong royong dapat mempererat persatuan masyarakat. Bu Guru menjelaskan bahwa udara pantai biasanya terasa panas, sedangkan udara pegunungan lebih sejuk. Bu Guru juga mengingatkan bahwa ide pokok merupakan inti pembahasan dalam paragraf. Kalimat majemuk setara terdiri atas dua kalimat yang sederajat. Teks persuasif bertujuan memengaruhi pembaca agar mau mengikuti ajakan. Berdasarkan teks, tentukan BENAR atau SALAH!',
+    answer: 3 },
+  { id: 6, type: 'truefalse',
+    text: 'Baca teks berikut! Warga Desa Harapan berkumpul untuk kerja bakti. Pak Rudi mengatakan gotong royong dapat mempererat persatuan masyarakat. Edo berkata wilayah pantai memiliki udara sejuk seperti pegunungan, namun Bu Guru menjelaskan udara pantai biasanya panas, pegunungan lebih sejuk. Bu Guru juga mengingatkan ide pokok merupakan inti pembahasan dalam paragraf, kalimat majemuk setara terdiri atas dua kalimat yang sederajat, dan teks persuasif bertujuan memengaruhi pembaca. Tentukan BENAR atau SALAH!',
     statements: [
       { text: 'Gotong royong dapat mempererat persatuan masyarakat.', answer: true },
       { text: 'Wilayah pantai memiliki udara yang sejuk seperti pegunungan.', answer: false },
       { text: 'Ide pokok merupakan inti pembahasan dalam paragraf.', answer: true },
       { text: 'Kalimat majemuk setara terdiri atas dua kalimat yang sederajat.', answer: true },
       { text: 'Teks persuasif bertujuan memengaruhi pembaca.', answer: true }
-    ]
-  },
-  {
-    id: 7, type: 'multiselect',
+    ] },
+  { id: 11, type: 'multiselect',
     text: 'Contoh sikap gotong royong adalah .... (pilih 3 jawaban)',
     options: ['Membersihkan lingkungan bersama', 'Membantu tetangga terkena musibah', 'Membiarkan teman bekerja sendiri', 'Bekerja sama saat piket kelas'],
-    answers: [0, 1, 3]
-  },
-  {
-    id: 8, type: 'multiselect',
+    answers: [0, 1, 3] },
+  { id: 12, type: 'multiselect',
     text: 'Ciri wilayah pantai adalah .... (pilih 3 jawaban)',
     options: ['Udara panas', 'Banyak nelayan', 'Tanah subur untuk sayuran pegunungan', 'Dekat laut'],
-    answers: [0, 1, 3]
-  },
-  {
-    id: 9, type: 'multiselect',
+    answers: [0, 1, 3] },
+  { id: 13, type: 'multiselect',
     text: 'Kalimat yang termasuk kalimat majemuk setara adalah .... (pilih 3 jawaban)',
     options: ['Dina membaca buku dan Rani menulis tugas.', 'Ayah bekerja sedangkan ibu memasak.', 'Saya pergi ke sekolah.', 'Edo bermain bola lalu Beni bersepeda.'],
-    answers: [0, 1, 3]
-  },
-  {
-    id: 10, type: 'multiselect',
+    answers: [0, 1, 3] },
+  { id: 14, type: 'multiselect',
     text: 'Ciri teks persuasif adalah .... (pilih 3 jawaban)',
     options: ['Mengajak pembaca', 'Menggunakan kata ajakan', 'Berisi langkah percobaan', 'Bertujuan memengaruhi pembaca'],
-    answers: [0, 1, 3]
-  },
-  {
-    id: 11, type: 'multiselect',
+    answers: [0, 1, 3] },
+  { id: 15, type: 'multiselect',
     text: 'Pernyataan yang termasuk ide pendukung adalah .... (pilih 3 jawaban)',
     options: ['Pegunungan memiliki udara sejuk.', 'Banyak petani menanam sayuran di pegunungan.', 'Indonesia memiliki wilayah pegunungan.', 'Tanah pegunungan subur untuk pertanian.'],
-    answers: [0, 1, 3]
-  },
-  {
-    id: 12, type: 'short',
-    text: 'Bacalah teks berikut! "Warga Desa Sukamaju mengadakan kerja bakti membersihkan jalan desa setiap hari Minggu. Mereka bekerja sama membersihkan selokan dan memotong rumput liar. Kepala desa mengingatkan bahwa gotong royong harus terus dilaksanakan agar persatuan warga tetap terjaga." Manfaat gotong royong adalah…',
-    answer: 'Pekerjaan cepat selesai dan mempererat persatuan warga'
-  },
-  {
-    id: 13, type: 'short',
+    answers: [0, 1, 3] },
+  { id: 16, type: 'short',
+    text: 'Warga Desa Sukamaju mengadakan kerja bakti membersihkan jalan desa setiap hari Minggu. Mereka bekerja sama membersihkan selokan dan memotong rumput liar. Kepala desa mengingatkan bahwa gotong royong harus terus dilaksanakan agar persatuan warga tetap terjaga. Manfaat gotong royong adalah…',
+    answer: 'Pekerjaan cepat selesai dan mempererat persatuan warga' },
+  { id: 17, type: 'short',
     text: 'Indonesia memiliki wilayah pegunungan, dataran rendah, dan pantai. Wilayah pegunungan memiliki udara sejuk dan tanah subur. Banyak masyarakat bekerja sebagai petani sayur. Wilayah pantai memiliki udara panas dan masyarakat banyak bekerja sebagai nelayan. Ide pokok paragraf pertama adalah…',
-    answer: 'Indonesia memiliki berbagai wilayah dengan ciri yang berbeda'
-  },
-  {
-    id: 14, type: 'short',
-    text: 'Bacalah teks! "Sekolah SD Nusantara mengadakan kegiatan menanam pohon di halaman sekolah. Semua siswa membawa bibit tanaman dari rumah. Kegiatan tersebut bertujuan menjaga lingkungan agar tetap hijau dan asri. Menurut Edo, kegiatan menanam pohon adalah kegiatan paling menyenangkan di sekolah." Informasi fakta dari teks tersebut adalah…',
-    answer: 'SD Nusantara mengadakan kegiatan menanam pohon di halaman sekolah'
-  },
-  {
-    id: 15, type: 'short',
+    answer: 'Indonesia memiliki berbagai wilayah dengan ciri yang berbeda' },
+  { id: 18, type: 'short',
+    text: 'Sekolah SD Nusantara mengadakan kegiatan menanam pohon di halaman sekolah. Semua siswa membawa bibit tanaman dari rumah. Kegiatan tersebut bertujuan menjaga lingkungan agar tetap hijau dan asri. Menurut Edo, kegiatan menanam pohon adalah kegiatan paling menyenangkan di sekolah. Informasi fakta dari teks tersebut adalah…',
+    answer: 'SD Nusantara mengadakan kegiatan menanam pohon di halaman sekolah' },
+  { id: 19, type: 'short',
     text: 'Dina mengikuti kerja kelompok bersama teman-temannya. Namun, beberapa teman tidak mau bekerja sama. Akibatnya, tugas kelompok tidak selesai tepat waktu. Dina kemudian mengajak teman-temannya berdiskusi agar tugas dapat diselesaikan bersama. Masalah yang dihadapi Dina adalah…',
-    answer: 'Beberapa teman tidak mau bekerja sama sehingga tugas tidak selesai tepat waktu'
-  },
-  {
-    id: 16, type: 'short',
-    text: 'Karakteristik wilayah pantai adalah…',
-    answer: 'Udara panas, dekat laut, banyak nelayan, dan berpasir'
-  },
-  {
-    id: 17, type: 'short',
-    text: 'Bacalah teks! "Gotong royong membuat pekerjaan menjadi lebih ringan. Selain itu, kegiatan tersebut dapat mempererat hubungan antarwarga. Warga yang saling membantu akan hidup rukun dan damai. Oleh karena itu, gotong royong perlu dibiasakan dalam kehidupan sehari-hari." Ide pendukung paragraf tersebut adalah…',
-    answer: 'Gotong royong mempererat hubungan antarwarga dan membuat warga hidup rukun'
-  },
-  {
-    id: 18, type: 'short',
-    text: 'Contoh kalimat majemuk setara adalah…',
-    answer: ''
-  },
-  {
-    id: 19, type: 'short',
-    text: 'Pekerjaan masyarakat di dataran rendah yaitu…',
-    answer: 'Petani, pedagang, buruh pabrik'
-  },
-  {
-    id: 20, type: 'short',
-    text: 'Bacalah teks! "Ayo, kita menjaga kebersihan lingkungan sekolah! Lingkungan yang bersih membuat belajar menjadi nyaman dan sehat. Buanglah sampah pada tempatnya dan ikutilah kegiatan kerja bakti bersama teman-teman." Tujuan dari isi teks tersebut adalah…',
-    answer: 'Mengajak pembaca untuk menjaga kebersihan lingkungan sekolah'
-  },
-  {
-    id: 21, type: 'short',
-    text: 'Bacalah teks! "Pada hari Sabtu, siswa kelas V melakukan kerja bakti membersihkan taman sekolah. Mereka bekerja sama mencabut rumput dan menyapu halaman. Namun, beberapa siswa hanya bermain sehingga pekerjaan menjadi lambat selesai." Solusi yang dilakukan ketua kelas adalah…',
-    answer: ''
-  },
-  {
-    id: 22, type: 'essay',
-    text: 'Baca teks berikut! Hari Minggu pagi, warga Kampung Harmoni berkumpul di balai desa untuk kerja bakti. Awalnya, sebagian warga kurang peduli dan memilih tetap di rumah. Akibatnya, pekerjaan membersihkan selokan menjadi lambat. Rani dan teman-temannya kemudian mengajak warga lain untuk bekerja bersama. Setelah semua warga ikut membantu, pekerjaan menjadi lebih cepat selesai. Bandingkan sikap warga yang ikut bergotong royong dengan warga yang tidak ikut bekerja bakti pada awal cerita!',
-    answer: ''
-  },
-  {
-    id: 23, type: 'essay',
-    text: 'Berdasarkan teks Kampung Harmoni: Apa masalah yang terjadi di Kampung Harmoni sebelum semua warga ikut membantu?',
-    answer: 'Sebagian warga tidak mau ikut bekerja bakti sehingga selokan tersumbat dan menimbulkan bau tidak sedap'
-  },
-  {
-    id: 24, type: 'essay',
-    text: 'Berdasarkan teks Kampung Harmoni: Tuliskan kesimpulan dari cerita tersebut!',
-    answer: ''
-  },
-  {
-    id: 25, type: 'essay',
+    answer: 'Beberapa teman tidak mau bekerja sama sehingga tugas tidak selesai tepat waktu' },
+  { id: 20, type: 'short', text: 'Karakteristik wilayah pantai adalah…', answer: 'Udara panas, dekat laut, banyak nelayan, dan berpasir' },
+  { id: 21, type: 'short',
+    text: 'Gotong royong membuat pekerjaan menjadi lebih ringan. Selain itu, kegiatan tersebut dapat mempererat hubungan antarwarga. Warga yang saling membantu akan hidup rukun dan damai. Oleh karena itu, gotong royong perlu dibiasakan dalam kehidupan sehari-hari. Ide pendukung paragraf tersebut adalah…',
+    answer: 'Gotong royong mempererat hubungan antarwarga dan membuat warga hidup rukun' },
+  { id: 22, type: 'short', text: 'Contoh kalimat majemuk setara adalah…', answer: '' },
+  { id: 23, type: 'short', text: 'Pekerjaan masyarakat di dataran rendah yaitu…', answer: 'Petani, pedagang, buruh pabrik' },
+  { id: 24, type: 'short',
+    text: '"Ayo, kita menjaga kebersihan lingkungan sekolah! Lingkungan yang bersih membuat belajar menjadi nyaman dan sehat. Buanglah sampah pada tempatnya dan ikutilah kegiatan kerja bakti bersama teman-teman." Tujuan dari isi teks tersebut adalah…',
+    answer: 'Mengajak pembaca untuk menjaga kebersihan lingkungan sekolah' },
+  { id: 25, type: 'short',
+    text: 'Pada hari Sabtu, siswa kelas V melakukan kerja bakti membersihkan taman sekolah. Mereka bekerja sama mencabut rumput dan menyapu halaman. Namun, beberapa siswa hanya bermain sehingga pekerjaan menjadi lambat selesai. Solusi yang dilakukan ketua kelas adalah…',
+    answer: '' },
+  { id: 26, type: 'essay',
+    text: 'Baca teks Kampung Harmoni! Bandingkan sikap warga yang ikut bergotong royong dengan warga yang tidak ikut bekerja bakti pada awal cerita!',
+    answer: '' },
+  { id: 27, type: 'essay',
+    text: 'Apa masalah yang terjadi di Kampung Harmoni sebelum semua warga ikut membantu?',
+    answer: 'Sebagian warga tidak mau ikut bekerja bakti sehingga selokan tersumbat dan menimbulkan bau tidak sedap' },
+  { id: 28, type: 'essay',
+    text: 'Tuliskan kesimpulan dari cerita Kampung Harmoni!',
+    answer: '' },
+  { id: 29, type: 'essay',
     text: 'Jika kamu menjadi warga Kampung Harmoni, solusi apa yang akan kamu lakukan agar semua warga mau ikut bergotong royong?',
-    answer: ''
-  },
-  {
-    id: 26, type: 'essay',
-    text: 'Ceritakan pengalamanmu tentang kegiatan gotong royong yang pernah dilakukan di lingkungan sekitar rumah atau di lingkungan sekolah. Tulis dalam 4 paragraf dengan menggunakan ejaan yang tepat!',
-    answer: ''
-  }
+    answer: '' },
+  { id: 30, type: 'essay',
+    text: 'Ceritakan pengalamanmu tentang kegiatan gotong royong yang pernah dilakukan di lingkungan sekitar rumah atau di lingkungan sekolah! Tulis dalam 4 paragraf dengan menggunakan ejaan yang tepat!',
+    answer: '' }
 ];
 
 
