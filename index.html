@@ -1357,6 +1357,21 @@
   font-size: 13px; font-weight: 700;
   display: none; align-items: center; gap: 6px;
 }
+
+/* ===== TIPE SOAL KERTAS ===== */
+.kertas-notice {
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: #f0f9ff;
+  border: 2px solid #0ea5e9;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0c4a6e;
+}
 </style>
 </head>
 <body>
@@ -1986,39 +2001,57 @@ const QUESTIONS = [
     options: ['8 siswa', '10 siswa', '12 siswa', '18 siswa'],
     answer: 1 },
   { id: 6, type: 'multiselect',
-    text: 'Robot bernama Galaxi memiliki tangki berkapasitas 3 Liter. Diisi dari: Wadah A = 1.200 cm³, Wadah B = 850 ml, Wadah C = 0,45 Liter. Manakah pernyataan yang BENAR? (centang yang benar)',
-    options: ['Jika volume Wadah A diubah ke satuan Liter, nilainya sama dengan 12 Liter.', 'Jumlah total volume ketiga cairan adalah 2.500 cm³.', 'Volume Wadah C jika diukur dalam mililiter menunjukkan angka 450 ml.', 'Setelah semua cairan dimasukkan, tangki langsung penuh dan meluap sebanyak 500 ml.'],
+    text: 'Di laboratorium sekolah, sekelompok siswa sedang menguji sebuah robot penyiram tanaman otomatis bernama Galaxi. Robot ini memiliki tangki air utama berkapasitas maksimal 3 Liter. Untuk keperluan uji coba, tangki robot tersebut akan diisi dengan campuran cairan nutrisi dari tiga wadah ukur yang berbeda penulisan satuannya: Wadah A (Nutrisi Organik): Berisi 1.200 cm³ cairan. Wadah B (Mineral Makro): Berisi 850 ml cairan. Wadah C (Zat Pengatur Tumbuh): Berisi 0,45 Liter cairan. Berdasarkan volume ketiga cairan di atas, manakah pernyataan yang benar di bawah ini!',
+    options: [
+      'Jika volume cairan pada Wadah A diubah ke dalam satuan Liter, maka nilainya sama dengan 12 Liter.',
+      'Jumlah total volume ketiga cairan yang akan dimasukkan ke dalam tangki robot adalah 2.500 cm³.',
+      'Volume cairan pada Wadah C jika diukur menggunakan gelas ukur berskala mililiter akan menunjukkan angka 450 ml.',
+      'Setelah semua cairan dari wadah A, B, dan C dimasukkan, tangki robot langsung penuh dan airnya meluap sebanyak 500 ml.'
+    ],
     answers: [2, 3] },
   { id: 7, type: 'multiselect',
-    text: 'Toko Buah "SEGAR" mencatat penjualan: Apel 25 kg = Rp500.000, Jeruk 30 kg = Rp450.000, Pisang 20 kg = Rp300.000, Mangga 15 kg = Rp375.000, Anggur 10 kg = Rp400.000. Manakah pernyataan yang BENAR? (centang yang benar)',
-    options: ['Total berat seluruh buah yang terjual adalah tepat 100 kg.', 'Buah Apel memiliki harga jual per kg yang paling mahal.', 'Walaupun berat Pisang lebih banyak dari Mangga, total pendapatan Mangga lebih besar dari Pisang.', 'Total pendapatan dari penjualan kelima jenis buah adalah Rp 2.500.000.'],
+    text: 'Toko Buah "SEGAR" mencatat seluruh hasil penjualan buahnya pada hari Senin, 15 April 2026. Pak Ahmad, sang pemilik toko, memasukkan data berat buah yang terjual beserta total pendapatan ke dalam tabel berikut: Apel 25 kg = Rp500.000, Jeruk 30 kg = Rp450.000, Pisang 20 kg = Rp300.000, Mangga 15 kg = Rp375.000, Anggur 10 kg = Rp400.000. Berdasarkan data tabel hasil penjualan di Toko "SEGAR" di atas, manakah pernyataan yang benar di bawah ini!',
+    options: [
+      'Total berat seluruh buah yang berhasil terjual adalah tepat 100 kg.',
+      'Buah Apel memiliki harga jual per kilogram yang paling mahal dibandingkan dengan jenis buah lainnya.',
+      'Walaupun berat Pisang yang terjual lebih banyak daripada Mangga, total pendapatan dari penjualan Mangga terbukti lebih besar daripada Pisang.',
+      'Total pendapatan bersih yang diperoleh Toko SEGAR dari penjualan kelima jenis buah tersebut adalah Rp 2.500.000.'
+    ],
     answers: [0, 2, 3] },
   { id: 8, type: 'multiselect',
-    text: 'Toko Laris Berkah menjual beras C4, menthik, dan rojo lele. Berdasarkan diagram batang stok beras Juli–Oktober 2024, manakah pernyataan yang BENAR? (centang yang benar)',
-    options: ['Stok beras rojo lele pada bulan Juli sama dengan stok beras menthik pada bulan Oktober.', 'Stok beras C4 pada bulan Juli sama dengan stok beras rojo lele pada bulan September.', 'Pada bulan Oktober, stok beras menthik yang paling banyak.', 'Stok beras C4 paling sedikit pada bulan Agustus.'],
+    text: 'Di Toko Laris Berkah menjual tiga macam jenis beras: beras C4, beras menthik, dan beras rojo lele. Di bawah ini merupakan diagram batang stok beras di Toko Laris Berkah dari bulan Juli sampai Oktober tahun 2024. Manakah pernyataan berikut yang benar!',
+    options: [
+      'Stok beras rojo lele pada bulan Juli sama dengan stok beras menthik pada bulan Oktober.',
+      'Stok beras C4 pada bulan Juli sama dengan stok beras rojo lele pada bulan September.',
+      'Pada bulan Oktober, stok beras menthik yang paling banyak.',
+      'Stok beras C4 paling sedikit pada bulan Agustus.'
+    ],
     answers: [1, 3] },
   { id: 9, type: 'truefalse',
     text: 'Berilah tanda centang pada pernyataan BENAR atau SALAH berikut!',
     statements: [
-      { text: 'Sebuah kelereng sangat cocok digunakan sebagai alat untuk mengukur luas permukaan buku gambar.', answer: false },
+      { text: 'Sebuah kelereng sangat cocok dan tepat digunakan sebagai alat untuk mengukur luas permukaan buku gambar.', answer: false }
+    ] },
+  { id: 10, type: 'truefalse',
+    text: 'Berilah tanda centang pada pernyataan BENAR atau SALAH berikut!',
+    statements: [
       { text: 'Di dalam sebuah gudang terdapat dua buah pipa. Pipa pertama panjangnya 450 cm dan pipa kedua panjangnya 3,5 m. Total panjang kedua pipa tersebut adalah 800 cm.', answer: false }
     ] },
-  { id: 10, type: 'short', text: 'Perhatikan gambar bangun datar berwarna biru pada kertas berpetak. Luas bangun datar tersebut adalah … satuan persegi.', answer: '' },
-  { id: 11, type: 'short', text: 'Volume sabun cuci tangan pada sebuah botol adalah 1 liter. Jika isinya dipindahkan ke botol yang volumenya 200 ml, maka banyak botol yang dibutuhkan adalah …', answer: '5' },
-  { id: 12, type: 'short', text: 'Perhatikan bangun belah ketupat ABCD. Jika besar sudut ABC = 75°, maka besar sudut BAD adalah …', answer: '105' },
-  { id: 13, type: 'short', text: 'Sebuah belah ketupat dapat dipotong menurut kedua garis diagonalnya yang saling menyilang. Hasil potongan tersebut berupa … buah segitiga siku-siku.', answer: '4' },
-  { id: 14, type: 'short', text: 'Dua buah trapesium sama kaki yang bentuk dan ukurannya sama persis, jika disusun saling membelakangi dan menempel pada sisi alasnya yang paling panjang, akan membentuk bangun datar ….', answer: 'jajargenjang' },
-  { id: 15, type: 'short', text: 'Volume bangun ruang pada gambar adalah … kubus satuan.', answer: '' },
-  { id: 16, type: 'short', text: 'Pak Budi membeli susu sebanyak 20 liter. Susu dijual dalam kemasan botol bervolume 1.000 cm³. Banyaknya botol yang dibutuhkan adalah …', answer: '20' },
-  { id: 17, type: 'short', text: 'Besar sudut pada bangun datar persegi panjang adalah … derajat.', answer: '90' },
-  { id: 18, type: 'short', text: 'Perhatikan tabel piktogram penjualan mobil (1 gambar = 1.000 mobil). Unit mobil yang terjual pada tahun 2021 adalah …', answer: '' },
-  { id: 19, type: 'short', text: 'Berdasarkan tabel piktogram penjualan mobil (1 gambar = 1.000 mobil). Selisih unit mobil yang terjual pada tahun 2022 dan 2023 adalah …', answer: '' },
-  { id: 20, type: 'essay', text: 'Di laboratorium sains, siswa kelas 4 merancang rumah kaca mini MUDA. Alas berbentuk persegi panjang panjang 120 cm dan lebar 80 cm. Ditutupi karpet sensor berbentuk persegi dengan sisi 40 cm. Berapa banyak lembar karpet sensor yang dibutuhkan? Tuliskan langkah-langkah penyelesaiannya!', answer: 'Luas alas = 120 × 80 = 9.600 cm². Luas karpet = 40 × 40 = 1.600 cm². Banyak karpet = 9.600 ÷ 1.600 = 6 lembar.' },
-  { id: 21, type: 'essay', text: 'Sebuah tangki air berbentuk balok panjang 50 cm, lebar 20 cm, tinggi 40 cm. Tangki hanya boleh diisi ½ dari kapasitas penuhnya. Berapa Liter volume air nutrisi yang harus dimasukkan? Tuliskan langkah-langkah penyelesaiannya!', answer: 'Volume penuh = 50 × 20 × 40 = 40.000 cm³ = 40 Liter. Volume ½ = 40 ÷ 2 = 20 Liter.' },
-  { id: 22, type: 'essay', text: 'Perhatikan tangram unta. Bandingkan potongan berwarna biru tua (di leher atas) dan oranye (di bagian kaki belakang). Apakah keduanya memiliki nama bentuk bangun datar yang sama? Jelaskan letak perbedaannya!', answer: '' },
-  { id: 23, type: 'essay', text: 'Hitung seluruh potongan tangram unta. Ada berapa bangun berbentuk SEGITIGA dan ada berapa bangun berbentuk SEGIEMPAT? Buat kesimpulan singkat mengapa bangun segitiga sangat penting dalam menyusun kreasi tangram hewan!', answer: '' },
-  { id: 24, type: 'essay', text: 'Sebutkan 1 jenis bangun datar yang ingin kamu tambahkan pada tangram Unta agar terlihat membawa beban atau memiliki ekor! Sebutkan alasanmu mengapa memilih bangun datar tersebut!', answer: '' },
-  { id: 25, type: 'essay', text: 'Jelaskan ide kreatifmu: di sebelah mana bangun tersebut akan kamu tempelkan dan akan berubah menjadi bagian tubuh/benda apa potongan tambahan tersebut?', answer: '' }
+  { id: 11, type: 'kertas', text: 'Perhatikan gambar bangun datar berwarna biru pada kertas berpetak. Luas bangun datar tersebut adalah … satuan persegi.' },
+  { id: 12, type: 'kertas', text: 'Volume sabun cuci tangan pada sebuah botol adalah 1 liter. Jika isinya dipindahkan ke botol yang volumenya 200 ml, maka banyak botol yang dibutuhkan adalah …' },
+  { id: 13, type: 'kertas', text: 'Perhatikan bangun belah ketupat ABCD. Jika besar sudut ABC = 75°, maka besar sudut BAD adalah …' },
+  { id: 14, type: 'kertas', text: 'Sebuah belah ketupat dapat dipotong menurut kedua garis diagonalnya yang saling menyilang. Hasil potongan tersebut berupa … buah segitiga siku-siku.' },
+  { id: 15, type: 'kertas', text: 'Dua buah trapesium sama kaki yang bentuk dan ukurannya sama persis, jika disusun saling membelakangi dan menempel pada sisi alasnya yang paling panjang, akan membentuk bangun datar ….' },
+  { id: 16, type: 'kertas', text: 'Volume bangun ruang pada gambar adalah … kubus satuan.' },
+  { id: 17, type: 'kertas', text: 'Pak Budi membeli susu sebanyak 20 liter. Susu dijual dalam kemasan botol bervolume 1.000 cm³. Banyaknya botol yang dibutuhkan adalah …' },
+  { id: 18, type: 'kertas', text: 'Besar sudut pada bangun datar persegi panjang adalah … derajat.' },
+  { id: 19, type: 'kertas', text: 'Perhatikan tabel piktogram penjualan mobil (1 gambar = 1.000 mobil). Unit mobil yang terjual pada tahun 2021 adalah …' },
+  { id: 20, type: 'kertas', text: 'Berdasarkan tabel piktogram penjualan mobil (1 gambar = 1.000 mobil). Selisih unit mobil yang terjual pada tahun 2022 dan 2023 adalah …' },
+  { id: 21, type: 'kertas', text: 'Di laboratorium sains, siswa kelas 4 merancang rumah kaca mini MUDA. Alas berbentuk persegi panjang panjang 120 cm dan lebar 80 cm. Ditutupi karpet sensor berbentuk persegi dengan sisi 40 cm. Berapa banyak lembar karpet sensor yang dibutuhkan? Tuliskan langkah-langkah penyelesaiannya!' },
+  { id: 22, type: 'kertas', text: 'Sebuah tangki air berbentuk balok panjang 50 cm, lebar 20 cm, tinggi 40 cm. Tangki hanya boleh diisi ½ dari kapasitas penuhnya. Berapa Liter volume air nutrisi yang harus dimasukkan? Tuliskan langkah-langkah penyelesaiannya!' },
+  { id: 23, type: 'kertas', text: 'Perhatikan tangram unta. Bandingkan potongan berwarna biru tua (di leher atas) dan oranye (di bagian kaki belakang). Apakah keduanya memiliki nama bentuk bangun datar yang sama? Jelaskan letak perbedaannya!' },
+  { id: 24, type: 'kertas', text: 'Hitung seluruh potongan tangram unta. Ada berapa bangun berbentuk SEGITIGA dan ada berapa bangun berbentuk SEGIEMPAT? Buat kesimpulan singkat mengapa bangun segitiga sangat penting dalam menyusun kreasi tangram hewan!' },
+  { id: 25, type: 'kertas', text: 'Sebutkan 1 jenis bangun datar yang ingin kamu tambahkan pada tangram Unta! Sebutkan alasanmu dan jelaskan di sebelah mana akan ditempelkan serta akan menjadi bagian apa!' }
 ];
 
 // ===================== PAKET 2: BAHASA INDONESIA KELAS 4 =====================
@@ -2727,6 +2760,7 @@ function isAnswered(qIdx) {
   if (q.type === 'multiselect') return ans.ms && ans.ms.length > 0;
   if (q.type === 'short') return ans.short && ans.short.trim().length > 0;
   if (q.type === 'essay') return ans.essay && ans.essay.trim().length > 0;
+  if (q.type === 'kertas') return true; // cukup centang LPS
   return false;
 }
 
@@ -2740,7 +2774,7 @@ function renderQuestion(pos) {
   const card = document.getElementById('questionCard');
   document.getElementById('examStudentName').textContent = `👤 ${currentUser} – ${currentClass}`;
 
-  let typeLabel = q.type === 'single' ? 'Pilihan Ganda' : q.type === 'truefalse' ? 'Benar / Salah' : q.type === 'multiselect' ? 'Pilih Semua yang Benar' : q.type === 'short' ? 'Isian Singkat' : 'Uraian';
+  let typeLabel = q.type === 'single' ? 'Pilihan Ganda' : q.type === 'truefalse' ? 'Benar / Salah' : q.type === 'multiselect' ? 'Pilih Semua yang Benar' : q.type === 'short' ? 'Isian Singkat' : q.type === 'kertas' ? '✏️ Jawab di Kertas' : 'Uraian';
 
   // Image for the question text
   const qImg = getImg(idx, 'soal');
@@ -2808,6 +2842,19 @@ function renderQuestion(pos) {
         oninput="selectShort(${idx}, this.value)"
         style="width:100%;padding:12px 16px;border:2px solid var(--border);border-radius:12px;font-family:Nunito,sans-serif;font-size:15px;font-weight:600;box-sizing:border-box;">
     </div>`;
+  }
+
+  if (q.type === 'kertas') {
+    html += `<div class="kertas-notice">
+      <span style="font-size:24px;">✏️</span>
+      <div>
+        <div style="font-size:13px;font-weight:800;margin-bottom:2px;">Jawab di Lembar Kertas</div>
+        <div style="font-size:12px;font-weight:600;opacity:0.8;">Tuliskan jawabanmu di kertas yang tersedia, kemudian centang Langkah Penyelesaian Soal di bawah ini.</div>
+      </div>
+    </div>`;
+    // Auto-mark as answered via langkah saja
+    if (!examAnswers[idx]) examAnswers[idx] = {};
+    if (examAnswers[idx].kertas === undefined) examAnswers[idx].kertas = false;
   }
 
   if (q.type === 'essay') {
@@ -4641,7 +4688,7 @@ function loadSkoringUI() {
 function getSkorOtomatis(qType) {
   if (qType === 'single') return _skoring.pg || 1;
   if (qType === 'multiselect' || qType === 'truefalse') return _skoring.bs || 1;
-  return 0; // isian dan essay tidak ada skor otomatis
+  return 0; // isian, essay, kertas tidak ada skor otomatis
 }
 
 function getSkorAlasan(qType) {
@@ -4658,7 +4705,8 @@ const typeStyle = {
   multiselect: { bg:'#ede9fe', text:'#5b21b6', label:'Multi' },
   truefalse:   { bg:'#dcfce7', text:'#166534', label:'B/S' },
   short:       { bg:'#ffedd5', text:'#9a3412', label:'Isian' },
-  essay:       { bg:'#fce7f3', text:'#9d174d', label:'Essay' }
+  essay:       { bg:'#fce7f3', text:'#9d174d', label:'Essay' },
+  kertas:      { bg:'#e0f2fe', text:'#0369a1', label:'Kertas' }
 };
 async function renderPenilaian() {
   const paket = document.getElementById('nilaiPaketSelector').value;
