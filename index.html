@@ -1785,6 +1785,53 @@
       <!-- Settings Panel -->
       <div id="panel-settings" class="admin-panel">
         <div class="settings-section">
+          <h3>🎯 Pengaturan Skoring per Tipe Soal</h3>
+          <div style="font-size:13px;color:var(--muted);font-weight:600;margin-bottom:12px;">
+            Skor otomatis dihitung dari jawaban siswa. Skor alasan/manual diinput guru di panel Penilaian.
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+            <div style="background:#dbeafe20;border:1.5px solid #dbeafe;border-radius:12px;padding:12px;">
+              <div style="font-weight:800;font-size:13px;color:#1e40af;margin-bottom:8px;">📘 Pilihan Ganda</div>
+              <div class="setting-row" style="margin-bottom:8px;">
+                <label style="font-size:13px;">Skor otomatis (benar)</label>
+                <input type="number" id="skorPG" min="0" max="10" step="0.5" value="1" style="width:60px;padding:4px 8px;border:1.5px solid #dbeafe;border-radius:8px;font-family:Nunito,sans-serif;font-weight:700;text-align:center;">
+              </div>
+              <div class="setting-row">
+                <label style="font-size:13px;">Skor alasan (manual guru)</label>
+                <input type="number" id="skorPGAlasan" min="0" max="10" step="0.5" value="1" style="width:60px;padding:4px 8px;border:1.5px solid #dbeafe;border-radius:8px;font-family:Nunito,sans-serif;font-weight:700;text-align:center;">
+              </div>
+            </div>
+            <div style="background:#dcfce720;border:1.5px solid #dcfce7;border-radius:12px;padding:12px;">
+              <div style="font-weight:800;font-size:13px;color:#166534;margin-bottom:8px;">✅ Benar/Salah & Multi</div>
+              <div class="setting-row" style="margin-bottom:8px;">
+                <label style="font-size:13px;">Skor otomatis (benar)</label>
+                <input type="number" id="skorBS" min="0" max="10" step="0.5" value="1" style="width:60px;padding:4px 8px;border:1.5px solid #dcfce7;border-radius:8px;font-family:Nunito,sans-serif;font-weight:700;text-align:center;">
+              </div>
+              <div class="setting-row">
+                <label style="font-size:13px;">Skor alasan (manual guru)</label>
+                <input type="number" id="skorBSAlasan" min="0" max="10" step="0.5" value="1" style="width:60px;padding:4px 8px;border:1.5px solid #dcfce7;border-radius:8px;font-family:Nunito,sans-serif;font-weight:700;text-align:center;">
+              </div>
+            </div>
+            <div style="background:#ffedd520;border:1.5px solid #ffedd5;border-radius:12px;padding:12px;">
+              <div style="font-weight:800;font-size:13px;color:#9a3412;margin-bottom:8px;">📝 Isian Singkat</div>
+              <div class="setting-row">
+                <label style="font-size:13px;">Skor per soal (guru koreksi)</label>
+                <input type="number" id="skorIsian" min="0" max="10" step="0.5" value="1" style="width:60px;padding:4px 8px;border:1.5px solid #ffedd5;border-radius:8px;font-family:Nunito,sans-serif;font-weight:700;text-align:center;">
+              </div>
+            </div>
+            <div style="background:#fce7f320;border:1.5px solid #fce7f3;border-radius:12px;padding:12px;">
+              <div style="font-weight:800;font-size:13px;color:#9d174d;margin-bottom:8px;">📄 Essay / Uraian</div>
+              <div class="setting-row">
+                <label style="font-size:13px;">Skor per soal (guru koreksi)</label>
+                <input type="number" id="skorEssay" min="0" max="10" step="0.5" value="1" style="width:60px;padding:4px 8px;border:1.5px solid #fce7f3;border-radius:8px;font-family:Nunito,sans-serif;font-weight:700;text-align:center;">
+              </div>
+            </div>
+          </div>
+          <div id="skorPreview" style="background:#f0fdf4;border:1.5px solid #10b981;border-radius:12px;padding:12px;margin-bottom:12px;font-size:13px;font-weight:700;color:#065f46;"></div>
+          <button class="btn-sm primary" onclick="saveSkoring()">💾 Simpan Pengaturan Skoring</button>
+        </div>
+
+        <div class="settings-section">
           <h3>⏱️ Pengaturan Waktu Ujian</h3>
           <div class="setting-row">
             <label>Durasi Ujian (menit)</label>
@@ -4869,6 +4916,73 @@ async function deleteCurrentImg(idx) {
 }
 
 
+
+
+// ===================== SKORING SETTINGS =====================
+let _skoring = {
+  pg: 1, pgAlasan: 1,
+  bs: 1, bsAlasan: 1,
+  isian: 1, essay: 1
+};
+
+function updateSkorPreview() {
+  const pg = parseFloat(document.getElementById('skorPG')?.value || 1);
+  const pgA = parseFloat(document.getElementById('skorPGAlasan')?.value || 1);
+  const bs = parseFloat(document.getElementById('skorBS')?.value || 1);
+  const bsA = parseFloat(document.getElementById('skorBSAlasan')?.value || 1);
+  const isian = parseFloat(document.getElementById('skorIsian')?.value || 1);
+  const essay = parseFloat(document.getElementById('skorEssay')?.value || 1);
+  const preview = document.getElementById('skorPreview');
+  if (!preview) return;
+  preview.innerHTML = '📊 Preview: PG = ' + (pg+pgA) + ' poin/soal &nbsp;|&nbsp; B/S & Multi = ' + (bs+bsA) + ' poin/soal &nbsp;|&nbsp; Isian = ' + isian + ' poin/soal &nbsp;|&nbsp; Essay = ' + essay + ' poin/soal';
+}
+
+async function saveSkoring() {
+  _skoring = {
+    pg: parseFloat(document.getElementById('skorPG').value) || 1,
+    pgAlasan: parseFloat(document.getElementById('skorPGAlasan').value) || 1,
+    bs: parseFloat(document.getElementById('skorBS').value) || 1,
+    bsAlasan: parseFloat(document.getElementById('skorBSAlasan').value) || 1,
+    isian: parseFloat(document.getElementById('skorIsian').value) || 1,
+    essay: parseFloat(document.getElementById('skorEssay').value) || 1
+  };
+  try {
+    await sbUpsert('settings', { id: 1, skoring: _skoring }, 'id');
+    alert('✅ Pengaturan skoring berhasil disimpan!');
+    updateSkorPreview();
+  } catch(e) { alert('❌ Gagal simpan: ' + e.message); }
+}
+
+function loadSkoringUI() {
+  if (document.getElementById('skorPG')) {
+    document.getElementById('skorPG').value = _skoring.pg || 1;
+    document.getElementById('skorPGAlasan').value = _skoring.pgAlasan || 1;
+    document.getElementById('skorBS').value = _skoring.bs || 1;
+    document.getElementById('skorBSAlasan').value = _skoring.bsAlasan || 1;
+    document.getElementById('skorIsian').value = _skoring.isian || 1;
+    document.getElementById('skorEssay').value = _skoring.essay || 1;
+    // Tambah listener untuk preview
+    ['skorPG','skorPGAlasan','skorBS','skorBSAlasan','skorIsian','skorEssay'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.oninput = updateSkorPreview;
+    });
+    updateSkorPreview();
+  }
+}
+
+function getSkorOtomatis(qType) {
+  if (qType === 'single') return _skoring.pg || 1;
+  if (qType === 'multiselect' || qType === 'truefalse') return _skoring.bs || 1;
+  return 0; // isian dan essay tidak ada skor otomatis
+}
+
+function getSkorAlasan(qType) {
+  if (qType === 'single') return _skoring.pgAlasan || 1;
+  if (qType === 'multiselect' || qType === 'truefalse') return _skoring.bsAlasan || 1;
+  if (qType === 'short') return _skoring.isian || 1;
+  if (qType === 'essay') return _skoring.essay || 1;
+  return 1;
+}
 
 // ===================== PENILAIAN =====================
 const typeStyle = {
