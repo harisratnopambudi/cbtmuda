@@ -2101,23 +2101,23 @@ const QUESTIONS_P2 = [
     statements: [
       { text: 'Kata "kemudian" merupakan konjungsi antar kalimat.', answer: true }
     ] },
-  { id: 11, type: 'multiselect',
+  { id: 11, type: 'multiselect', noAlasan: true,
     text: 'Sikap yang sesuai dengan nilai Pancasila adalah … (pilih 2 jawaban)',
     options: ['Menghargai pendapat teman', 'Mengejek budaya daerah lain', 'Membantu teman yang kesulitan', 'Memaksakan kehendak'],
     answers: [0, 2] },
-  { id: 12, type: 'multiselect',
+  { id: 12, type: 'multiselect', noAlasan: true,
     text: 'Ciri-ciri teks narasi adalah … (pilih 3 jawaban)',
     options: ['Memiliki tokoh', 'Memiliki urutan peristiwa', 'Hanya berisi angka', 'Memiliki awal, tengah, akhir'],
     answers: [0, 1, 3] },
-  { id: 13, type: 'multiselect',
+  { id: 13, type: 'multiselect', noAlasan: true,
     text: 'Kalimat yang termasuk fakta adalah … (pilih 2 jawaban)',
     options: ['Sekolah mengadakan lomba kebersihan.', 'Menurut Sinta, sekolahnya paling bagus.', 'Upacara dilaksanakan hari Senin.', 'Pelajaran IPA sangat menyenangkan.'],
     answers: [0, 2] },
-  { id: 14, type: 'multiselect',
+  { id: 14, type: 'multiselect', noAlasan: true,
     text: 'Sikap tokoh perumus Pancasila yang dapat diteladani adalah … (pilih 3 jawaban)',
     options: ['Cinta tanah air', 'Bekerja sama', 'Memaksakan pendapat', 'Menghargai perbedaan'],
     answers: [0, 1, 3] },
-  { id: 15, type: 'multiselect',
+  { id: 15, type: 'multiselect', noAlasan: true,
     text: 'Konjungsi antar kalimat ditunjukkan oleh kata … (pilih 3 jawaban)',
     options: ['Namun', 'Oleh karena itu', 'Kemudian', 'Tetapi'],
     answers: [0, 1, 2] },
@@ -2147,7 +2147,7 @@ const QUESTIONS_P3 = [
     options: ['Memiliki 3 sisi sama panjang dan 3 sudut lancip.', 'Memiliki 4 sisi, di mana sepasang sisinya sejajar.', 'Memiliki 3 sisi yang panjangnya berbeda dan 1 sudut tumpul.', 'Memiliki 1 sudut siku-siku, 2 sudut lancip, dan 2 sisi yang sama panjang.'],
     answer: 3 },
   { id: 2, type: 'single',
-    text: 'Fatimah menemukan petunjuk: "Aku memiliki jumlah sudut yang berdekatan 180 derajat. Sisi-sisiku yang berhadapan sejajar dan sama panjang. Sudut-sudutku yang berhadapan sama besar. Kedua diagonalku tidak saling membagi dua ruas garis sama panjang." Bangun datar apakah yang sedang dicari Fatimah?',
+    text: 'Fatimah menemukan selembar kertas petunjuk yang bertuliskan:<br>- Aku memiliki jumlah sudut yang berdekatan 180 derajat<br>- Sisi-sisiku yang berhadapan sejajar dan sama panjang.<br>- Sudut-sudutku yang berhadapan sama besar.<br>- Kedua diagonalku tidak saling membagi dua sama panjang dan berpotongan tegak lurus<br><br>Berdasarkan petunjuk tersebut, bangun datar apakah yang sedang dicari Fatimah?',
     options: ['Jajargenjang', 'Belah ketupat', 'Persegi panjang', 'Trapesium sama kaki'],
     answer: 0 },
   { id: 3, type: 'single',
@@ -2162,15 +2162,15 @@ const QUESTIONS_P3 = [
     text: 'Berikut data banyak apel yang terjual di suatu toko buah selama 5 hari:<br><br>(Lihat tabel pada lembar soal)<br><br>Diagram gambar yang mewakili data tersebut, jika 1 gambar apel mewakili 5 kg apel, untuk hari Rabu adalah …',
     options: ['5 gambar', '6 gambar', '7 gambar', '8 gambar'],
     answer: 2 },
-  { id: 6, type: 'multiselect',
+  { id: 6, type: 'multiselect', noAlasan: true,
     text: 'Sebuah robot pembuat garis di layar komputer sedang diprogram menggunakan blok kode sederhana. Robot tersebut menerima perintah pergerakan berulang sebagai berikut:<br>1. Maju 15 langkah.<br>2. Belok kanan tepat 90 derajat.<br>3. Ulangi langkah 1 dan 2 sebanyak 4 kali putaran.<br><br>Berdasarkan lintasan garis yang ditinggalkan oleh robot tersebut, manakah pernyataan di bawah ini yang benar mengenai sifat bangun datar yang terbentuk?',
     options: ['Bangun tersebut memiliki 4 sumbu simetri lipat.', 'Kedua garis diagonalnya berpotongan dan membentuk sudut siku-siku.', 'Bangun tersebut memiliki dua sudut lancip dan dua sudut tumpul.', 'Bangun tersebut memiliki sisi yang berhadapan sejajar, tetapi panjangnya berbeda-beda.'],
     answers: [0, 1] },
-  { id: 7, type: 'multiselect',
+  { id: 7, type: 'multiselect', noAlasan: true,
     text: 'Perhatikan diagram gambar data banyak pengunjung di suatu pameran buku selama 5 hari.<br><br>(Lihat diagram pada lembar soal — 1 gambar = 50 orang)<br><br>Berdasarkan diagram tersebut, banyak pengunjung pameran lebih dari 300 orang terjadi pada hari …',
     options: ['Rabu', 'Jumat', 'Sabtu', 'Minggu'],
     answers: [1, 3] },
-  { id: 8, type: 'multiselect',
+  { id: 8, type: 'multiselect', noAlasan: true,
     text: 'Perhatikan diagram batang pekerjaan orang tua siswa kelas 5. Manakah pernyataan yang TEPAT?',
     options: ['Orang tua siswa kelas 5 paling banyak bekerja sebagai pedagang.', 'Orang tua siswa kelas 5 yang paling sedikit bekerja sebagai Pegawai Negeri.', 'Orang tua yang bekerja sebagai pegawai negeri lebih banyak dari pegawai swasta.', 'Selisih banyak orang tua yang bekerja sebagai wiraswasta dan petani adalah 2 orang.'],
     answers: [1, 3] },
@@ -2192,13 +2192,13 @@ const QUESTIONS_P3 = [
   { id: 16, type: 'kertas', text: 'Sebuah taplak meja berukuran panjang 75 cm dan lebar 50 cm. Di sekelilingnya taplak dihias pita. Pita yang dibutuhkan untuk menghias adalah …' },
   { id: 17, type: 'kertas', text: 'Sebuah jendela rumah berbentuk persegi memiliki keliling 84 cm. Maka panjang sisi jendela adalah … cm.' },
   { id: 18, type: 'kertas', text: 'Jika diketahui panjang diagonal pertama sebuah layang-layang sama dengan sisi persegi yang luasnya 64 cm² dan panjang diagonal kedua adalah 6 cm, maka luas layang-layang tersebut adalah …' },
-  { id: 19, type: 'kertas', text: 'Jika 1 gambar ⚽ menyatakan 4 orang yang suka bermain bola, maka 4,5 gambar ⚽ menyatakan ada … orang yang suka bermain bola.' },
+  { id: 19, type: 'kertas', text: 'Jika 1 gambar ⚽ menyatakan 4 orang yang suka bermain bola, maka ⚽⚽⚽⚽⚽ menyatakan ada … orang yang suka bermain bola.' },
   { id: 20, type: 'kertas', text: 'Perhatikan diagram batang berikut! Banyaknya siswa yang memperoleh nilai lebih dari 60 sebanyak …' },
-  { id: 21, type: 'kertas', text: 'Sebuah perusahaan mainan ingin memproduksi dua jenis produk baru: Layang-layang hias dan Papan rambu peringatan berbentuk belah ketupat. Beberapa pekerja di pabrik sering kali keliru membedakan potongan kerangka kayu untuk layang-layang dan belah ketupat, sehingga banyak bahan yang terbuang karena salah potong. Sebutkan minimal 2 persamaan dan 2 perbedaan mendasar dari kedua bangun tersebut agar para pekerja pabrik tidak salah lagi dalam mengidentifikasi bahan! Tuliskan langkah-langkah penyelesaiannya!' },
-  { id: 22, type: 'kertas', text: 'Pak Kepala Desa ingin membuat sebuah taman bermain untuk anak-anak. Terdapat dua pilihan rancangan lahan: Rancangan A (persegi panjang: panjang 12 m, lebar 8 m) dan Rancangan B (persegi: sisi 10 m). Di sekeliling taman akan dipasang pagar besi, dan seluruh bagian dalam ditanami rumput hias. Hitunglah keliling dan luas dari masing-masing rancangan! Lalu, bandingkan rancangan mana yang membutuhkan pagar besi paling panjang, dan rancangan mana yang membutuhkan rumput hias paling banyak! Tuliskan langkah-langkah penyelesaiannya!' },
-  { id: 23, type: 'kertas', text: 'Jika dana desa saat ini sangat terbatas untuk membeli pagar besi, namun mereka mendapat sumbangan rumput hias dalam jumlah yang sangat berlimpah dari warga, rancangan manakah yang paling tepat dan menguntungkan untuk dipilih oleh Pak Kades? Jelaskan alasanmu! Tuliskan langkah-langkah penyelesaiannya!' },
-  { id: 24, type: 'kertas', text: 'Guru olahraga mendata pilihan kegiatan ekstrakurikuler 40 siswa kelas 5. Catatan: 15 anak memilih Futsal; anak yang memilih Pramuka 3 lebih sedikit dari Futsal; 5 anak memilih Seni Tari; sisanya memilih Melukis. Sajikan data ke dalam bentuk tabel sederhana! Lalu, bandingkan dan sebutkan selisih antara jumlah siswa yang menyukai kegiatan lapangan (Futsal & Pramuka) dengan kegiatan di dalam ruangan (Seni Tari & Melukis)! Tuliskan langkah-langkah penyelesaiannya!' },
-  { id: 25, type: 'kertas', text: 'Berdasarkan data tabel ekstrakurikuler yang kamu buat: a) Kesimpulan apa yang bisa kamu tarik mengenai karakteristik dan minat bakat siswa kelas 5 tersebut? b) Kepala Sekolah memiliki aturan bahwa sebuah ekstrakurikuler baru boleh diadakan jika pesertanya minimal berjumlah 10 orang. Berdasarkan datamu, ada ekstrakurikuler yang terancam dibatalkan. Berikan ide kreatif atau solusimu agar siswa yang memilih kegiatan tersebut tidak kecewa dan kegiatannya tetap bisa berjalan! Tuliskan jawabanmu secara lengkap!' }
+  { id: 21, type: 'kertas', text: 'Sebuah perusahaan mainan ingin memproduksi dua jenis produk baru: Layang-layang hias dan Papan rambu peringatan berbentuk belah ketupat. Tim desainer memberikan potongan bambu dan sisa kain sisa produksi yang panjangnya bervariasi. Namun, beberapa pekerja di pabrik sering kali keliru membedakan potongan kerangka kayu untuk layang-layang dan belah ketupat, sehingga banyak bahan yang terbuang karena salah potong.<br>Sebutkan minimal 2 persamaan dan 2 perbedaan mendasar dari kedua bangun tersebut agar para pekerja pabrik tidak salah lagi dalam mengidentifikasi bahan!<br><br><b>Bacalah teks berikut untuk menjawab soal nomor 22 dan nomor 23!</b><br>Pak Kepala Desa ingin membuat sebuah taman bermain untuk anak-anak. Saat ini terdapat dua pilihan rancangan lahan:<br>• Rancangan A: Taman berbentuk persegi panjang dengan ukuran panjang 12 meter dan lebar 8 meter.<br>• Rancangan B: Taman berbentuk persegi dengan ukuran panjang sisi 10 meter.<br>Di sekeliling taman tersebut akan dipasang pagar besi agar aman, dan seluruh bagian dalam taman akan ditanami rumput hias.' },
+  { id: 22, type: 'kertas', text: 'Hitunglah keliling dan luas dari masing-masing rancangan! Lalu, bandingkan rancangan mana yang membutuhkan pagar besi paling panjang, dan rancangan mana yang membutuhkan rumput hias paling banyak!' },
+  { id: 23, type: 'kertas', text: 'Jika dana desa saat ini sangat terbatas untuk membeli pagar besi, namun mereka mendapat sumbangan rumput hias dalam jumlah yang sangat berlimpah dari warga, rancangan manakah yang paling tepat dan menguntungkan untuk dipilih oleh Pak Kades? Jelaskan alasanmu!' },
+  { id: 24, type: 'kertas', text: 'Guru olahraga mendata pilihan kegiatan ekstrakurikuler 40 siswa kelas 5 SD. Berikut adalah catatan wali kelas: "Sebanyak 15 anak memilih Futsal. Anak yang memilih Pramuka jumlahnya 3 lebih sedikit dari anak yang memilih Futsal. Ada 5 anak yang menyukai Seni Tari. Sedangkan sisanya memilih ekstrakurikuler Melukis."<br>Sajikan data di atas ke dalam bentuk tabel sederhana! Lalu, bandingkan dan sebutkan selisih antara jumlah siswa yang menyukai kegiatan lapangan (Futsal &amp; Pramuka) dengan kegiatan di dalam ruangan (Seni Tari &amp; Melukis)!' },
+  { id: 25, type: 'kertas', text: 'Berdasarkan data tabel yang kamu buat,<br>a. Kesimpulan apa yang bisa kamu tarik mengenai karakteristik dan minat bakat siswa kelas 5 tersebut?<br>b. Kepala Sekolah memiliki aturan bahwa sebuah ekstrakurikuler baru boleh diadakan jika pesertanya minimal berjumlah 10 orang. Berdasarkan datamu, ada ekstrakurikuler yang terancam dibatalkan. Berikan ide kreatif atau solusimu agar siswa yang memilih kegiatan tersebut tidak kecewa dan kegiatannya tetap bisa berjalan!' }
 ];
 
 // ===================== PAKET 4: BAHASA INDONESIA KELAS 5 =====================
@@ -2248,23 +2248,23 @@ const QUESTIONS_P4 = [
     statements: [
       { text: 'Teks persuasif bertujuan memengaruhi pembaca.', answer: true }
     ] },
-  { id: 11, type: 'multiselect',
+  { id: 11, type: 'multiselect', noAlasan: true,
     text: 'Contoh sikap gotong royong adalah .... (pilih 3 jawaban)',
     options: ['Membersihkan lingkungan bersama', 'Membantu tetangga terkena musibah', 'Membiarkan teman bekerja sendiri', 'Bekerja sama saat piket kelas'],
     answers: [0, 1, 3] },
-  { id: 12, type: 'multiselect',
+  { id: 12, type: 'multiselect', noAlasan: true,
     text: 'Ciri wilayah pantai adalah .... (pilih 3 jawaban)',
     options: ['Udara panas', 'Banyak nelayan', 'Tanah subur untuk sayuran pegunungan', 'Dekat laut'],
     answers: [0, 1, 3] },
-  { id: 13, type: 'multiselect',
+  { id: 13, type: 'multiselect', noAlasan: true,
     text: 'Kalimat yang termasuk kalimat majemuk setara adalah .... (pilih 3 jawaban)',
     options: ['Dina membaca buku dan Rani menulis tugas.', 'Ayah bekerja sedangkan ibu memasak.', 'Saya pergi ke sekolah.', 'Edo bermain bola lalu Beni bersepeda.'],
     answers: [0, 1, 3] },
-  { id: 14, type: 'multiselect',
+  { id: 14, type: 'multiselect', noAlasan: true,
     text: 'Ciri teks persuasif adalah .... (pilih 3 jawaban)',
     options: ['Mengajak pembaca', 'Menggunakan kata ajakan', 'Berisi langkah percobaan', 'Bertujuan memengaruhi pembaca'],
     answers: [0, 1, 3] },
-  { id: 15, type: 'multiselect',
+  { id: 15, type: 'multiselect', noAlasan: true,
     text: 'Pernyataan yang termasuk ide pendukung adalah .... (pilih 3 jawaban)',
     options: ['Pegunungan memiliki udara sejuk.', 'Banyak petani menanam sayuran di pegunungan.', 'Indonesia memiliki wilayah pegunungan.', 'Tanah pegunungan subur untuk pertanian.'],
     answers: [0, 1, 3] },
@@ -2932,7 +2932,7 @@ function renderQuestion(pos) {
         ⚠️ Isi dulu Alasan Jawaban sebelum lanjut!
       </div>
     `;
-  } else if (!isBiPaket) {
+  } else if (!isBiPaket && !q.noAlasan) {
     const langkahDone = examAnswers[idx]?.langkah === true;
     html += `
       <button class="langkah-btn ${langkahDone ? 'filled' : ''}" onclick="toggleLangkah(${idx})" id="langkahBtn_${idx}">
@@ -3560,8 +3560,53 @@ async function renderDashboard() {
     // Helper hitung total nilai = skor otomatis + langkah + essay
     function getTotalNilai(r) {
       if (!r) return null;
+      const isBi   = r.paket === 'p2' || r.paket === 'p4';
+      const isMtk5 = r.paket === 'p3';
       const nm = nilaiMap[`${r.class_name}::${r.nama}::${r.paket}`] || {};
       const langkahScores = nm.langkah_scores || {};
+
+      if (isBi) {
+        const biQs = resolveQuestions(r.paket === 'p2' ? '2' : '4');
+        const answers = r.answers || {};
+        let autoMentah = 0;
+        biQs.forEach((q, qi) => {
+          if (q.id > 15) return;
+          const ans = answers[qi] || {};
+          if (q.type === 'single') {
+            if (ans.choice === q.answer) autoMentah += 1;
+          } else if (q.type === 'truefalse') {
+            if (q.statements && q.statements.every((st, si) => ans.tf && ans.tf[si] === st.answer)) autoMentah += 1;
+          } else if (q.type === 'multiselect') {
+            if (JSON.stringify([...(q.answers||[])].sort()) === JSON.stringify([...(ans.ms||[])].sort())) autoMentah += 1;
+          }
+        });
+        const totalGuru = Object.values(langkahScores).reduce((a,b) => a + (parseFloat(b)||0), 0);
+        const skorMentah = autoMentah + totalGuru;
+        return Math.min(100, Math.round((skorMentah / 55) * 100 * 10) / 10);
+      }
+
+      if (isMtk5) {
+        // MTK Kelas 5: auto soal 1–10, guru soal 1–5 alasan + 9–10 alasan + 11–25 manual
+        const mtkQs = resolveQuestions('3');
+        const answers = r.answers || {};
+        let autoMentah = 0;
+        mtkQs.forEach((q, qi) => {
+          if (q.id > 10) return;
+          const ans = answers[qi] || {};
+          if (q.type === 'single') {
+            if (ans.choice === q.answer) autoMentah += 1;
+          } else if (q.type === 'multiselect') {
+            if (JSON.stringify([...(q.answers||[])].sort()) === JSON.stringify([...(ans.ms||[])].sort())) autoMentah += 1;
+          } else if (q.type === 'truefalse') {
+            if (q.statements && q.statements.every((st, si) => ans.tf && ans.tf[si] === st.answer)) autoMentah += 1;
+          }
+        });
+        const totalGuru = Object.values(langkahScores).reduce((a,b) => a + (parseFloat(b)||0), 0);
+        const skorMentah = autoMentah + totalGuru;
+        // Nilai MTK5 = (skor mentah / 67) × 100
+        return Math.min(100, Math.round((skorMentah / 67) * 100 * 10) / 10);
+      }
+
       const essayScores = nm.essay_scores || {};
       const totalLangkah = Object.values(langkahScores).reduce((a,b) => a + (parseFloat(b)||0), 0);
       const totalEssay = Object.values(essayScores).reduce((a,b) => a + (parseFloat(b)||0), 0);
@@ -4245,9 +4290,51 @@ function renderKunciJawaban() {
 
   let html = `<div id="kunciList" ${isEdit ? 'class="kunci-edit-mode"' : ''}>`;
 
+  const currentPaket = document.getElementById('adminPaketSelector')?.value || '1';
+  const isBiKunci    = currentPaket === '2' || currentPaket === '4';
+  const isMtkP3Kunci = currentPaket === '3' || currentPaket === '1';
+
   ACTIVE_QUESTIONS.forEach((q, idx) => {
     const changed = _kunciChanges[idx];
     let answerHtml = '';
+
+    // MTK Kelas 5: soal 11–25 = Dinilai Guru
+    if (isMtkP3Kunci && q.id >= 11 && q.id <= 25) {
+      const catLabel = q.id <= 20 ? 'Isian (max 3)' : 'Essay (max 4)';
+      const dg = '<span style="background:#fef3c7;color:#92400e;padding:5px 14px;border-radius:8px;font-weight:800;font-size:13px;display:inline-flex;align-items:center;gap:6px;">'
+               + '✏️ Dinilai Guru '
+               + '<span style="font-weight:500;font-size:12px;color:#b45309;">(' + catLabel + ')</span>'
+               + '</span>';
+      const soalText = q.text.replace(/<br>/g,' ').replace(/<[^>]+>/g,'').substring(0,120) + (q.text.length > 120 ? '…' : '');
+      html += '<div class="kunci-row" style="display:flex;gap:16px;padding:16px;border-bottom:1px solid #e2e8f0;align-items:flex-start;">'
+            + '<div style="min-width:36px;height:36px;border-radius:50%;background:#fef3c7;color:#92400e;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;flex-shrink:0;">' + q.id + '</div>'
+            + '<div style="flex:1;min-width:0;">'
+            + '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">'
+            + '<span style="background:#ffedd5;color:#9a3412;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:800;">' + catLabel + '</span>'
+            + '</div>'
+            + '<div style="font-size:13px;color:#334155;line-height:1.5;margin-bottom:8px;">' + soalText + '</div>'
+            + dg + '</div></div>';
+      return;
+    }
+
+    // BI soal 16-30 = Dinilai Guru
+    if (isBiKunci && q.id >= 16 && q.id <= 30) {
+      const catLabel = q.id <= 25 ? 'Isian Singkat' : 'Essay';
+      answerHtml = `<span style="background:#fef3c7;color:#92400e;padding:5px 14px;border-radius:8px;font-weight:800;font-size:13px;display:inline-flex;align-items:center;gap:6px;">
+        ✏️ Dinilai Guru <span style="font-weight:500;font-size:12px;color:#b45309;">(${catLabel})</span>
+      </span>`;
+      html += `<div class="kunci-row" style="display:flex;gap:16px;padding:16px;border-bottom:1px solid #e2e8f0;align-items:flex-start;">
+        <div style="min-width:36px;height:36px;border-radius:50%;background:#fef3c7;color:#92400e;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;flex-shrink:0;">${q.id}</div>
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+            <span style="background:#ffedd5;color:#9a3412;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:800;">${catLabel}</span>
+          </div>
+          <div style="font-size:13px;color:#334155;line-height:1.5;margin-bottom:8px;">${q.text.replace(/<br>/g,' ').replace(/<[^>]+>/g,'').substring(0,120)}${q.text.length>120?'…':''}</div>
+          ${answerHtml}
+        </div>
+      </div>`;
+      return; // skip render normal
+    }
 
     if (q.type === 'single') {
       if (isEdit) {
@@ -4765,10 +4852,8 @@ async function renderPenilaian() {
   const kelas = document.getElementById('nilaiKelasSelector').value;
   const content = document.getElementById('penilaianContent');
 
-  // Populate kelas dropdown sesuai paket
   const kelasSelect = document.getElementById('nilaiKelasSelector');
   const nilaiPrefix = (paket === '3' || paket === '4') ? '5 ' : '4 ';
-  // Reset dan isi ulang sesuai paket
   kelasSelect.innerHTML = '<option value="">-- Pilih Kelas --</option>';
   const classesNilai = await getClasses();
   Object.keys(classesNilai)
@@ -4786,152 +4871,385 @@ async function renderPenilaian() {
 
   showLoading();
   try {
-    // Ambil semua hasil ujian kelas ini paket ini
     const paketKey = paket === '1' ? 'p1' : paket === '2' ? 'p2' : paket === '3' ? 'p3' : 'p4';
+    const isBiPaket = paket === '2' || paket === '4';
+    const isMtkP3   = paket === '3' || paket === '1';  // MTK Kelas 5 & MTK Kelas 4
+
+    // ── Klasifikasi soal MTK Kelas 5 (P3) & MTK Kelas 4 (P1) ──
+    //   1–5   : PG        → auto 1 + guru alasan max 1 → max 2/soal = 10
+    //   6–8   : PG Kompleks → auto 1 only              → max 1/soal = 3
+    //   9–10  : B/S       → auto 1 + guru max 1        → max 2/soal = 4
+    //   11–20 : Kertas    → manual guru max 3           → max 3/soal = 30
+    //   21–25 : Kertas    → manual guru max 4           → max 4/soal = 20
+    // Total maks = 10+3+4+30+20 = 67 → Nilai = (skor/67)×100
+    const getMTK_Category = (id) => {
+      if (id >= 1  && id <= 5)  return 'pg';      // auto + alasan guru max 1
+      if (id >= 6  && id <= 8)  return 'pgk';     // PG Kompleks: auto only
+      if (id >= 9  && id <= 10) return 'bs';      // auto + guru max 1
+      if (id >= 11 && id <= 20) return 'isian3';  // manual guru max 3
+      if (id >= 21 && id <= 25) return 'essay4';  // manual guru max 4
+      return 'other';
+    };
     const rows = await sbGet('results', `?class_name=eq.${encodeURIComponent(kelas)}&paket=eq.${paketKey}&order=nama`);
     const nilaiRows = await sbGet('nilai_langkah', `?class_name=eq.${encodeURIComponent(kelas)}&paket=eq.${paketKey}&order=nama`).catch(() => []);
 
-    // Map nilai langkah per siswa
     const nilaiMap = {};
     (nilaiRows || []).forEach(r => { nilaiMap[r.nama] = r; });
 
     const qs = resolveQuestions(paket);
-    const objQuestions = qs.filter(q => ['single','multiselect','truefalse','short'].includes(q.type));
-    const essayQuestions = qs.filter(q => q.type === 'essay');
+    const mtkGuruSoal = isMtkP3 ? qs : [];
+
+    // ── Klasifikasi soal untuk B.Indo (P2/P4) ──
+    // Skoring B.Indo berdasarkan nomor soal:
+    //   1–5   : PG      → auto 1 + alasan guru max 1  → max 2/soal = 10
+    //   6–10  : B/S     → auto 1 + alasan guru max 1  → max 2/soal = 10
+    //   11–15 : Multi   → auto 1 only, TANPA input guru → max 1/soal = 5
+    //   16–25 : Isian   → guru max 1                   → max 1/soal = 10
+    //   26–30 : Essay   → guru max 4                   → max 4/soal = 20
+    // Total maks = 10+10+5+10+20 = 55 → Nilai akhir = (skor/55)×100
+
+    const getBI_Category = (id) => {
+      if (id >= 1  && id <= 5)  return 'pg';       // auto + alasan guru max 1
+      if (id >= 6  && id <= 10) return 'bs';       // auto + alasan guru max 1
+      if (id >= 11 && id <= 15) return 'multi';    // auto only, no guru input
+      if (id >= 16 && id <= 25) return 'isian';    // manual guru max 1
+      if (id >= 26 && id <= 30) return 'essay';    // manual guru max 4
+      return 'other';
+    };
+
+    // Soal yang butuh kolom guru (untuk B.Indo)
+    // biGuruSoal: semua soal yang perlu kolom di tabel (termasuk 'multi' untuk badge auto skor)
+    const biGuruSoal = isBiPaket ? qs.filter(q => {
+      const cat = getBI_Category(q.id);
+      return cat === 'pg' || cat === 'bs' || cat === 'multi' || cat === 'isian' || cat === 'essay';
+    }) : [];
+
+    // Soal non-BI dan non-MTKP3: sistem lama
+    const objQuestions = (!isBiPaket && !isMtkP3) ? qs.filter(q => ['single','multiselect','truefalse','short'].includes(q.type)) : [];
+    const essayQuestions = (!isBiPaket && !isMtkP3) ? qs.filter(q => q.type === 'essay') : [];
 
     if (!rows || rows.length === 0) {
       content.innerHTML = '<div style="text-align:center;padding:40px;color:var(--muted);font-weight:700;">Belum ada siswa yang mengerjakan paket ini</div>';
       hideLoading(); return;
     }
 
+    // ── Bangun header tabel ──
     let html = `<table style="width:100%;border-collapse:collapse;font-size:13px;">
       <thead>
         <tr style="background:var(--primary);color:white;position:sticky;top:0;z-index:10;">
           <th style="padding:10px 12px;text-align:left;min-width:160px;">Nama Siswa</th>
-          <th style="padding:10px 12px;text-align:center;min-width:80px;">Skor Otomatis</th>`;
+          <th style="padding:10px 12px;text-align:center;min-width:70px;">Auto</th>`;
 
-    objQuestions.forEach((q, i) => {
-      const s = typeStyle[q.type] || typeStyle.single;
-      html += `<th style="padding:8px 6px;text-align:center;min-width:56px;font-size:11px;background:${s.bg};color:${s.text};">
-        <div style="font-weight:800;">S${q.id}</div>
-        <div style="font-size:10px;font-weight:600;opacity:0.9;">${s.label}</div>
-        <div style="font-size:9px;font-weight:600;margin-top:1px;">Langkah</div>
-      </th>`;
-    });
+    if (isMtkP3) {
+      // Header kolom MTK Kelas 5
+      mtkGuruSoal.forEach(q => {
+        const cat = getMTK_Category(q.id);
+        const colors = {
+          pg:     {bg:'#dbeafe', text:'#1e40af', label:'PG'},
+          pgk:    {bg:'#ede9fe', text:'#5b21b6', label:'PG Kplks'},
+          bs:     {bg:'#dcfce7', text:'#166534', label:'B/S'},
+          isian3: {bg:'#ffedd5', text:'#9a3412', label:'Isian'},
+          essay4: {bg:'#fce7f3', text:'#9d174d', label:'Essay'},
+        };
+        const c = colors[cat] || {bg:'#f1f5f9', text:'#334155', label:''};
+        const maxVal = cat === 'essay4' ? 4 : cat === 'isian3' ? 3 : 1;
+        const subLabel = (cat === 'pgk') ? 'auto' : 'max ' + maxVal;
+        html += '<th style="padding:6px 4px;text-align:center;min-width:52px;font-size:11px;background:' + c.bg + ';color:' + c.text + ';">'
+              + '<div style="font-weight:800;">S' + q.id + '</div>'
+              + '<div style="font-size:10px;">' + c.label + '</div>'
+              + '<div style="font-size:9px;">' + subLabel + '</div>'
+              + '</th>';
+      });
+      html += '<th style="padding:10px 8px;text-align:center;min-width:70px;background:#f1f5f9;color:#1e293b;">Skor<br><span style="font-size:10px;">/67</span></th>'
+            + '<th style="padding:10px 8px;text-align:center;min-width:70px;background:#fef9c3;color:#854d0e;font-weight:800;">Nilai<br><span style="font-size:10px;">×100</span></th>';
+    } else if (isBiPaket) {
+      // Kolom per soal BI (termasuk multi yang hanya badge, tidak ada input guru)
+      biGuruSoal.forEach(q => {
+        const cat = getBI_Category(q.id);
+        const colors = {
+          pg:    {bg:'#dbeafe', text:'#1e40af', label:'PG'},
+          bs:    {bg:'#dcfce7', text:'#166534', label:'B/S'},
+          multi: {bg:'#ede9fe', text:'#5b21b6', label:'Multi'},
+          isian: {bg:'#ffedd5', text:'#9a3412', label:'Isian'},
+          essay: {bg:'#fce7f3', text:'#9d174d', label:'Essay'},
+        };
+        const c = colors[cat] || {bg:'#f1f5f9', text:'#334155', label:''};
+        const maxVal = (cat === 'essay') ? 4 : 1;
+        const subLabel = (cat === 'multi') ? 'auto' : `max ${maxVal}`;
+        html += `<th style="padding:6px 4px;text-align:center;min-width:52px;font-size:11px;background:${c.bg};color:${c.text};">
+          <div style="font-weight:800;">S${q.id}</div>
+          <div style="font-size:10px;">${c.label}</div>
+          <div style="font-size:9px;">${subLabel}</div>
+        </th>`;
+      });
+      html += `<th style="padding:10px 8px;text-align:center;min-width:70px;background:#f1f5f9;color:#1e293b;">Skor<br><span style="font-size:10px;">/55</span></th>
+               <th style="padding:10px 8px;text-align:center;min-width:70px;background:#fef9c3;color:#854d0e;font-weight:800;">Nilai<br><span style="font-size:10px;">×100</span></th>`;
+    } else {
+      objQuestions.forEach(q => {
+        const s = typeStyle[q.type] || typeStyle.single;
+        html += `<th style="padding:8px 6px;text-align:center;min-width:52px;font-size:11px;background:${s.bg};color:${s.text};">
+          <div style="font-weight:800;">S${q.id}</div><div style="font-size:10px;">${s.label}</div>
+        </th>`;
+      });
+      essayQuestions.forEach(q => {
+        html += `<th style="padding:8px 6px;text-align:center;min-width:60px;font-size:11px;background:#fce7f3;color:#9d174d;">
+          <div style="font-weight:800;">S${q.id}</div><div style="font-size:10px;">Essay</div>
+        </th>`;
+      });
+      html += `<th style="padding:10px 8px;text-align:center;min-width:80px;background:#f1f5f9;color:#1e293b;">Total Nilai</th>`;
+    }
 
-    essayQuestions.forEach((q, i) => {
-      const s = typeStyle.essay;
-      html += `<th style="padding:8px 6px;text-align:center;min-width:64px;font-size:11px;background:${s.bg};color:${s.text};">
-        <div style="font-weight:800;">S${q.id}</div>
-        <div style="font-size:10px;font-weight:600;opacity:0.9;">Essay</div>
-        <div style="font-size:9px;font-weight:600;margin-top:1px;">Nilai</div>
-      </th>`;
-    });
+    html += `</tr></thead><tbody>`;
 
-    html += `<th style="padding:10px 12px;text-align:center;min-width:80px;background:#f1f5f9;color:#1e293b;">Total Nilai</th>
-        </tr>
-      </thead><tbody>`;
+    // Legend row
     html += '<tr style="background:#f8fafc;border-bottom:2px solid #e2e8f0;">'
       + '<td colspan="2" style="padding:6px 12px;font-size:11px;font-weight:700;color:#64748b;">Keterangan:</td>'
       + '<td colspan="100" style="padding:6px 8px;">'
-      + '<span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">PG</span>'
-      + '<span style="background:#ede9fe;color:#5b21b6;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">Multi</span>'
-      + '<span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">B/S</span>'
-      + '<span style="background:#ffedd5;color:#9a3412;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">Isian</span>'
-      + '<span style="background:#fce7f3;color:#9d174d;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;">Essay</span>'
+      + '<span style="background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">PG (max 1 guru)</span>'
+      + (isMtkP3 ? '<span style="background:#ede9fe;color:#5b21b6;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">PG Kompleks (auto)</span>' : '')
+      + (isMtkP3 ? '<span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">B/S (max 1 guru)</span>' : '')
+      + (isMtkP3 ? '<span style="background:#ffedd5;color:#9a3412;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">Isian (max 3 guru)</span>' : '')
+      + (isMtkP3 ? '<span style="background:#fce7f3;color:#9d174d;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;">Essay (max 4 guru)</span>' : '')
+      + (isBiPaket ? '<span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">B/S (max 1 guru)</span>' : '')
+      + (isBiPaket ? '<span style="background:#ede9fe;color:#5b21b6;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">Multi (auto only)</span>' : '')
+      + (isBiPaket ? '<span style="background:#ffedd5;color:#9a3412;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;margin-right:4px;">Isian (max 1 guru)</span>' : '')
+      + (isBiPaket ? '<span style="background:#fce7f3;color:#9d174d;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:700;">Essay (max 4 guru)</span>' : '')
       + '</td></tr>';
 
-    const isBiPaket = paket === '2' || paket === '4';
-    // Store answers per siswa untuk popup alasan
     window._penilaianAnswers = {};
-    rows.forEach((r, ri) => {
-      window._penilaianAnswers[r.nama] = r.answers || {};
-    });
+    rows.forEach(r => { window._penilaianAnswers[r.nama] = r.answers || {}; });
 
     rows.forEach((r, ri) => {
       const nm = nilaiMap[r.nama] || {};
-      const langkahVals = nm.langkah_scores || {};
-      const essayVals = nm.essay_scores || {};
+      const guruScores = nm.langkah_scores || {};   // simpan semua manual guru di sini
       const autoScore = r.score || 0;
       const answers = r.answers || {};
-
-      // Hitung total langkah
-      let totalLangkah = 0;
-      objQuestions.forEach(q => { totalLangkah += parseInt(langkahVals[q.id] || 0); });
-      let totalEssay = 0;
-      essayQuestions.forEach(q => { totalEssay += parseFloat(essayVals[q.id] || 0); });
-      const totalNilai = autoScore + totalLangkah + totalEssay;
-
       const rowBg = ri % 2 === 0 ? 'white' : '#f8fafc';
-      const lihatAlasanBtn = isBiPaket
-        ? '<br><button onclick="showAlasanSiswa(' + JSON.stringify(r.nama) + ', ' + ri + ')" style="margin-top:4px;padding:3px 10px;background:#ede9fe;color:#5b21b6;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;">📖 Lihat Alasan</button>'
-        : '';
-      html += `<tr style="background:${rowBg};">
-        <td style="padding:8px 12px;font-weight:700;">
-          ${r.nama}${lihatAlasanBtn}
-        </td>
-        <td style="padding:8px 12px;text-align:center;font-weight:800;color:var(--primary);">${autoScore}</td>`;
 
-      objQuestions.forEach(q => {
-        const val = langkahVals[q.id] !== undefined ? langkahVals[q.id] : '';
-        const ans = answers[q.id - 1] || {};
-        const alasan = isBiPaket && ans.langkah ? ans.langkah.substring(0, 40) + (ans.langkah.length > 40 ? '...' : '') : '';
-        const tStyle = typeStyle[q.type] || typeStyle.single;
+      if (isMtkP3) {
+        // ── MTK Kelas 5: hitung auto skor soal 1–10, guru input soal 11–25 ──
+        let autoMentah = 0;
+        qs.forEach((q, qi) => {
+          if (q.id > 10) return;
+          const ans = answers[qi] || {};
+          if (q.type === 'single') {
+            if (ans.choice === q.answer) autoMentah += 1;
+          } else if (q.type === 'multiselect') {
+            const cs = JSON.stringify([...(q.answers||[])].sort());
+            const us = JSON.stringify([...(ans.ms||[])].sort());
+            if (cs === us) autoMentah += 1;
+          } else if (q.type === 'truefalse') {
+            const ok = q.statements && q.statements.every((st, si) => ans.tf && ans.tf[si] === st.answer);
+            if (ok) autoMentah += 1;
+          }
+        });
 
-        // Cek skor otomatis per soal
-        let autoMark = '⬜';
-        let autoColor = '#94a3b8';
-        if (ans && (ans.choice !== undefined || ans.ms || ans.tf)) {
-          // Cek apakah jawaban benar
-          let isCorrect = false;
-          if (q.type === 'single') isCorrect = ans.choice === q.answer;
-          else if (q.type === 'multiselect') isCorrect = JSON.stringify([...q.answers].sort()) === JSON.stringify([...(ans.ms||[])].sort());
-          else if (q.type === 'truefalse') isCorrect = q.statements && q.statements.every((st, si) => ans.tf && ans.tf[si] === st.answer);
-          else if (q.type === 'short') isCorrect = ans.short && q.answer && ans.short.trim().toLowerCase() === q.answer.toString().toLowerCase();
-          autoMark = isCorrect ? '✅' : '❌';
-          autoColor = isCorrect ? '#10b981' : '#ef4444';
-        }
+        let totalGuru = 0;
+        qs.forEach(q => {
+          const cat = getMTK_Category(q.id);
+          if (cat !== 'pgk') totalGuru += parseFloat(guruScores[q.id] || 0);
+        });
 
-        const alasanDiv = (isBiPaket && alasan) ? '<div style="font-size:10px;color:#7c3aed;margin-bottom:2px;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + alasan + '</div>' : '';
-        html += '<td style="padding:4px 6px;text-align:center;background:' + tStyle.bg + '30;" title="' + alasan + '">'
-          + '<div style="font-size:14px;line-height:1;">' + autoMark + '</div>'
-          + alasanDiv
-          + '<input type="number" min="0" max="1" step="1" value="' + val + '"'
-          + ' data-nama="' + r.nama + '" data-soal="' + q.id + '" data-type="langkah" data-ri="' + ri + '"'
-          + ' onchange="updateNilaiCell(this)"'
-          + ' style="width:44px;padding:4px;border:1.5px solid ' + tStyle.text + '50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;margin-top:2px;">'
-          + '</td>';
-      });
+        const skorMentah = autoMentah + totalGuru;
+        const nilaiAkhir = Math.min(100, Math.round((skorMentah / 67) * 100 * 10) / 10);
+        const nilaiColor = nilaiAkhir >= 75 ? '#10b981' : nilaiAkhir >= 60 ? '#f59e0b' : '#ef4444';
 
-      essayQuestions.forEach(q => {
-        const val = essayVals[q.id] !== undefined ? essayVals[q.id] : '';
-        const ans = answers[q.id - 1] || {};
-        const essayText = ans.essay ? ans.essay.substring(0, 40) + (ans.essay.length > 40 ? '...' : '') : '';
-        const essayDiv = essayText ? '<div style="font-size:10px;color:#9d174d;margin-bottom:2px;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + essayText + '</div>' : '<div style="font-size:10px;color:#94a3b8;">⬜ belum diisi</div>';
-        html += '<td style="padding:4px 6px;text-align:center;background:#fce7f330;" title="' + essayText + '">'
-          + essayDiv
-          + '<input type="number" min="0" max="100" step="0.5" value="' + val + '"'
-          + ' data-nama="' + r.nama + '" data-soal="' + q.id + '" data-type="essay" data-ri="' + ri + '"'
-          + ' onchange="updateNilaiCell(this)"'
-          + ' style="width:54px;padding:4px;border:1.5px solid #9d174d50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">'
-          + '</td>';
-      });
+        html += '<tr style="background:' + rowBg + ';">'
+              + '<td style="padding:8px 12px;font-weight:700;">' + r.nama + '</td>'
+              + '<td style="padding:8px 12px;text-align:center;font-weight:800;color:var(--primary);">' + autoMentah + '</td>';
 
-      html += `<td style="padding:8px 12px;text-align:center;" id="total_${ri}">
-        <span style="font-weight:800;font-size:15px;color:${totalNilai>=75?'#10b981':totalNilai>=60?'#f59e0b':'#ef4444'};">${totalNilai.toFixed(1)}</span>
-      </td></tr>`;
+        mtkGuruSoal.forEach(q => {
+          const cat = getMTK_Category(q.id);
+          const maxVal = cat === 'essay4' ? 4 : cat === 'isian3' ? 3 : 1;
+          const val = guruScores[q.id] !== undefined ? guruScores[q.id] : '';
+          const colors = {
+            pg:     {bg:'#dbeafe', border:'#1e40af'},
+            pgk:    {bg:'#ede9fe', border:'#5b21b6'},
+            bs:     {bg:'#dcfce7', border:'#166534'},
+            isian3: {bg:'#ffedd5', border:'#9a3412'},
+            essay4: {bg:'#fce7f3', border:'#9d174d'},
+          };
+          const c = colors[cat] || {bg:'#f1f5f9', border:'#94a3b8'};
 
-      // Row alasan (tersembunyi, expand saat klik Lihat Alasan)
-      if (isBiPaket) {
+          // Badge skor otomatis untuk soal 1–10
+          const ans = answers[q.id - 1] || {};
+          let autoPerSoal = 0, answered = false;
+          if (q.type === 'single') {
+            answered = ans.choice !== undefined;
+            autoPerSoal = (ans.choice === q.answer) ? 1 : 0;
+          } else if (q.type === 'multiselect') {
+            answered = ans.ms !== undefined;
+            autoPerSoal = (JSON.stringify([...(q.answers||[])].sort()) === JSON.stringify([...(ans.ms||[])].sort())) ? 1 : 0;
+          } else if (q.type === 'truefalse') {
+            answered = ans.tf !== undefined;
+            autoPerSoal = (q.statements && q.statements.every((st, si) => ans.tf && ans.tf[si] === st.answer)) ? 1 : 0;
+          }
+
+          let autoBadge = '';
+          if (q.id <= 10) {
+            if (!answered) {
+              autoBadge = '<div style="font-size:11px;font-weight:800;color:#94a3b8;line-height:1;margin-bottom:3px;">—</div>';
+            } else if (autoPerSoal === 1) {
+              autoBadge = '<div style="font-size:13px;font-weight:900;color:#16a34a;line-height:1;margin-bottom:3px;">1</div>';
+            } else {
+              autoBadge = '<div style="font-size:13px;font-weight:900;color:#dc2626;line-height:1;margin-bottom:3px;">0</div>';
+            }
+          }
+
+          // PGK (auto only): hanya badge, tidak ada input
+          if (cat === 'pgk') {
+            html += '<td style="padding:4px 4px;text-align:center;background:' + c.bg + '30;">' + autoBadge + '</td>';
+          } else if (q.id >= 11) {
+            // Soal 11–25: hanya input guru, tidak ada badge auto
+            html += '<td style="padding:4px 4px;text-align:center;background:' + c.bg + '30;">'
+                  + '<input type="number" min="0" max="' + maxVal + '" step="1" value="' + val + '"'
+                  + ' data-nama="' + r.nama + '" data-soal="' + q.id + '" data-type="langkah" data-ri="' + ri + '" data-max="' + maxVal + '"'
+                  + ' oninput="clampNilai(this); updateNilaiCell(this)"'
+                  + ' style="width:46px;padding:4px;border:1.5px solid ' + c.border + '50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">'
+                  + '</td>';
+          } else {
+            // Soal 1–5 dan 9–10: badge + input alasan guru
+            html += '<td style="padding:4px 4px;text-align:center;background:' + c.bg + '30;">'
+                  + autoBadge
+                  + '<input type="number" min="0" max="' + maxVal + '" step="1" value="' + val + '"'
+                  + ' data-nama="' + r.nama + '" data-soal="' + q.id + '" data-type="langkah" data-ri="' + ri + '" data-max="' + maxVal + '"'
+                  + ' oninput="clampNilai(this); updateNilaiCell(this)"'
+                  + ' style="width:46px;padding:4px;border:1.5px solid ' + c.border + '50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">'
+                  + '</td>';
+          }
+        });
+
+        html += '<td style="padding:8px 8px;text-align:center;" id="total_' + ri + '">'
+              + '<span style="font-weight:800;font-size:14px;color:#334155;">' + skorMentah + '<span style="font-size:10px;color:#94a3b8;">/67</span></span>'
+              + '</td>'
+              + '<td style="padding:8px 8px;text-align:center;" id="nilai_' + ri + '">'
+              + '<span style="font-weight:800;font-size:15px;color:' + nilaiColor + ';">' + nilaiAkhir + '</span>'
+              + '</td></tr>';
+
+      } else if (isBiPaket) {
+        // Hitung skor auto per soal dari answers (soal 1–15 yang punya skor otomatis)
+        // Soal 1–5: single, 6–10: truefalse, 11–15: multiselect
+        let autoMentah = 0;
+        qs.forEach((q, qi) => {
+          if (q.id > 15) return; // soal 16–30 tidak ada skor auto
+          const ans = answers[qi] || {};
+          if (q.type === 'single') {
+            if (ans.choice === q.answer) autoMentah += 1;
+          } else if (q.type === 'truefalse') {
+            const ok = q.statements && q.statements.every((st, si) => ans.tf && ans.tf[si] === st.answer);
+            if (ok) autoMentah += 1;
+          } else if (q.type === 'multiselect') {
+            const cs = JSON.stringify([...(q.answers||[])].sort());
+            const us = JSON.stringify([...(ans.ms||[])].sort());
+            if (cs === us) autoMentah += 1;
+          }
+        });
+
+        // Hitung total nilai guru (alasan + isian + essay)
+        let totalGuru = 0;
+        biGuruSoal.forEach(q => {
+          const cat = getBI_Category(q.id);
+          if (cat !== 'multi') totalGuru += parseFloat(guruScores[q.id] || 0);
+        });
+
+        // Skor mentah = auto (soal 1–15) + guru (alasan 1–10, isian 16–25, essay 26–30)
+        const skorMentah = autoMentah + totalGuru;
+        const nilaiAkhir = Math.min(100, Math.round((skorMentah / 55) * 100 * 10) / 10);
+        const nilaiColor = nilaiAkhir >= 75 ? '#10b981' : nilaiAkhir >= 60 ? '#f59e0b' : '#ef4444';
+
+        const lihatAlasanBtn = '<br><button onclick="showAlasanSiswa(' + JSON.stringify(r.nama) + ', ' + ri + ')" style="margin-top:4px;padding:3px 10px;background:#ede9fe;color:#5b21b6;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;">📖 Lihat Alasan</button>';
+
+        html += `<tr style="background:${rowBg};">
+          <td style="padding:8px 12px;font-weight:700;">${r.nama}${lihatAlasanBtn}</td>
+          <td style="padding:8px 12px;text-align:center;font-weight:800;color:var(--primary);">${autoMentah}</td>`;
+
+        biGuruSoal.forEach(q => {
+          const cat = getBI_Category(q.id);
+          const maxVal = cat === 'essay' ? 4 : 1;
+          const val = guruScores[q.id] !== undefined ? guruScores[q.id] : '';
+          const colors = {
+            pg:    {bg:'#dbeafe', border:'#1e40af'},
+            bs:    {bg:'#dcfce7', border:'#166534'},
+            isian: {bg:'#ffedd5', border:'#9a3412'},
+            essay: {bg:'#fce7f3', border:'#9d174d'},
+          };
+          const c = colors[cat] || {bg:'#f1f5f9', border:'#94a3b8'};
+
+          // Hitung skor otomatis per soal ini
+          const ans = answers[q.id - 1] || {};
+          let autoPerSoal = 0;
+          let answered = false;
+          if (q.type === 'single') {
+            answered = ans.choice !== undefined;
+            autoPerSoal = (ans.choice === q.answer) ? 1 : 0;
+          } else if (q.type === 'truefalse') {
+            answered = ans.tf !== undefined;
+            autoPerSoal = (q.statements && q.statements.every((st, si) => ans.tf && ans.tf[si] === st.answer)) ? 1 : 0;
+          } else if (q.type === 'multiselect') {
+            answered = ans.ms !== undefined;
+            autoPerSoal = (JSON.stringify([...(q.answers||[])].sort()) === JSON.stringify([...(ans.ms||[])].sort())) ? 1 : 0;
+          } else if (q.type === 'short') {
+            answered = !!(ans.short && ans.short.trim());
+            autoPerSoal = (ans.short && q.answer && ans.short.trim().toLowerCase() === q.answer.toString().toLowerCase()) ? 1 : 0;
+          }
+
+          // Badge skor otomatis: angka 1 (hijau) atau 0 (merah), abu jika belum dijawab
+          let autoBadge = '';
+          if (!answered) {
+            autoBadge = `<div style="font-size:11px;font-weight:800;color:#94a3b8;line-height:1;margin-bottom:3px;">—</div>`;
+          } else if (autoPerSoal === 1) {
+            autoBadge = `<div style="font-size:13px;font-weight:900;color:#16a34a;line-height:1;margin-bottom:3px;">1</div>`;
+          } else {
+            autoBadge = `<div style="font-size:13px;font-weight:900;color:#dc2626;line-height:1;margin-bottom:3px;">0</div>`;
+          }
+
+          // Cuplikan alasan/jawaban siswa
+          let snippetText = '';
+          if (cat === 'pg' || cat === 'bs') {
+            snippetText = (ans.langkah || '').substring(0, 35);
+          } else if (cat === 'isian') {
+            snippetText = (ans.short || ans.essay || '').substring(0, 35);
+          } else if (cat === 'essay') {
+            snippetText = (ans.essay || ans.short || '').substring(0, 35);
+          }
+          const snippetDiv = snippetText
+            ? `<div style="font-size:9px;color:#64748b;margin-bottom:2px;max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${snippetText}">${snippetText}</div>`
+            : '';
+
+          // Untuk soal multi (cat==='multi'): tidak ada input guru, hanya tampilkan badge
+          if (cat === 'multi') {
+            html += `<td style="padding:4px 4px;text-align:center;background:${c.bg}30;">
+              ${autoBadge}
+            </td>`;
+          } else {
+            html += `<td style="padding:4px 4px;text-align:center;background:${c.bg}30;">
+              ${autoBadge}
+              ${snippetDiv}
+              <input type="number" min="0" max="${maxVal}" step="1" value="${val}"
+                data-nama="${r.nama}" data-soal="${q.id}" data-type="langkah" data-ri="${ri}" data-max="${maxVal}"
+                oninput="clampNilai(this); updateNilaiCell(this)"
+                style="width:46px;padding:4px;border:1.5px solid ${c.border}50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">
+            </td>`;
+          }
+        });
+
+        html += `<td style="padding:8px 8px;text-align:center;" id="total_${ri}">
+            <span style="font-weight:800;font-size:14px;color:#334155;">${skorMentah}<span style="font-size:10px;color:#94a3b8;">/55</span></span>
+          </td>
+          <td style="padding:8px 8px;text-align:center;" id="nilai_${ri}">
+            <span style="font-weight:800;font-size:15px;color:${nilaiColor};">${nilaiAkhir}</span>
+          </td></tr>`;
+
+        // Expandable alasan row
         html += `<tr id="alasanRow_${ri}" style="display:none;background:#faf5ff;">
           <td colspan="100%" style="padding:12px 16px;">
-            <div style="font-weight:800;font-size:13px;color:#5b21b6;margin-bottom:8px;">📖 Alasan Jawaban — ${r.nama}</div>
+            <div style="font-weight:800;font-size:13px;color:#5b21b6;margin-bottom:8px;">📖 Alasan / Jawaban — ${r.nama}</div>
             <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;">
               ${qs.map((q, qi) => {
                 const ans = answers[qi] || {};
                 const alasan = ans.langkah || '';
                 const jawaban = ans.essay || ans.short || '';
-                return alasan || jawaban ? `
+                return (alasan || jawaban) ? `
                   <div style="background:white;border:1.5px solid #ddd6fe;border-radius:8px;padding:8px 12px;">
                     <div style="font-size:11px;font-weight:800;color:#5b21b6;">Soal ${q.id} (${q.type})</div>
                     ${alasan ? `<div style="font-size:12px;margin-top:4px;"><b>Alasan:</b> ${alasan}</div>` : ''}
@@ -4941,17 +5259,57 @@ async function renderPenilaian() {
             </div>
           </td>
         </tr>`;
+
+      } else {
+        // ── Non-BI: sistem lama ──
+        const langkahVals = nm.langkah_scores || {};
+        const essayVals = nm.essay_scores || {};
+        let totalLangkah = 0;
+        objQuestions.forEach(q => { totalLangkah += parseFloat(langkahVals[q.id] || 0); });
+        let totalEssay = 0;
+        essayQuestions.forEach(q => { totalEssay += parseFloat(essayVals[q.id] || 0); });
+        const totalNilai = autoScore + totalLangkah + totalEssay;
+
+        html += `<tr style="background:${rowBg};">
+          <td style="padding:8px 12px;font-weight:700;">${r.nama}</td>
+          <td style="padding:8px 12px;text-align:center;font-weight:800;color:var(--primary);">${autoScore}</td>`;
+
+        objQuestions.forEach(q => {
+          const val = langkahVals[q.id] !== undefined ? langkahVals[q.id] : '';
+          const tStyle = typeStyle[q.type] || typeStyle.single;
+          html += `<td style="padding:4px 4px;text-align:center;background:${tStyle.bg}30;">
+            <input type="number" min="0" max="1" step="1" value="${val}"
+              data-nama="${r.nama}" data-soal="${q.id}" data-type="langkah" data-ri="${ri}" data-max="1"
+              oninput="clampNilai(this); updateNilaiCell(this)"
+              style="width:44px;padding:4px;border:1.5px solid ${tStyle.text}50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">
+          </td>`;
+        });
+
+        essayQuestions.forEach(q => {
+          const val = essayVals[q.id] !== undefined ? essayVals[q.id] : '';
+          html += `<td style="padding:4px 4px;text-align:center;background:#fce7f330;">
+            <input type="number" min="0" max="100" step="0.5" value="${val}"
+              data-nama="${r.nama}" data-soal="${q.id}" data-type="essay" data-ri="${ri}" data-max="100"
+              oninput="clampNilai(this); updateNilaiCell(this)"
+              style="width:54px;padding:4px;border:1.5px solid #9d174d50;border-radius:6px;text-align:center;font-family:Nunito,sans-serif;font-size:13px;font-weight:700;">
+          </td>`;
+        });
+
+        html += `<td style="padding:8px 12px;text-align:center;" id="total_${ri}">
+          <span style="font-weight:800;font-size:15px;color:${totalNilai>=75?'#10b981':totalNilai>=60?'#f59e0b':'#ef4444'};">${totalNilai.toFixed(1)}</span>
+        </td></tr>`;
       }
     });
 
     html += '</tbody></table>';
     content.innerHTML = html;
 
-    // Store rows for save reference
     window._nilaiRows = rows;
     window._nilaiMap = nilaiMap;
     window._nilaiPaket = paketKey;
     window._nilaiKelas = kelas;
+    window._nilaiIsMtkP3 = isMtkP3;
+    window._nilaiIsBi = isBiPaket;
 
   } catch(e) {
     content.innerHTML = `<div style="color:red;padding:20px;">Error: ${e.message}</div>`;
@@ -4959,37 +5317,56 @@ async function renderPenilaian() {
   hideLoading();
 }
 
-function showAlasanSiswa(nama, ri) {
-  const row = document.getElementById(`alasanRow_${ri}`);
-  if (!row) return;
-  row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
-}
 
-// Temporary store perubahan
-window._nilaiChanges = {};
+function clampNilai(input) {
+  const max = parseFloat(input.dataset.max) || 1;
+  let val = parseFloat(input.value);
+  if (isNaN(val) || input.value === '') return;
+  if (val < 0) { input.value = 0; return; }
+  if (val > max) { input.value = max; return; }
+  if (max <= 4) { input.value = Math.round(val); }
+}
 
 function updateNilaiCell(input) {
   const nama = input.dataset.nama;
   const soal = input.dataset.soal;
   const type = input.dataset.type;
-  const ri = input.dataset.ri;
+  const ri = parseInt(input.dataset.ri);
   if (!window._nilaiChanges[nama]) window._nilaiChanges[nama] = { langkah_scores: {}, essay_scores: {} };
   if (type === 'langkah') window._nilaiChanges[nama].langkah_scores[soal] = parseFloat(input.value) || 0;
   if (type === 'essay') window._nilaiChanges[nama].essay_scores[soal] = parseFloat(input.value) || 0;
 
   // Recalculate total untuk baris ini
-  const autoScore = parseFloat(input.closest('tr').querySelector('td:nth-child(2)').textContent) || 0;
+  const autoScore = parseFloat(input.closest('tr').querySelector('td:nth-child(2)')?.textContent) || 0;
   const allInputs = input.closest('tr').querySelectorAll('input[type=number]');
-  let totalLangkah = 0, totalEssay = 0;
-  allInputs.forEach(inp => {
-    if (inp.dataset.type === 'langkah') totalLangkah += parseFloat(inp.value) || 0;
-    if (inp.dataset.type === 'essay') totalEssay += parseFloat(inp.value) || 0;
-  });
-  const totalNilai = autoScore + totalLangkah + totalEssay;
+  let totalGuru = 0;
+  allInputs.forEach(inp => { totalGuru += parseFloat(inp.value) || 0; });
+
   const totalCell = document.getElementById(`total_${ri}`);
-  if (totalCell) {
-    const color = totalNilai >= 75 ? '#10b981' : totalNilai >= 60 ? '#f59e0b' : '#ef4444';
-    totalCell.innerHTML = `<span style="font-weight:800;font-size:15px;color:${color};">${totalNilai.toFixed(1)}</span>`;
+  const nilaiCell = document.getElementById(`nilai_${ri}`);
+
+  if (window._nilaiIsMtkP3) {
+    const skorMentah = autoScore + totalGuru;
+    if (totalCell) totalCell.innerHTML = '<span style="font-weight:800;font-size:14px;color:#334155;">' + skorMentah + '<span style="font-size:10px;color:#94a3b8;">/67</span></span>';
+    if (nilaiCell) {
+      const nilaiAkhir = Math.min(100, Math.round((skorMentah / 67) * 100 * 10) / 10);
+      const color = nilaiAkhir >= 75 ? '#10b981' : nilaiAkhir >= 60 ? '#f59e0b' : '#ef4444';
+      nilaiCell.innerHTML = '<span style="font-weight:800;font-size:15px;color:' + color + ';">' + nilaiAkhir + '</span>';
+    }
+  } else if (window._nilaiIsBi) {
+    const skorMentah = autoScore + totalGuru;
+    if (totalCell) totalCell.innerHTML = `<span style="font-weight:800;font-size:14px;color:#334155;">${skorMentah}<span style="font-size:10px;color:#94a3b8;">/55</span></span>`;
+    if (nilaiCell) {
+      const nilaiAkhir = Math.min(100, Math.round((skorMentah / 55) * 100 * 10) / 10);
+      const color = nilaiAkhir >= 75 ? '#10b981' : nilaiAkhir >= 60 ? '#f59e0b' : '#ef4444';
+      nilaiCell.innerHTML = `<span style="font-weight:800;font-size:15px;color:${color};">${nilaiAkhir}</span>`;
+    }
+  } else {
+    const totalNilai = autoScore + totalGuru;
+    if (totalCell) {
+      const color = totalNilai >= 75 ? '#10b981' : totalNilai >= 60 ? '#f59e0b' : '#ef4444';
+      totalCell.innerHTML = `<span style="font-weight:800;font-size:15px;color:${color};">${totalNilai.toFixed(1)}</span>`;
+    }
   }
 }
 
@@ -4998,20 +5375,36 @@ async function saveAllNilaiLangkah() {
   const paket = window._nilaiPaket;
   if (!kelas || !paket) { alert('Pilih kelas dan paket terlebih dahulu!'); return; }
 
-  const changes = window._nilaiChanges || {};
-  if (Object.keys(changes).length === 0) { alert('Tidak ada perubahan nilai untuk disimpan.'); return; }
+  // Baca LANGSUNG dari DOM — tidak bergantung pada _nilaiChanges
+  // supaya tidak terlewat meski guru belum blur dari input
+  const allInputs = document.querySelectorAll('#penilaianContent input[type=number][data-nama]');
+  if (allInputs.length === 0) { alert('Tidak ada data nilai di tampilan. Silakan pilih kelas terlebih dahulu.'); return; }
+
+  // Kumpulkan semua nilai per siswa dari DOM
+  const domChanges = {};
+  allInputs.forEach(inp => {
+    const nama = inp.dataset.nama;
+    const soal = inp.dataset.soal;
+    const type = inp.dataset.type;
+    const val = parseFloat(inp.value) || 0;
+    if (!domChanges[nama]) domChanges[nama] = { langkah_scores: {}, essay_scores: {} };
+    if (type === 'langkah') domChanges[nama].langkah_scores[soal] = val;
+    if (type === 'essay')   domChanges[nama].essay_scores[soal] = val;
+  });
+
+  if (Object.keys(domChanges).length === 0) { alert('Tidak ada data nilai untuk disimpan.'); return; }
 
   showLoading();
   try {
-    // Ambil data lama
+    // Ambil data lama untuk merge
     const nilaiRows = await sbGet('nilai_langkah', `?class_name=eq.${encodeURIComponent(kelas)}&paket=eq.${paket}`).catch(() => []);
     const existMap = {};
     (nilaiRows || []).forEach(r => { existMap[r.nama] = r; });
 
-    const upserts = Object.keys(changes).map(nama => {
+    const upserts = Object.keys(domChanges).map(nama => {
       const existing = existMap[nama] || {};
-      const langkah = { ...(existing.langkah_scores || {}), ...changes[nama].langkah_scores };
-      const essay = { ...(existing.essay_scores || {}), ...changes[nama].essay_scores };
+      const langkah = { ...(existing.langkah_scores || {}), ...domChanges[nama].langkah_scores };
+      const essay   = { ...(existing.essay_scores   || {}), ...domChanges[nama].essay_scores   };
       return {
         nilai_key: `${kelas}::${nama}::${paket}`,
         nama, class_name: kelas, paket,
@@ -5023,6 +5416,7 @@ async function saveAllNilaiLangkah() {
 
     await sbUpsert('nilai_langkah', upserts, 'nilai_key');
     window._nilaiChanges = {};
+    await renderPenilaian();
     alert(`✅ Nilai berhasil disimpan untuk ${upserts.length} siswa!`);
   } catch(e) {
     alert('❌ Gagal simpan: ' + e.message);
