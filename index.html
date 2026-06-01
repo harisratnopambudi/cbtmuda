@@ -2811,14 +2811,25 @@ function renderQuestion(pos) {
   const card = document.getElementById('questionCard');
   document.getElementById('examStudentName').textContent = `👤 ${currentUser} – ${currentClass}`;
 
-  let typeLabel = q.type === 'single' ? 'Pilihan Ganda' : q.type === 'truefalse' ? 'Benar / Salah' : q.type === 'multiselect' ? 'Pilih Semua yang Benar' : q.type === 'short' ? 'Isian Singkat' : q.type === 'kertas' ? '✏️ Jawab di Kertas' : 'Uraian';
+  // Label soal: untuk BI pakai label range, untuk MTK pakai label tipe
+  let typeLabel;
+  const isBiLabel = paketDipilih === '2' || paketDipilih === '4';
+  if (isBiLabel) {
+    if (q.id <= 5) typeLabel = 'Pilihan Ganda 1-5';
+    else if (q.id <= 10) typeLabel = 'Benar Salah 6-10';
+    else if (q.id <= 15) typeLabel = 'PG Kompleks 11-15';
+    else if (q.id <= 25) typeLabel = 'Isian 16-25';
+    else typeLabel = 'Essay 26-30';
+  } else {
+    typeLabel = q.type === 'single' ? 'Pilihan Ganda' : q.type === 'truefalse' ? 'Benar / Salah' : q.type === 'multiselect' ? 'Pilih Semua yang Benar' : q.type === 'short' ? 'Isian Singkat' : q.type === 'kertas' ? '✏️ Jawab di Kertas' : 'Uraian';
+  }
 
   // Image for the question text
   const qImg = getImg(idx, 'soal');
   const qImgHtml = qImg ? `<div class="q-image"><img src="${qImg}" alt="Gambar soal ${pos+1}"></div>` : '';
 
   let html = `
-    <div class="q-number">Soal ${pos+1} <span class="q-type-badge">${typeLabel}</span></div>
+    <div class="q-number">${isBiLabel ? '' : 'Soal ' + (pos+1) + ' '}<span class="q-type-badge">${typeLabel}</span></div>
     <div class="q-text">${q.text}</div>
     ${qImgHtml}
   `;
