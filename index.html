@@ -2786,7 +2786,8 @@ function isAnswered(qIdx) {
   const ans = examAnswers[qIdx];
   if (!ans) return false;
   const isBi = paketDipilih === '2' || paketDipilih === '4';
-  if (!q.noAlasan) {
+  const isMtkIsianCheck = (paketDipilih === '1' || paketDipilih === '3') && q.id >= 11 && q.id <= 20;
+  if (!q.noAlasan && !isMtkIsianCheck) {
     const hasLangkah = isBi
       ? (typeof ans.langkah === 'string' && ans.langkah.trim().length > 0)
       : ans.langkah === true;
@@ -2797,7 +2798,12 @@ function isAnswered(qIdx) {
   if (q.type === 'multiselect') return ans.ms && ans.ms.length > 0;
   if (q.type === 'short') return ans.short && ans.short.trim().length > 0;
   if (q.type === 'essay') return ans.essay && ans.essay.trim().length > 0;
-  if (q.type === 'kertas') return true; // cukup centang LPS
+  if (q.type === 'kertas') {
+    const isMtkPaketAns = paketDipilih === '1' || paketDipilih === '3';
+    const isIsianMtkAns = isMtkPaketAns && q.id >= 11 && q.id <= 20;
+    if (isIsianMtkAns) return ans.isianMtk && ans.isianMtk.trim().length > 0;
+    return true; // soal 21-25 dan non-MTK: cukup centang LPS
+  }
   return false;
 }
 
@@ -2893,16 +2899,33 @@ function renderQuestion(pos) {
   }
 
   if (q.type === 'kertas') {
-    html += `<div class="kertas-notice">
-      <span style="font-size:24px;">✏️</span>
-      <div>
-        <div style="font-size:13px;font-weight:800;margin-bottom:2px;">Jawab di Lembar Kertas</div>
-        <div style="font-size:12px;font-weight:600;opacity:0.8;">Tuliskan jawabanmu di kertas yang tersedia, kemudian centang Langkah Penyelesaian Soal di bawah ini.</div>
-      </div>
-    </div>`;
-    // Auto-mark as answered via langkah saja
+    const isMtkPaket = paketDipilih === '1' || paketDipilih === '3';
+    const isIsianMtk = isMtkPaket && q.id >= 11 && q.id <= 20;
+
     if (!examAnswers[idx]) examAnswers[idx] = {};
-    if (examAnswers[idx].kertas === undefined) examAnswers[idx].kertas = false;
+
+    if (isIsianMtk) {
+      // Soal isian MTK 11–20: siswa mengetik jawaban langsung di CBT
+      const curIsian = examAnswers[idx]?.isianMtk || '';
+      html += `<div style="margin-top:14px;">
+        <div style="font-size:12px;font-weight:800;color:#9a3412;margin-bottom:6px;">✏️ Ketik jawabanmu di sini:</div>
+        <textarea id="isianMtkInput_${idx}" rows="4"
+          placeholder="Tulis jawaban isian di sini..."
+          oninput="selectIsianMtk(${idx}, this.value)"
+          style="width:100%;padding:12px 16px;border:2px solid #fdba74;border-radius:12px;font-family:Nunito,sans-serif;font-size:15px;font-weight:600;resize:vertical;box-sizing:border-box;background:#fff7ed;">${curIsian}</textarea>
+      </div>`;
+      if (examAnswers[idx].isianMtk === undefined) examAnswers[idx].isianMtk = '';
+    } else {
+      // Soal 21–25 MTK (essay panjang) dan non-MTK: tetap jawab di kertas
+      html += `<div class="kertas-notice">
+        <span style="font-size:24px;">✏️</span>
+        <div>
+          <div style="font-size:13px;font-weight:800;margin-bottom:2px;">Jawab di Lembar Kertas</div>
+          <div style="font-size:12px;font-weight:600;opacity:0.8;">Tuliskan jawabanmu di kertas yang tersedia, kemudian centang Langkah Penyelesaian Soal di bawah ini.</div>
+        </div>
+      </div>`;
+      if (examAnswers[idx].kertas === undefined) examAnswers[idx].kertas = false;
+    }
   }
 
   if (q.type === 'essay') {
@@ -2933,20 +2956,25 @@ function renderQuestion(pos) {
       </div>
     `;
   } else if (!isBiPaket && !q.noAlasan) {
-    const langkahDone = examAnswers[idx]?.langkah === true;
-    html += `
-      <button class="langkah-btn ${langkahDone ? 'filled' : ''}" onclick="toggleLangkah(${idx})" id="langkahBtn_${idx}">
-        <span class="langkah-icon">📝</span>
-        <div style="flex:1">
-          <div style="font-size:13px;font-weight:800;">${langkahDone ? '✅ Sudah mengerjakan Langkah Penyelesaian di kertas' : 'Langkah Penyelesaian Soal'}</div>
-          <div style="font-size:11px;font-weight:600;margin-top:2px;opacity:0.8;">${langkahDone ? 'Klik untuk membatalkan centang' : 'Klik untuk konfirmasi sudah dikerjakan di kertas'}</div>
+    const isMtkIsianSoal = (paketDipilih === '1' || paketDipilih === '3') && q.id >= 11 && q.id <= 20;
+    if (!isMtkIsianSoal) {
+      // Soal MTK selain 11–20: tampilkan tombol centang LPS
+      const langkahDone = examAnswers[idx]?.langkah === true;
+      html += `
+        <button class="langkah-btn ${langkahDone ? 'filled' : ''}" onclick="toggleLangkah(${idx})" id="langkahBtn_${idx}">
+          <span class="langkah-icon">📝</span>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:800;">${langkahDone ? '✅ Sudah mengerjakan Langkah Penyelesaian di kertas' : 'Langkah Penyelesaian Soal'}</div>
+            <div style="font-size:11px;font-weight:600;margin-top:2px;opacity:0.8;">${langkahDone ? 'Klik untuk membatalkan centang' : 'Klik untuk konfirmasi sudah dikerjakan di kertas'}</div>
+          </div>
+          <div class="langkah-check">${langkahDone ? '✓' : ''}</div>
+        </button>
+        <div class="langkah-warn" id="langkahWarn_${idx}">
+          ⚠️ Centang dulu konfirmasi Langkah Penyelesaian di kertas sebelum lanjut!
         </div>
-        <div class="langkah-check">${langkahDone ? '✓' : ''}</div>
-      </button>
-      <div class="langkah-warn" id="langkahWarn_${idx}">
-        ⚠️ Centang dulu konfirmasi Langkah Penyelesaian di kertas sebelum lanjut!
-      </div>
-    `;
+      `;
+    }
+    // Soal 11–20 MTK: tidak perlu tombol centang, cukup textarea isian di atas
   }
 
   const isFirst = pos === 0;
@@ -3047,6 +3075,13 @@ function selectShort(idx, val) {
 function selectEssay(idx, val) {
   if (!examAnswers[idx]) examAnswers[idx] = {};
   examAnswers[idx].essay = val;
+  updateNav();
+  saveSession();
+}
+
+function selectIsianMtk(idx, val) {
+  if (!examAnswers[idx]) examAnswers[idx] = {};
+  examAnswers[idx].isianMtk = val;
   updateNav();
   saveSession();
 }
@@ -5055,7 +5090,9 @@ async function renderPenilaian() {
         const nilaiColor = nilaiAkhir >= 75 ? '#10b981' : nilaiAkhir >= 60 ? '#f59e0b' : '#ef4444';
 
         html += '<tr style="background:' + rowBg + ';">'
-              + '<td style="padding:8px 12px;font-weight:700;">' + r.nama + '</td>'
+              + '<td style="padding:8px 12px;font-weight:700;">' + r.nama
+              + '<br><button id="mtkIsianBtn_' + ri + '" onclick="showMtkIsian(' + ri + ')" style="margin-top:4px;padding:3px 10px;background:#ffedd5;color:#9a3412;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;">✏️ Lihat Jawaban Isian</button>'
+              + '</td>'
               + '<td style="padding:8px 12px;text-align:center;font-weight:800;color:var(--primary);">' + autoMentah + '</td>';
 
         mtkGuruSoal.forEach(q => {
@@ -5126,6 +5163,32 @@ async function renderPenilaian() {
               + '<span style="font-weight:800;font-size:15px;color:' + nilaiColor + ';">' + nilaiAkhir + '</span>'
               + '</td></tr>';
 
+        // Expandable baris jawaban isian MTK soal 11–20
+        const isianMtkItems = qs.filter(q => q.id >= 11 && q.id <= 20).map(q => {
+          const qi = q.id - 1; // index di answers (0-based)
+          const ans = answers[qi] || {};
+          const jawaban = ans.isianMtk || '';
+          return { id: q.id, jawaban };
+        }).filter(item => item.jawaban.trim().length > 0);
+
+        const hasIsianMtk = isianMtkItems.length > 0;
+        html += '<tr id="mtkIsianRow_' + ri + '" style="display:none;background:#fff7ed;">'
+              + '<td colspan="100%" style="padding:12px 16px;">'
+              + '<div style="font-weight:800;font-size:13px;color:#9a3412;margin-bottom:8px;">✏️ Jawaban Isian (Soal 11–20) — ' + r.nama + '</div>'
+              + (hasIsianMtk
+                  ? '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;">'
+                    + isianMtkItems.map(item =>
+                        '<div style="background:white;border:1.5px solid #fdba74;border-radius:8px;padding:8px 12px;">'
+                        + '<div style="font-size:11px;font-weight:800;color:#9a3412;">Soal ' + item.id + ' (Isian)</div>'
+                        + '<div style="font-size:13px;margin-top:4px;white-space:pre-wrap;">' + item.jawaban + '</div>'
+                        + '</div>'
+                      ).join('')
+                    + '</div>'
+                  : '<div style="font-size:12px;color:#94a3b8;font-style:italic;">Belum ada jawaban isian yang diketik.</div>'
+                )
+              + '</td></tr>';
+
+
       } else if (isBiPaket) {
         // Hitung skor auto per soal dari answers (soal 1–15 yang punya skor otomatis)
         // Soal 1–5: single, 6–10: truefalse, 11–15: multiselect
@@ -5157,7 +5220,7 @@ async function renderPenilaian() {
         const nilaiAkhir = Math.min(100, Math.round((skorMentah / 55) * 100 * 10) / 10);
         const nilaiColor = nilaiAkhir >= 75 ? '#10b981' : nilaiAkhir >= 60 ? '#f59e0b' : '#ef4444';
 
-        const lihatAlasanBtn = '<br><button onclick="showAlasanSiswa(' + JSON.stringify(r.nama) + ', ' + ri + ')" style="margin-top:4px;padding:3px 10px;background:#ede9fe;color:#5b21b6;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;">📖 Lihat Alasan</button>';
+        const lihatAlasanBtn = `<br><button id="alasanBtn_${ri}" onclick="showAlasanSiswa(${ri})" style="margin-top:4px;padding:3px 10px;background:#ede9fe;color:#5b21b6;border:none;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;">📖 Lihat Alasan</button>`;
 
         html += `<tr style="background:${rowBg};">
           <td style="padding:8px 12px;font-weight:700;">${r.nama}${lihatAlasanBtn}</td>
@@ -5317,6 +5380,25 @@ async function renderPenilaian() {
   hideLoading();
 }
 
+
+function showMtkIsian(ri) {
+  const row = document.getElementById('mtkIsianRow_' + ri);
+  if (!row) return;
+  const isHidden = row.style.display === 'none' || row.style.display === '';
+  row.style.display = isHidden ? 'table-row' : 'none';
+  const btn = document.getElementById('mtkIsianBtn_' + ri);
+  if (btn) btn.textContent = isHidden ? '🔼 Tutup Jawaban' : '✏️ Lihat Jawaban Isian';
+}
+
+function showAlasanSiswa(ri) {
+  const row = document.getElementById('alasanRow_' + ri);
+  if (!row) return;
+  const isHidden = row.style.display === 'none' || row.style.display === '';
+  row.style.display = isHidden ? 'table-row' : 'none';
+
+  const btn = document.getElementById('alasanBtn_' + ri);
+  if (btn) btn.textContent = isHidden ? '🔼 Tutup Alasan' : '📖 Lihat Alasan';
+}
 
 function clampNilai(input) {
   const max = parseFloat(input.dataset.max) || 1;
