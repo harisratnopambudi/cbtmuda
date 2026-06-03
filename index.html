@@ -3034,7 +3034,22 @@ function tryNext(pos, isLast) {
   const q = ACTIVE_QUESTIONS[idx];
   const ans = examAnswers[idx] || {};
   const isBi = paketDipilih === '2' || paketDipilih === '4';
+  const isMtkIsian = (paketDipilih === '1' || paketDipilih === '3') && q.id >= 11 && q.id <= 20;
   const warn = document.getElementById(`langkahWarn_${idx}`);
+
+  // Soal isian MTK 11–20: cukup cek textarea terisi
+  if (isMtkIsian) {
+    const isianOk = ans.isianMtk && ans.isianMtk.trim().length > 0;
+    if (!isianOk) {
+      const ta = document.getElementById(`isianMtkInput_${idx}`);
+      if (ta) { ta.focus(); ta.style.borderColor = '#ef4444'; ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      return;
+    }
+    if (isLast) confirmSubmit();
+    else renderQuestion(pos + 1);
+    return;
+  }
+
   // Soal noAlasan: tidak perlu cek alasan/langkah, langsung lanjut
   if (!q.noAlasan) {
     const langkahOk = isBi
